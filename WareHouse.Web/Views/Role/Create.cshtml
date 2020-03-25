@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Created</h2>
+
+<div class="form-group">
+    <label for="roleName">角色名</label>
+    <input class="form-control" type="text" id="roleName" name="roleName" placeholder="请输入角色名.." required="required">
+</div>
+<div class="form-group">
+    <button id="add-btn" class="btn btn-primary" type="submit">添加</button>
+</div>
+
+@section Scripts
+{
+    <script>
+        $("#add-btn").click(function () {
+            if ($("#roleName").val()==="") {
+                alert("角色名不能为空");
+                return;
+            }
+            $.ajax({
+                url: '/Role/AddRole',
+                data: {
+                    RoleName: $("#roleName").val()
+                },
+                type: 'post',
+                success: function() {
+                    window.location.href = "@Url.Action("Index")";
+                },
+                error: function(res) {
+                    console.log(res);
+                }
+            });
+        });
+    </script>
+}

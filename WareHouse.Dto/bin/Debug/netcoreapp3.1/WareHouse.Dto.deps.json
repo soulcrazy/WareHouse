@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WareHouse.Dto/1.0.0": {
+        "runtime": {
+          "WareHouse.Dto.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WareHouse.Dto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

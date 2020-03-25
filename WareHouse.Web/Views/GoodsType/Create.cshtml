@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "添加分类";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form action="@Url.Action("AddType")" method="post">
+    <div class="form-group">
+        <label for="name">分类名称</label>
+        <input class="form-control" type="text" id="name" name="name" placeholder="请输入分类名称.." required="">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">添加</button>
+    </div>
+</form>

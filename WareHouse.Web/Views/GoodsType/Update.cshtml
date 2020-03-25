@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "分类分类";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form action="@Url.Action("UpdateType")" method="post">
+    <input type="hidden" name="id" id="id" value="" />
+    <div class="form-group">
+        <label for="name">分类名称</label>
+        <input class="form-control" type="text" id="name" name="name" placeholder="请输入分类名称.." required="">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">修改</button>
+    </div>
+</form>
+<button id="test-btn">测试</button>
+
+@section Scripts
+{
+
+    <script>
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            //console.log(window.location.search);//?id=2
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    </script>
+
+    <script>
+        $.ajax({
+            url: '/GoodsType/Find',
+            data: {
+                id: GetQueryString("id")
+            },
+            type: 'get',
+            success: function (res) {
+                $("#name").val(res.name);
+                $("#id").val(res.id);
+            }
+        });
+        $("#test-btn").click(function () {
+            var data = {
+                id: $("#id").val(),
+                name: $("#name").val()
+            };
+            console.log(data);
+        });
+    </script>
+
+}

@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-8">
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="name">用户名</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="name" name="name" placeholder="请输入用户名..">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="pwd">密码</label>
+        <div class="col-md-10">
+            <input class="form-control" type="password" id="pwd" name="pwd" placeholder="请输入密码..">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="corporatename">公司名</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="corporatename" name="corporatename" placeholder="请输入公司名..">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="phone">手机号</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="phone" name="phone" placeholder="请输入手机号..">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="email">邮箱</label>
+        <div class="col-md-10">
+            <input class="form-control" type="email" id="email" name="email" placeholder="请输入邮箱..">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="postcode">邮编</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="postcode" name="postcode" placeholder="请输入邮编..">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="address">地址</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="address" name="address" placeholder="请输入地址..">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-1 col-md-offset-3">
+            <button id="update-btn" class="btn btn-primary" type="submit">修改</button>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script>
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            //console.log(window.location.search);//?id=2
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    </script>
+    <script>
+        //console.log(GetQueryString("id"));
+        $.ajax({
+            url: '/Home/FindUser',
+            data: {
+                id:GetQueryString("id")
+            },
+            type: 'get',
+            success: function(res) {
+                console.log(res);
+                $("#id").val(res.id);
+                $("#name").val(res.name);
+                $("#pwd").val(res.pwd);
+                $("#corporatename").val(res.corporateName);
+                $("#phone").val(res.phone);
+                $("#email").val(res.email);
+                $("#postcode").val(res.postCode);
+                $("#address").val(res.address);
+            }
+        });
+
+        $("#update-btn").click(function () {
+            var data = {
+                id: GetQueryString("id"),
+                name: $("#name").val(),
+                pwd: $("#pwd").val(),
+                phone: $("#phone").val(),
+                corporatename: $("#corporatename").val(),
+                email: $("#email").val(),
+                postcode: $("#postcode").val(),
+                address: $("#address").val()
+            }
+            //console.log(data);
+            $.ajax({
+                url: '/Home/UpdateUser',
+                type: 'post',
+                data: data,
+                success: function () {
+                    window.location.href = "@Url.Action("Index")";
+                    //console.log("修改成功");
+                },
+                error: function () {
+                    //alert("添加失败");
+                    console.log("修改失败");
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Web", "WareHouse.Web\WareHouse.Web.csproj", "{935D556C-B637-4BEB-A898-69308BC9B256}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Core", "WareHouse.Core\WareHouse.Core.csproj", "{4B152BBB-0719-491F-81CC-DEF72D710F74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Service", "WareHouse.Service\WareHouse.Service.csproj", "{1E8A1673-6CDB-4C24-8F6C-E975CEC56620}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.ViewModel", "WareHouse.ViewModel\WareHouse.ViewModel.csproj", "{EBD83454-306A-4B7D-91F4-C6B4AD6255EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Entity", "WareHouse.Entity\WareHouse.Entity.csproj", "{6BBCDAC1-D169-44FB-9AE3-15018735B896}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Dto", "WareHouse.Dto\WareHouse.Dto.csproj", "{9889E971-3BF2-437C-9826-CF7D6DF75B9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WareHouse.Api", "WareHouse.Api\WareHouse.Api.csproj", "{59E6CCD3-128E-4005-8843-B2E8DBAF433C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{935D556C-B637-4BEB-A898-69308BC9B256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935D556C-B637-4BEB-A898-69308BC9B256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935D556C-B637-4BEB-A898-69308BC9B256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{935D556C-B637-4BEB-A898-69308BC9B256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B152BBB-0719-491F-81CC-DEF72D710F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B152BBB-0719-491F-81CC-DEF72D710F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B152BBB-0719-491F-81CC-DEF72D710F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B152BBB-0719-491F-81CC-DEF72D710F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E8A1673-6CDB-4C24-8F6C-E975CEC56620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8A1673-6CDB-4C24-8F6C-E975CEC56620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8A1673-6CDB-4C24-8F6C-E975CEC56620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8A1673-6CDB-4C24-8F6C-E975CEC56620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD83454-306A-4B7D-91F4-C6B4AD6255EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD83454-306A-4B7D-91F4-C6B4AD6255EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD83454-306A-4B7D-91F4-C6B4AD6255EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD83454-306A-4B7D-91F4-C6B4AD6255EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBCDAC1-D169-44FB-9AE3-15018735B896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBCDAC1-D169-44FB-9AE3-15018735B896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBCDAC1-D169-44FB-9AE3-15018735B896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBCDAC1-D169-44FB-9AE3-15018735B896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9889E971-3BF2-437C-9826-CF7D6DF75B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9889E971-3BF2-437C-9826-CF7D6DF75B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9889E971-3BF2-437C-9826-CF7D6DF75B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9889E971-3BF2-437C-9826-CF7D6DF75B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D250A1AD-D7CE-47EB-A90D-649D69DD400F}
+	EndGlobalSection
+EndGlobal

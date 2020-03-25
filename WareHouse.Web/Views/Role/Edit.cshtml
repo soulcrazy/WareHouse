@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-group">
+    <input type="hidden" id="id" value="" />
+    <label for="roleName">角色名</label>
+    <input class="form-control" type="text" id="roleName" name="roleName" placeholder="请输入角色名.." required="required">
+</div>
+<div class="form-group">
+    <button id="edit-btn" class="btn btn-primary" type="submit">修改</button>
+</div>
+
+@section Scripts
+{
+    <script>
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            //console.log(window.location.search);//?id=2
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    </script>
+    <script>
+        $.ajax({
+            url: '/Role/Find',
+            data: {
+                id: GetQueryString("id")
+            },
+            type: 'post',
+            success: function (res) {
+                console.log(res);
+                $("#roleName").val(res.data.roleName);
+                $("#id").val(res.data.id);
+            }
+        });
+        $("#edit-btn").click(function () {
+            if ($("#roleName").val()==="") {
+                alert("角色名不能为空");
+                return;
+            }
+            var data = {
+                id: $("#id").val(),
+                roleName: $("#roleName").val()
+            };
+            $.ajax({
+                url: '/Role/Update',
+                data: data,
+                type: 'post',
+                success: function() {
+                    window.location.href = "@Url.Action("Index")";
+                },
+                error: function(res) {
+                    alert(res);
+                }
+            });
+            //console.log(data);
+        });
+    </script>
+}
