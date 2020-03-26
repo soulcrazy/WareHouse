@@ -29,5 +29,36 @@ namespace WareHouse.Service
         bool Delete(int id);
 
         bool Update(Goods goods);
+
+        /// <summary>
+        /// 入库
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        bool Join(int id);
+
+        /// <summary>
+        /// 出库
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        bool Out(int id);
+
+        /// <summary>
+        /// 在仓库里的
+        /// </summary>
+        /// <returns></returns>
+        List<Goods> Inside();
+
+        /// <summary>
+        /// 分页查询在仓库里的
+        /// </summary>
+        /// <param name="pager"></param>
+        /// <returns></returns>
+        IPageResult<Goods> InsidePage(IPager pager);
+
+        List<Goods> Outside();
+
+        IPageResult<Goods> OutsidePage(IPager pager);
     }
 }

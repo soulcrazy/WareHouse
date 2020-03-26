@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "WareHouse.ViewModel/1.0.0": {
+        "dependencies": {
+          "WareHouse.Entity": "1.0.0"
+        },
         "runtime": {
           "WareHouse.ViewModel.dll": {}
+        }
+      },
+      "WareHouse.Entity/1.0.0": {
+        "runtime": {
+          "WareHouse.Entity.dll": {}
         }
       }
     }
   },
   "libraries": {
     "WareHouse.ViewModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WareHouse.Entity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -26,6 +26,9 @@ namespace WareHouse.Core.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("IsWarehousing")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("ModifyTime")
                         .HasColumnType("datetime(6)");
 
@@ -77,6 +80,34 @@ namespace WareHouse.Core.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("GoodsType");
+                });
+
+            modelBuilder.Entity("WareHouse.Entity.Region", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("ModifyTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Region");
                 });
 
             modelBuilder.Entity("WareHouse.Entity.Role", b =>
@@ -133,6 +164,34 @@ namespace WareHouse.Core.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Storage");
+                });
+
+            modelBuilder.Entity("WareHouse.Entity.StorageRegion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("ModifyTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp(6)");
+
+                    b.Property<int>("StorageId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StorageRegion");
                 });
 
             modelBuilder.Entity("WareHouse.Entity.Users", b =>

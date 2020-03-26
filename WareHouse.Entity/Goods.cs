@@ -26,5 +26,10 @@
         /// 货物备注
         /// </summary>
         public string Remarks { get; set; }
+
+        /// <summary>
+        /// 是否入库，0未入库，1已入库
+        /// </summary>
+        public int IsWarehousing { get; set; }
     }
 }

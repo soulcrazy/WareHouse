@@ -39,6 +39,7 @@ namespace WareHouse.Service
 
         public bool Add(Goods goods)
         {
+            goods.IsWarehousing = 0;
             _repository.Add(goods);
             return _unitOfWork.Commit() > 0;
         }
@@ -78,6 +79,62 @@ namespace WareHouse.Service
 
             _repository.Update(tempGoods);
             return _unitOfWork.Commit() > 0;
+        }
+
+        public bool Join(int id)
+        {
+            if (id <= 0)
+            {
+                return false;
+            }
+            Goods goods = Find(id);
+            if (goods == null)
+            {
+                return false;
+            }
+
+            goods.IsWarehousing = 1;
+
+            _repository.Update(goods);
+            return _unitOfWork.Commit() > 0;
+        }
+
+        public bool Out(int id)
+        {
+            if (id <= 0)
+            {
+                return false;
+            }
+            Goods goods = Find(id);
+            if (goods == null)
+            {
+                return false;
+            }
+
+            goods.IsWarehousing = 0;
+
+            _repository.Update(goods);
+            return _unitOfWork.Commit() > 0;
+        }
+
+        public List<Goods> Inside()
+        {
+            return _repository.Select(c => c.IsWarehousing == 1);
+        }
+
+        public IPageResult<Goods> InsidePage(IPager pager)
+        {
+            return _repository.Select(pager, c => c.IsWarehousing == 1, c => c.Id);
+        }
+
+        public List<Goods> Outside()
+        {
+            return _repository.Select(c => c.IsWarehousing == 0);
+        }
+
+        public IPageResult<Goods> OutsidePage(IPager pager)
+        {
+            return _repository.Select(pager, c => c.IsWarehousing == 0, c => c.Id);
         }
     }
 }

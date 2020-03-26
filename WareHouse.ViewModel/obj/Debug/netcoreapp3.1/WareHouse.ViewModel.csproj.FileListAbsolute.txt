@@ -7,3 +7,6 @@ D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.ViewModel\obj\Debug\netcor
 D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
 D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csproj.CoreCompileInputs.cache
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csproj.CopyComplete

@@ -41,6 +41,7 @@
                     formatter: function(value, row, index) {
                         var html = '';
                         html += "<button class='btn btn-default' onclick='edit(" + value + ")'>修改</button>";
+                        html += "<button class='btn btn-default' onclick='region(" + value + ")'>区域</button>";
                         html += "<button class='btn btn-default' onclick='del(" + value + ")'>删除</button>";
                         return html;
                     }
@@ -54,6 +55,9 @@
         function edit(id) {
             window.location.href = "@Url.Action("Update")?id="+id;
         }
+        function region(id) {
+            window.location.href = "@Url.Action("Region")?id="+id;
+        }
         function del(id) {
             $.ajax({
                 url: '/Storage/DeleteStorage',
@@ -66,17 +70,6 @@
                 },
                 error: function(res) {
                     alert(res);
-                }
-            });
-        }
-
-        function GetRole() {
-            $.ajax({
-                url: '/Storage/GetPages',
-                data: {},
-                type: 'get',
-                success: function (res) {
-                    console.log(res);
                 }
             });
         }

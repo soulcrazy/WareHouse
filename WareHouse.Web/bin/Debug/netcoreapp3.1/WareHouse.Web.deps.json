@@ -2324,6 +2324,9 @@
         }
       },
       "WareHouse.ViewModel/1.0.0": {
+        "dependencies": {
+          "WareHouse.Entity": "1.0.0"
+        },
         "runtime": {
           "WareHouse.ViewModel.dll": {}
         },

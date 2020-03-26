@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.Service;
@@ -8,10 +10,14 @@ namespace WareHouse.Web.Controllers
     public class StorageController : BaseController
     {
         private readonly IStorageService _storageService;
+        private readonly IRegionService _regionService;
+        private readonly IStorageRegionService _storageRegionService;
 
-        public StorageController(IStorageService storageService)
+        public StorageController(IServiceProvider serviceProvider)
         {
-            _storageService = storageService;
+            _storageService = serviceProvider.GetRequiredService<IStorageService>();
+            _regionService = serviceProvider.GetRequiredService<IRegionService>();
+            _storageRegionService = serviceProvider.GetRequiredService<IStorageRegionService>();
         }
 
         public IActionResult Index()
@@ -25,6 +31,11 @@ namespace WareHouse.Web.Controllers
         }
 
         public IActionResult Update()
+        {
+            return View();
+        }
+
+        public IActionResult Region()
         {
             return View();
         }
@@ -77,6 +88,33 @@ namespace WareHouse.Web.Controllers
             else
             {
                 return Json("修改失败");
+            }
+        }
+
+        public IActionResult Choose()
+        {
+            return View();
+        }
+
+        public IActionResult GetAllRegion()
+        {
+            return Json(_regionService.GetAll());
+        }
+
+        public IActionResult GetAllStorageRegion(int id)
+        {
+            return Json(_storageRegionService.GetAllByStorageId(id));
+        }
+
+        public IAjaxResult AddStorageRegion(StorageRegion storageRegion)
+        {
+            if (_storageRegionService.Add(storageRegion))
+            {
+                return Success("添加成功");
+            }
+            else
+            {
+                return Error("添加失败");
             }
         }
     }
