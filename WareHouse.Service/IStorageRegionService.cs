@@ -10,15 +10,15 @@
  * 创建日期：2020-03-26 13:12:18
  */
 
-using System.Collections.Generic;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
+using WareHouse.ViewModel;
 
 namespace WareHouse.Service
 {
     public interface IStorageRegionService : IService
     {
-        List<StorageRegion> GetAllByStorageId(int id);
+        RegionModel GetAllByStorageId(int id);
 
         IPageResult<StorageRegion> GetPageResultByStorageId(IPager pager, int id);
 

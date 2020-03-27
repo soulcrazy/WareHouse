@@ -1,8 +1,42 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div>
+    <button id="add-btn" class="btn btn-cyan">添加货物并入库</button>
+    <table class="table table-striped table-hover" id="inside-table">
+    </table>
+</div>
 
+@section Scripts
+{
+    <script>
+        $('#inside-table').bootstrapTable({
+            method: 'get',
+            url: "/Join/GetAllInside", //请求路径
+            striped: true, //是否显示行间隔色
+            pageNumber: 1, //初始化加载第一页
+            pagination: true, //是否分页
+            sidePagination: 'client', //server:服务器端分页|client：前端分页
+            pageSize: 5, //单页记录数
+            pageList: [5, 10, 20, 30], //可选择单页记录数
+            showRefresh: true, //刷新按钮
+            columns: [
+                {
+                    field: "id",
+                    title: "主键"
+                }, {
+                    field: "name",
+                    title: "仓库名称"
+                }, {
+                    field: "address",
+                    title: "仓库地址"
+                }, {
+                    field: "capacity",
+                    title: "仓库容量"
+                }
+            ]
+        });
+    </script>
+}

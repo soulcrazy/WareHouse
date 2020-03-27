@@ -57,6 +57,40 @@ namespace WareHouse.Core.Migrations
                     b.ToTable("Goods");
                 });
 
+            modelBuilder.Entity("WareHouse.Entity.GoodsStorage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("GoodsId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifyTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp(6)");
+
+                    b.Property<int>("State")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StorageId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GoodsStorage");
+                });
+
             modelBuilder.Entity("WareHouse.Entity.GoodsType", b =>
                 {
                     b.Property<int>("Id")

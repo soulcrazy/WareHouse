@@ -42,6 +42,13 @@ namespace WareHouse.Core.Data
         TEntity Find(TKey id);
 
         /// <summary>
+        /// 条件查询单条数据
+        /// </summary>
+        /// <param name="whereExpression"></param>
+        /// <returns></returns>
+        TEntity Find(Expression<Func<TEntity, bool>> whereExpression);
+
+        /// <summary>
         /// 条件查询
         /// </summary>
         /// <param name="whereExpression"></param>

@@ -805,6 +805,16 @@
           "bin/placeholder/WareHouse.Core.dll": {}
         }
       },
+      "WareHouse.Dto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/WareHouse.Dto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WareHouse.Dto.dll": {}
+        }
+      },
       "WareHouse.Entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -813,6 +823,19 @@
         },
         "runtime": {
           "bin/placeholder/WareHouse.Entity.dll": {}
+        }
+      },
+      "WareHouse.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "WareHouse.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WareHouse.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WareHouse.ViewModel.dll": {}
         }
       }
     }
@@ -3240,16 +3263,28 @@
       "path": "../WareHouse.Core/WareHouse.Core.csproj",
       "msbuildProject": "../WareHouse.Core/WareHouse.Core.csproj"
     },
+    "WareHouse.Dto/1.0.0": {
+      "type": "project",
+      "path": "../WareHouse.Dto/WareHouse.Dto.csproj",
+      "msbuildProject": "../WareHouse.Dto/WareHouse.Dto.csproj"
+    },
     "WareHouse.Entity/1.0.0": {
       "type": "project",
       "path": "../WareHouse.Entity/WareHouse.Entity.csproj",
       "msbuildProject": "../WareHouse.Entity/WareHouse.Entity.csproj"
+    },
+    "WareHouse.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../WareHouse.ViewModel/WareHouse.ViewModel.csproj",
+      "msbuildProject": "../WareHouse.ViewModel/WareHouse.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "WareHouse.Core >= 1.0.0",
-      "WareHouse.Entity >= 1.0.0"
+      "WareHouse.Dto >= 1.0.0",
+      "WareHouse.Entity >= 1.0.0",
+      "WareHouse.ViewModel >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3286,8 +3321,14 @@
             "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj": {
               "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj"
             },
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj"
+            },
             "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
               "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+            },
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj"
             }
           }
         }

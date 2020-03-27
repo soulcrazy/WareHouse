@@ -57,8 +57,17 @@ namespace WareHouse.Service
         /// <returns></returns>
         IPageResult<Goods> InsidePage(IPager pager);
 
+        /// <summary>
+        /// 不在仓库的货物
+        /// </summary>
+        /// <returns></returns>
         List<Goods> Outside();
 
+        /// <summary>
+        /// 分页查询不在仓库的货物
+        /// </summary>
+        /// <param name="pager"></param>
+        /// <returns></returns>
         IPageResult<Goods> OutsidePage(IPager pager);
     }
 }

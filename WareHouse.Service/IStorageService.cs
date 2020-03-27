@@ -12,6 +12,7 @@
 
 using System.Collections.Generic;
 using WareHouse.Core.Data;
+using WareHouse.Dto;
 using WareHouse.Entity;
 
 namespace WareHouse.Service
@@ -29,5 +30,7 @@ namespace WareHouse.Service
         bool Delete(int id);
 
         bool Update(Storage storage);
+
+        bool AddNewRegion(GetRegionDto getRegionDto);
     }
 }

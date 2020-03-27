@@ -2723,7 +2723,9 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "WareHouse.Core": "1.0.0",
-          "WareHouse.Entity": "1.0.0"
+          "WareHouse.Dto": "1.0.0",
+          "WareHouse.Entity": "1.0.0",
+          "WareHouse.ViewModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WareHouse.Service.dll": {}

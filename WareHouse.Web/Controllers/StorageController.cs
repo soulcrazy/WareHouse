@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using WareHouse.Core.Data;
+using WareHouse.Dto;
 using WareHouse.Entity;
 using WareHouse.Service;
 
@@ -115,6 +116,30 @@ namespace WareHouse.Web.Controllers
             else
             {
                 return Error("添加失败");
+            }
+        }
+
+        public IAjaxResult AddNewRegion(GetRegionDto getRegionDto)
+        {
+            if (_storageService.AddNewRegion(getRegionDto))
+            {
+                return Success("添加成功");
+            }
+            else
+            {
+                return Error("添加失败");
+            }
+        }
+
+        public IAjaxResult DeleteStorageRegion(int id)
+        {
+            if (_storageRegionService.Delete(id))
+            {
+                return Success("删除成功");
+            }
+            else
+            {
+                return Error("删除失败");
             }
         }
     }

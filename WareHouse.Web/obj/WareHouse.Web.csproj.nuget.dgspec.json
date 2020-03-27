@@ -226,8 +226,14 @@
               "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj": {
                 "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj"
               },
+              "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
+                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj"
+              },
               "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
                 "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+              },
+              "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
+                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj"
               }
             }
           }

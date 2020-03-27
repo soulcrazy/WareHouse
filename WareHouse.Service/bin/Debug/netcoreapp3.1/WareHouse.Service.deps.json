@@ -9,7 +9,9 @@
       "WareHouse.Service/1.0.0": {
         "dependencies": {
           "WareHouse.Core": "1.0.0",
-          "WareHouse.Entity": "1.0.0"
+          "WareHouse.Dto": "1.0.0",
+          "WareHouse.Entity": "1.0.0",
+          "WareHouse.ViewModel": "1.0.0"
         },
         "runtime": {
           "WareHouse.Service.dll": {}
@@ -582,9 +584,22 @@
           "WareHouse.Core.dll": {}
         }
       },
+      "WareHouse.Dto/1.0.0": {
+        "runtime": {
+          "WareHouse.Dto.dll": {}
+        }
+      },
       "WareHouse.Entity/1.0.0": {
         "runtime": {
           "WareHouse.Entity.dll": {}
+        }
+      },
+      "WareHouse.ViewModel/1.0.0": {
+        "dependencies": {
+          "WareHouse.Entity": "1.0.0"
+        },
+        "runtime": {
+          "WareHouse.ViewModel.dll": {}
         }
       },
       "Microsoft.AspNetCore.Http.Abstractions/3.1.0.0": {
@@ -1146,7 +1161,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "WareHouse.Dto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "WareHouse.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WareHouse.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

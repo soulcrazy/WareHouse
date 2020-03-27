@@ -178,3 +178,4 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Join\Index.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Storage\Region.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Storage\Choose.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Outbound\Index.cshtml.g.cs

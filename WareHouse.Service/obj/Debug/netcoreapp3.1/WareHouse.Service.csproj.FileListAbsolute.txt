@@ -39,3 +39,7 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcorea
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.xml
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.csproj.CoreCompileInputs.cache
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb

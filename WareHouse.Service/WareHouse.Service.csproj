@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WareHouse.Core\WareHouse.Core.csproj" />
+    <ProjectReference Include="..\WareHouse.Dto\WareHouse.Dto.csproj" />
     <ProjectReference Include="..\WareHouse.Entity\WareHouse.Entity.csproj" />
+    <ProjectReference Include="..\WareHouse.ViewModel\WareHouse.ViewModel.csproj" />
   </ItemGroup>
 </Project>

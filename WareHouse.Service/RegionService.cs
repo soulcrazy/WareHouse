@@ -51,6 +51,10 @@ namespace WareHouse.Service
 
         public bool Add(Region region)
         {
+            if (region.Name == null)
+            {
+                return false;
+            }
             if (_repository.Select(c => c.Name == region.Name).Count > 0)
             {
                 return false;

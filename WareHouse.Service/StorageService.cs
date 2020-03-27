@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using WareHouse.Core.Data;
+using WareHouse.Dto;
 using WareHouse.Entity;
 
 namespace WareHouse.Service
@@ -21,12 +22,18 @@ namespace WareHouse.Service
     public class StorageService : IStorageService
     {
         private readonly IRepository<Storage, int> _repository;
+        private readonly IRepository<Region, int> _regionRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IRegionService _regionService;
+        private readonly IStorageRegionService _storageRegionService;
 
         public StorageService(IServiceProvider serviceProvider)
         {
             _repository = serviceProvider.GetRequiredService<IRepository<Storage, int>>();
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
+            _regionService = serviceProvider.GetRequiredService<IRegionService>();
+            _regionRepository = serviceProvider.GetRequiredService<IRepository<Region, int>>();
+            _storageRegionService = serviceProvider.GetRequiredService<IStorageRegionService>();
         }
 
         public string Get()
@@ -93,6 +100,31 @@ namespace WareHouse.Service
             tempStorage.Capacity = storage.Capacity;
             _repository.Update(tempStorage);
             return _unitOfWork.Commit() > 0;
+        }
+
+        public bool AddNewRegion(GetRegionDto getRegionDto)
+        {
+            Region region = new Region()
+            {
+                Name = getRegionDto.RegionName,
+                Capacity = getRegionDto.RegionCapacity
+            };
+
+            if (!_regionService.Add(region))
+            {
+                return false;
+            }
+
+            region = _regionRepository.Find(c =>
+                c.Name == getRegionDto.RegionName && c.Capacity == getRegionDto.RegionCapacity);
+
+            StorageRegion storageRegion = new StorageRegion()
+            {
+                StorageId = getRegionDto.StorageId,
+                RegionId = region.Id
+            };
+
+            return _storageRegionService.Add(storageRegion);
         }
     }
 }

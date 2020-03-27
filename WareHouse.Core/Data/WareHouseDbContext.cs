@@ -17,6 +17,7 @@ namespace WareHouse.Core.Data
         public DbSet<Storage> Storage { get; set; }
         public DbSet<Region> Region { get; set; }
         public DbSet<StorageRegion> StorageRegion { get; set; }
+        public DbSet<GoodsStorage> GoodsStorage { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

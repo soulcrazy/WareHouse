@@ -29,7 +29,7 @@ namespace WareHouse.Web.Controllers
             }
         }
 
-        public IActionResult GetAll()
+        public IActionResult GetAllInside()
         {
             return Json(_goodsService.Inside());
         }

@@ -2314,7 +2314,9 @@
       "WareHouse.Service/1.0.0": {
         "dependencies": {
           "WareHouse.Core": "1.0.0",
-          "WareHouse.Entity": "1.0.0"
+          "WareHouse.Dto": "1.0.0",
+          "WareHouse.Entity": "1.0.0",
+          "WareHouse.ViewModel": "1.0.0"
         },
         "runtime": {
           "WareHouse.Service.dll": {}

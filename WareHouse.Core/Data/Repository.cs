@@ -44,6 +44,11 @@ namespace WareHouse.Core.Data
             return Entities.Find(id);
         }
 
+        public TEntity Find(Expression<Func<TEntity, bool>> whereExpression)
+        {
+            return Entities.Where(whereExpression).FirstOrDefault();
+        }
+
         public List<TEntity> Select(Expression<Func<TEntity, bool>> whereExpression)
         {
             return Entities.Where(whereExpression).ToList();
