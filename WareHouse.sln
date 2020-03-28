@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Entity", "WareHou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Dto", "WareHouse.Dto\WareHouse.Dto.csproj", "{9889E971-3BF2-437C-9826-CF7D6DF75B9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WareHouse.Api", "WareHouse.Api\WareHouse.Api.csproj", "{59E6CCD3-128E-4005-8843-B2E8DBAF433C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Api", "WareHouse.Api\WareHouse.Api.csproj", "{59E6CCD3-128E-4005-8843-B2E8DBAF433C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WareHouse.IService", "WareHouse.IService\WareHouse.IService.csproj", "{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WareHouse.XUnitTest", "WareHouse.XUnitTest\WareHouse.XUnitTest.csproj", "{F0C756B3-1304-4BD5-94EA-83C0180891ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0C756B3-1304-4BD5-94EA-83C0180891ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C756B3-1304-4BD5-94EA-83C0180891ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C756B3-1304-4BD5-94EA-83C0180891ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C756B3-1304-4BD5-94EA-83C0180891ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

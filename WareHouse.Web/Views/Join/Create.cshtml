@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form action="" method="post">
+    <div class="form-group">
+        <label for="name">名称</label>
+        <input class="form-control" type="text" id="name" name="name" placeholder="请输入货物名称.." required="">
+    </div>
+    <div class="form-group">
+        <label for="weight">重量</label>
+        <input class="form-control" type="number" id="weight" name="weight" placeholder="请输入货物重量.." required="">
+    </div>
+    <div class="form-group">
+        <label for="typeId">种类</label>
+        <select class="form-control" id="typeId" name="typeId" size="1">
+            <option value="0">请选择</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="remarks">备注</label>
+        <input class="form-control" type="text" id="remarks" name="remarks" placeholder="请输入货物备注.." required="">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">添加</button>
+    </div>
+</form>
+
+@section Scripts
+{
+    <script>
+        $.ajax({
+            url: '/GoodsType/GetAll',
+            data: {},
+            type: 'get',
+            success: function (res) {
+                console.log(res);
+                var html = "";
+                for (var i = 0; i < res.length; i++) {
+                    html += "<option value='" + res[i].id + "'>" + res[i].name + "</option>";
+                }
+                $("#typeId").append(html);
+            }
+        });
+    </script>
+}

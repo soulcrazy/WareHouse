@@ -11,6 +11,7 @@
           "WareHouse.Core": "1.0.0",
           "WareHouse.Dto": "1.0.0",
           "WareHouse.Entity": "1.0.0",
+          "WareHouse.IService": "1.0.0",
           "WareHouse.ViewModel": "1.0.0"
         },
         "runtime": {
@@ -594,6 +595,17 @@
           "WareHouse.Entity.dll": {}
         }
       },
+      "WareHouse.IService/1.0.0": {
+        "dependencies": {
+          "WareHouse.Core": "1.0.0",
+          "WareHouse.Dto": "1.0.0",
+          "WareHouse.Entity": "1.0.0",
+          "WareHouse.ViewModel": "1.0.0"
+        },
+        "runtime": {
+          "WareHouse.IService.dll": {}
+        }
+      },
       "WareHouse.ViewModel/1.0.0": {
         "dependencies": {
           "WareHouse.Entity": "1.0.0"
@@ -1167,6 +1179,11 @@
       "sha512": ""
     },
     "WareHouse.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WareHouse.IService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

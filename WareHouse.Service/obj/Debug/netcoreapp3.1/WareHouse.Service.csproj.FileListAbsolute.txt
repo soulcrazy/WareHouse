@@ -43,3 +43,5 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcorea
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.IService.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.IService.pdb

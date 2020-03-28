@@ -2718,6 +2718,22 @@
           "bin/placeholder/WareHouse.Entity.dll": {}
         }
       },
+      "WareHouse.IService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "WareHouse.Core": "1.0.0",
+          "WareHouse.Dto": "1.0.0",
+          "WareHouse.Entity": "1.0.0",
+          "WareHouse.ViewModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WareHouse.IService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WareHouse.IService.dll": {}
+        }
+      },
       "WareHouse.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2725,6 +2741,7 @@
           "WareHouse.Core": "1.0.0",
           "WareHouse.Dto": "1.0.0",
           "WareHouse.Entity": "1.0.0",
+          "WareHouse.IService": "1.0.0",
           "WareHouse.ViewModel": "1.0.0"
         },
         "compile": {
@@ -8652,6 +8669,11 @@
       "path": "../WareHouse.Entity/WareHouse.Entity.csproj",
       "msbuildProject": "../WareHouse.Entity/WareHouse.Entity.csproj"
     },
+    "WareHouse.IService/1.0.0": {
+      "type": "project",
+      "path": "../WareHouse.IService/WareHouse.IService.csproj",
+      "msbuildProject": "../WareHouse.IService/WareHouse.IService.csproj"
+    },
     "WareHouse.Service/1.0.0": {
       "type": "project",
       "path": "../WareHouse.Service/WareHouse.Service.csproj",
@@ -8672,6 +8694,7 @@
       "WareHouse.Core >= 1.0.0",
       "WareHouse.Dto >= 1.0.0",
       "WareHouse.Entity >= 1.0.0",
+      "WareHouse.IService >= 1.0.0",
       "WareHouse.Service >= 1.0.0",
       "WareHouse.ViewModel >= 1.0.0"
     ]
@@ -8715,6 +8738,9 @@
             },
             "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
               "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+            },
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.IService.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.IService.csproj"
             },
             "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Service\\WareHouse.Service.csproj": {
               "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Service\\WareHouse.Service.csproj"

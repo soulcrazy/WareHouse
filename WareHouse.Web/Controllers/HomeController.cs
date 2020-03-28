@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
-using WareHouse.Service;
+using WareHouse.IService;
 
 namespace WareHouse.Web.Controllers
 {

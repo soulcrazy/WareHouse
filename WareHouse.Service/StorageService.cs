@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using WareHouse.Core.Data;
 using WareHouse.Dto;
 using WareHouse.Entity;
+using WareHouse.IService;
 
 namespace WareHouse.Service
 {

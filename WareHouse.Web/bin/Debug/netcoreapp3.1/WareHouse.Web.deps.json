@@ -31,6 +31,7 @@
           "WareHouse.Core": "1.0.0",
           "WareHouse.Dto": "1.0.0",
           "WareHouse.Entity": "1.0.0",
+          "WareHouse.IService": "1.0.0",
           "WareHouse.Service": "1.0.0",
           "WareHouse.ViewModel": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -2311,11 +2312,26 @@
           "WareHouse.Entity.dll": {}
         }
       },
+      "WareHouse.IService/1.0.0": {
+        "dependencies": {
+          "WareHouse.Core": "1.0.0",
+          "WareHouse.Dto": "1.0.0",
+          "WareHouse.Entity": "1.0.0",
+          "WareHouse.ViewModel": "1.0.0"
+        },
+        "runtime": {
+          "WareHouse.IService.dll": {}
+        },
+        "compile": {
+          "WareHouse.IService.dll": {}
+        }
+      },
       "WareHouse.Service/1.0.0": {
         "dependencies": {
           "WareHouse.Core": "1.0.0",
           "WareHouse.Dto": "1.0.0",
           "WareHouse.Entity": "1.0.0",
+          "WareHouse.IService": "1.0.0",
           "WareHouse.ViewModel": "1.0.0"
         },
         "runtime": {
@@ -5052,6 +5068,11 @@
       "sha512": ""
     },
     "WareHouse.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WareHouse.IService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
+using WareHouse.IService;
 
 namespace WareHouse.Service
 {

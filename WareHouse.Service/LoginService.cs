@@ -2,6 +2,7 @@
 using WareHouse.Core.Data;
 using WareHouse.Core.Helper;
 using WareHouse.Entity;
+using WareHouse.IService;
 
 namespace WareHouse.Service
 {

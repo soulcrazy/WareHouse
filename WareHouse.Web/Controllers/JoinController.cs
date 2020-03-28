@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WareHouse.Service;
+using WareHouse.IService;
 
 namespace WareHouse.Web.Controllers
 {
@@ -13,6 +13,11 @@ namespace WareHouse.Web.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Create()
         {
             return View();
         }

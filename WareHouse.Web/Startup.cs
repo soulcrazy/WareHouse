@@ -24,7 +24,8 @@ namespace WareHouse.Web
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
-            var baseType = typeof(IService);
+            var baseType = typeof(IBaseService);
+
             Assembly.Load("WareHouse.Service").GetTypes()
                 .Where(type => type.IsClass && !type.IsAbstract && !type.IsNested && !type.IsSealed)
                 .Where(type => type.BaseType != null)
