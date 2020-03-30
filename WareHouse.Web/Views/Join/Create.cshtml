@@ -15,12 +15,24 @@
     <div class="form-group">
         <label for="typeId">种类</label>
         <select class="form-control" id="typeId" name="typeId" size="1">
-            <option value="0">请选择</option>
+            <option value="0">请选择种类</option>
         </select>
     </div>
     <div class="form-group">
         <label for="remarks">备注</label>
         <input class="form-control" type="text" id="remarks" name="remarks" placeholder="请输入货物备注.." required="">
+    </div>
+    <div class="form-group">
+        <label for="typeId">仓库</label>
+        <select class="form-control" id="storageId" name="storageId" size="1" onchange="getRegion(this.value)">
+            <option value="0">请选择仓库</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="typeId">区域</label>
+        <select class="form-control" id="regionId" name="regionId" size="1">
+            <option value="0">请选择区域</option>
+        </select>
     </div>
     <div class="form-group">
         <button class="btn btn-primary" type="submit">添加</button>
@@ -30,18 +42,47 @@
 @section Scripts
 {
     <script>
+        //$.ajax({
+        //    url: '/GoodsType/GetAll',
+        //    data: {},
+        //    type: 'get',
+        //    success: function (res) {
+        //        console.log(res);
+        //        var html = "";
+        //        for (var i = 0; i < res.length; i++) {
+        //            html += "<option value='" + res[i].id + "'>" + res[i].name + "</option>";
+        //        }
+        //        $("#typeId").append(html);
+        //    }
+        //});
         $.ajax({
-            url: '/GoodsType/GetAll',
+            url: '/Join/GetJoinModel',
             data: {},
             type: 'get',
             success: function (res) {
                 console.log(res);
                 var html = "";
-                for (var i = 0; i < res.length; i++) {
-                    html += "<option value='" + res[i].id + "'>" + res[i].name + "</option>";
+                for (var i = 0; i < res.data.goodsTypeList.length; i++) {
+                    html += "<option value='" + res.data.goodsTypeList[i].id + "'>" + res.data.goodsTypeList[i].name + "</option>";
                 }
                 $("#typeId").append(html);
+
+                html = "";
+                for (var i = 0; i < res.data.storageList.length; i++) {
+                    html += "<option value='" + res.data.storageList[i].id + "'>" + res.data.storageList[i].name + "</option>";
+                }
+                $("#storageId").append(html);
             }
         });
+        function getRegion(id) {
+            $.ajax({
+                url: '/Join/GetRegion',
+                data: {},
+                type: 'get',
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+        }
     </script>
 }

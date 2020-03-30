@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -84,6 +85,11 @@ namespace WareHouse.Core.Data
             }
             //return Entities.Where(whereExpression).OrderBy(orderExpression).ToList();
             return pageResult;
+        }
+
+        public List<TResult> SqlQuery<TResult>(string sql, object param)
+        {
+            return _dbContext.Database.GetDbConnection().Query<TResult>(sql, param).ToList();
         }
     }
 }

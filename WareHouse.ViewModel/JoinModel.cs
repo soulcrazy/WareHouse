@@ -10,14 +10,15 @@
  * 创建日期：2020-03-28 17:36:36
  */
 
+using System.Collections.Generic;
 using WareHouse.Entity;
 
 namespace WareHouse.ViewModel
 {
     public class JoinModel
     {
-        public Storage Storage { get; set; }
+        public List<Storage> StorageList { get; set; }
 
-        public GoodsType GoodsType { get; set; }
+        public List<GoodsType> GoodsTypeList { get; set; }
     }
 }

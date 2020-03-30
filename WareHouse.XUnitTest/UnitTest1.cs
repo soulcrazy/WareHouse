@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace WareHouse.XUnitTest
@@ -8,7 +7,6 @@ namespace WareHouse.XUnitTest
         [Fact]
         public void Test1()
         {
-
         }
     }
 }

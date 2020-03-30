@@ -79,5 +79,7 @@ namespace WareHouse.Core.Data
         IPageResult<TEntity> Select<TOrder>(IPager pager, Expression<Func<TEntity, bool>> whereExpression, Expression<Func<TEntity, TOrder>> orderExpression, bool isDesc = true);
 
         #endregion 分页查询
+
+        List<TResult> SqlQuery<TResult>(string sql, object param);
     }
 }

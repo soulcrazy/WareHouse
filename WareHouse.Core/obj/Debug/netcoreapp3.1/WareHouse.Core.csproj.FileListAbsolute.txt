@@ -38,5 +38,5 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\bin\Debug\netcoreapp3
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Routing.xml
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.xml
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csproj.CoreCompileInputs.cache
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.genruntimeconfig.cache
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csproj.CoreCompileInputs.cache
