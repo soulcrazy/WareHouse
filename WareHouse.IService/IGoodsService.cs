@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 
-namespace WareHouse.IService
+namespace WareHouse.Service.Interface
 {
     public interface IGoodsService : IBaseService
     {
@@ -24,18 +24,13 @@ namespace WareHouse.IService
 
         Goods Find(int id);
 
+        int GetId(Goods goods);
+
         bool Add(Goods goods);
 
         bool Delete(int id);
 
         bool Update(Goods goods);
-
-        /// <summary>
-        /// 入库
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        bool Join(int id);
 
         /// <summary>
         /// 出库

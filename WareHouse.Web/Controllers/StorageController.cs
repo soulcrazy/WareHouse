@@ -4,7 +4,7 @@ using System;
 using WareHouse.Core.Data;
 using WareHouse.Dto;
 using WareHouse.Entity;
-using WareHouse.IService;
+using WareHouse.Service.Interface;
 
 namespace WareHouse.Web.Controllers
 {

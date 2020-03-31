@@ -15,7 +15,7 @@ using WareHouse.Core.Data;
 using WareHouse.Dto;
 using WareHouse.Entity;
 
-namespace WareHouse.IService
+namespace WareHouse.Service.Interface
 {
     public interface IStorageService : Core.Data.IBaseService
     {

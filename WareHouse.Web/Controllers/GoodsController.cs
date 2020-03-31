@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
-using WareHouse.IService;
+using WareHouse.Service.Interface;
 
 namespace WareHouse.Web.Controllers
 {

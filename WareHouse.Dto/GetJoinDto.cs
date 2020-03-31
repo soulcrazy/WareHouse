@@ -15,9 +15,26 @@ namespace WareHouse.Dto
     public class GetJoinDto
     {
         /// <summary>
-        /// 货物ID
+        /// 货物名称
         /// </summary>
-        public int GoodsId { get; set; }
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 货物重量
+        /// </summary>
+        public float Weight { get; set; }
+
+        /// <summary>
+        /// 用户ID
+        /// </summary>
+        public int UserId { get; set; }
+
+        /// <summary>
+        /// 货物分类ID
+        /// </summary>
+        public int TypeId { get; set; }
+
+        public string Remarks { get; set; }
 
         /// <summary>
         /// 仓库ID

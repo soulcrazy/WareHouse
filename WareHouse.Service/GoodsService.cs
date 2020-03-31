@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
-using WareHouse.IService;
+using WareHouse.Service.Interface;
 
 namespace WareHouse.Service
 {
@@ -36,6 +36,11 @@ namespace WareHouse.Service
         public Goods Find(int id)
         {
             return _repository.Find(id);
+        }
+
+        public int GetId(Goods goods)
+        {
+            return _repository.Find(c => c.UserId == goods.UserId && c.Name == goods.Name && c.Remarks == goods.Remarks).Id;
         }
 
         public bool Add(Goods goods)
@@ -79,24 +84,6 @@ namespace WareHouse.Service
             tempGoods.Remarks = goods.Remarks;
 
             _repository.Update(tempGoods);
-            return _unitOfWork.Commit() > 0;
-        }
-
-        public bool Join(int id)
-        {
-            if (id <= 0)
-            {
-                return false;
-            }
-            Goods goods = Find(id);
-            if (goods == null)
-            {
-                return false;
-            }
-
-            goods.IsWarehousing = 1;
-
-            _repository.Update(goods);
             return _unitOfWork.Commit() > 0;
         }
 

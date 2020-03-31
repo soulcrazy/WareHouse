@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 
-namespace WareHouse.IService
+namespace WareHouse.Service.Interface
 {
     public interface IRegionService : Core.Data.IBaseService
     {

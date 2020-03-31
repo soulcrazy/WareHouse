@@ -15,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
-using WareHouse.IService;
+using WareHouse.Service.Interface;
 
 namespace WareHouse.Service
 {

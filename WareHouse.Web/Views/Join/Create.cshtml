@@ -3,14 +3,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="" method="post">
+<form action="@Url.Action("Join")" method="post">
     <div class="form-group">
         <label for="name">名称</label>
         <input class="form-control" type="text" id="name" name="name" placeholder="请输入货物名称.." required="">
     </div>
     <div class="form-group">
         <label for="weight">重量</label>
-        <input class="form-control" type="number" id="weight" name="weight" placeholder="请输入货物重量.." required="">
+        <input class="form-control" type="text" id="weight" name="weight" onkeyup="checkInputIntFloat(this);" placeholder="请输入货物重量.." required="">
+    </div>
+    <div class="form-group">
+        <label for="typeId">用户</label>
+        <select class="form-control" id="userId" name="userId" size="1">
+            <option value="0">请选择所属用户</option>
+        </select>
     </div>
     <div class="form-group">
         <label for="typeId">种类</label>
@@ -42,19 +48,11 @@
 @section Scripts
 {
     <script>
-        //$.ajax({
-        //    url: '/GoodsType/GetAll',
-        //    data: {},
-        //    type: 'get',
-        //    success: function (res) {
-        //        console.log(res);
-        //        var html = "";
-        //        for (var i = 0; i < res.length; i++) {
-        //            html += "<option value='" + res[i].id + "'>" + res[i].name + "</option>";
-        //        }
-        //        $("#typeId").append(html);
-        //    }
-        //});
+        function checkInputIntFloat(oInput) {
+            if ('' !== oInput.value.replace(/\d{1,}\.{0,1}\d{0,}/, '')) {
+                oInput.value = oInput.value.match(/\d{1,}\.{0,1}\d{0,}/) == null ? '' : oInput.value.match(/\d{1,}\.{0,1}\d{0,}/);
+            }
+        }
         $.ajax({
             url: '/Join/GetJoinModel',
             data: {},
@@ -72,15 +70,36 @@
                     html += "<option value='" + res.data.storageList[i].id + "'>" + res.data.storageList[i].name + "</option>";
                 }
                 $("#storageId").append(html);
+
+                html = "";
+                for (var i = 0; i < res.data.usersList.length; i++) {
+                    html += "<option value='" + res.data.usersList[i].id + "'>" + res.data.usersList[i].name + "</option>";
+                }
+                $("#userId").append(html);
+
             }
         });
         function getRegion(id) {
             $.ajax({
                 url: '/Join/GetRegion',
-                data: {},
+                data: {
+                    id: id
+                },
                 type: 'get',
                 success: function (res) {
-                    console.log(res);
+
+                    if (res.data.region.length === 0) {
+                        $("#regionId").empty();
+                        $("#regionId").append("<option value='0'>该仓库没有划分区域，请前往仓库进行设置</option>");
+                    } else {
+                        var html = "<option value='0'>请选择区域</option>";
+                        for (var i = 0; i < res.data.region.length; i++) {
+                            html += "<option value='" + res.data.region[i].id + "'>" + res.data.region[i].name + "</option>";
+                        }
+                        $("#regionId").empty();
+                        $("#regionId").append(html);
+                    }
+
                 }
             });
         }

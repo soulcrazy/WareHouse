@@ -1,6 +1,6 @@
 ﻿using WareHouse.Entity;
 
-namespace WareHouse.IService
+namespace WareHouse.Service.Interface
 {
     public interface ILoginService : Core.Data.IBaseService
     {

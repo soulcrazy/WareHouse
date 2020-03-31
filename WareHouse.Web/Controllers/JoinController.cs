@@ -2,19 +2,22 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using WareHouse.Core.Data;
-using WareHouse.IService;
+using WareHouse.Dto;
+using WareHouse.Service.Interface;
 
 namespace WareHouse.Web.Controllers
 {
     public class JoinController : BaseController
     {
-        private readonly IGoodsService _goodsService;
         private readonly IJoinService _joinService;
+        private readonly IStorageRegionService _storageRegionService;
+        private readonly IGoodsStorageService _goodsStorageService;
 
         public JoinController(IServiceProvider serviceProvider)
         {
-            _goodsService = serviceProvider.GetRequiredService<IGoodsService>();
             _joinService = serviceProvider.GetRequiredService<IJoinService>();
+            _goodsStorageService = serviceProvider.GetRequiredService<IGoodsStorageService>();
+            _storageRegionService = serviceProvider.GetRequiredService<IStorageRegionService>();
         }
 
         public IActionResult Index()
@@ -27,9 +30,14 @@ namespace WareHouse.Web.Controllers
             return View();
         }
 
-        public IActionResult Join(int id)
+        public IActionResult Record()
         {
-            if (_goodsService.Join(id))
+            return View();
+        }
+
+        public IActionResult Join(GetJoinDto getJoinDto)
+        {
+            if (_joinService.Join(getJoinDto))
             {
                 return RedirectToAction(nameof(Index));
             }
@@ -41,7 +49,7 @@ namespace WareHouse.Web.Controllers
 
         public IActionResult GetAllInside()
         {
-            return Json(_goodsService.Inside());
+            return Json(_joinService.GetAll(0));
         }
 
         public IAjaxResult GetJoinModel()
@@ -49,9 +57,9 @@ namespace WareHouse.Web.Controllers
             return Success(_joinService.GetJoinModel());
         }
 
-        public IAjaxResult GetRegion()
+        public IAjaxResult GetRegion(int id)
         {
-            return Success(_joinService.GetRegion());
+            return Success(_storageRegionService.GetAllByStorageId(id));
         }
     }
 }

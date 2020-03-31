@@ -178,8 +178,9 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Storage\Choose.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Outbound\Index.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Join\Create.cshtml.g.cs
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.IService.dll
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.IService.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.Service.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.Service.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Join\Record.cshtml.g.cs

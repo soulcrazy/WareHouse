@@ -14,7 +14,7 @@ using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.ViewModel;
 
-namespace WareHouse.IService
+namespace WareHouse.Service.Interface
 {
     public interface IStorageRegionService : Core.Data.IBaseService
     {

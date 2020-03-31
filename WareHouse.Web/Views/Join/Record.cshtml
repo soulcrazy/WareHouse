@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "入库记录";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-striped table-hover" id="inside-table">
+</table>
+
+@section Scripts
+{
+    <script>
+        $('#inside-table').bootstrapTable({
+            method: 'get',
+            url: "/Join/GetAllInside", //请求路径
+            striped: true, //是否显示行间隔色
+            pageNumber: 1, //初始化加载第一页
+            pagination: true, //是否分页
+            sidePagination: 'client', //server:服务器端分页|client：前端分页
+            pageSize: 5, //单页记录数
+            pageList: [5, 10, 20, 30], //可选择单页记录数
+            showRefresh: true, //刷新按钮
+            columns: [
+                {
+                    field: "id",
+                    title: "主键"
+                }, {
+                    field: "goodsName",
+                    title: "货物名称"
+                }, {
+                    field: "storageName",
+                    title: "仓库名称"
+                }, {
+                    field: "regionName",
+                    title: "区域名称"
+                }, {
+                    field: "createdTime",
+                    title: "入库时间"
+                }
+            ]
+        });
+    </script>
+}

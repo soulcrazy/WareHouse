@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Dto", "WareHouse.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Api", "WareHouse.Api\WareHouse.Api.csproj", "{59E6CCD3-128E-4005-8843-B2E8DBAF433C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WareHouse.IService", "WareHouse.IService\WareHouse.IService.csproj", "{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Service.Interface", "WareHouse.IService\WareHouse.Service.Interface.csproj", "{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WareHouse.XUnitTest", "WareHouse.XUnitTest\WareHouse.XUnitTest.csproj", "{F0C756B3-1304-4BD5-94EA-83C0180891ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.XUnitTest", "WareHouse.XUnitTest\WareHouse.XUnitTest.csproj", "{F0C756B3-1304-4BD5-94EA-83C0180891ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

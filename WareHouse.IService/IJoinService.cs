@@ -12,15 +12,17 @@
 
 using System.Collections.Generic;
 using WareHouse.Core.Data;
-using WareHouse.Entity;
+using WareHouse.Dto;
 using WareHouse.ViewModel;
 
-namespace WareHouse.IService
+namespace WareHouse.Service.Interface
 {
     public interface IJoinService : IBaseService
     {
         JoinModel GetJoinModel();
 
-        List<Region> GetRegion();
+        bool Join(GetJoinDto getJoinDto);
+
+        List<GoodsStorageModel> GetAll(int state);
     }
 }

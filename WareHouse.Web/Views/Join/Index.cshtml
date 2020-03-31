@@ -12,6 +12,15 @@
 @section Scripts
 {
     <script>
+        //$.ajax({
+        //    url: '/Join/GetAllInside',
+        //    data: {},
+        //    type: 'get',
+        //    success: function (res) {
+        //        console.log(res);
+        //    }
+        //});
+
         $('#inside-table').bootstrapTable({
             method: 'get',
             url: "/Join/GetAllInside", //请求路径
@@ -27,14 +36,17 @@
                     field: "id",
                     title: "主键"
                 }, {
-                    field: "name",
+                    field: "goodsName",
+                    title: "货物名称"
+                }, {
+                    field: "storageName",
                     title: "仓库名称"
                 }, {
-                    field: "address",
-                    title: "仓库地址"
+                    field: "regionName",
+                    title: "区域名称"
                 }, {
-                    field: "capacity",
-                    title: "仓库容量"
+                    field: "createdTime",
+                    title: "入库时间"
                 }
             ]
         });

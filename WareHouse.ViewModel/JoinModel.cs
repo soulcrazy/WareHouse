@@ -20,5 +20,7 @@ namespace WareHouse.ViewModel
         public List<Storage> StorageList { get; set; }
 
         public List<GoodsType> GoodsTypeList { get; set; }
+
+        public List<Users> UsersList { get; set; }
     }
 }

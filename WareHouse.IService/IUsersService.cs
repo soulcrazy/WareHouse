@@ -2,7 +2,7 @@
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 
-namespace WareHouse.IService
+namespace WareHouse.Service.Interface
 {
     public interface IUsersService : Core.Data.IBaseService
     {
