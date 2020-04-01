@@ -109,6 +109,73 @@ namespace WareHouse.Service
             return goodsStorageModels;
         }
 
+        public List<GoodsStorageModel> GetAll()
+        {
+            List<GoodsStorageModel> goodsStorageModels = new List<GoodsStorageModel>();
+            List<GoodsStorage> goodsStorageList = _goodsStorage.Select(c => true);
+            foreach (var goodsStorage in goodsStorageList)
+            {
+                GoodsStorageModel tempGoodsStorageModel = new GoodsStorageModel
+                {
+                    Id = goodsStorage.Id,
+                    GoodsName = _goodsService.Find(goodsStorage.GoodsId).Name,
+                    StorageName = _storageService.Find(goodsStorage.StorageId).Name,
+                    RegionName = _regionService.Find(goodsStorage.RegionId).Name,
+                    CreatedTime = goodsStorage.CreatedTime.ToString("F"),
+                    State = goodsStorage.State
+                };
+                goodsStorageModels.Add(tempGoodsStorageModel);
+            }
+
+            return goodsStorageModels;
+        }
+
+        public GoodsStorageDetailModel Find(int id)
+        {
+            GoodsStorage goodsStorage = _goodsStorage.Find(id);
+            Goods goods = _goodsService.Find(goodsStorage.GoodsId);
+            GoodsStorageDetailModel goodsStorageDetailModel = new GoodsStorageDetailModel()
+            {
+                GoodsStorageId = goodsStorage.Id,
+                GoodsId = goods.Id,
+                GoodsName = goods.Name,
+                GoodsRemarks = goods.Remarks,
+                Weight = goods.Weight,
+                TypeId = goods.TypeId,
+                TypeName = _goodsTypeService.Find(goods.TypeId).Name,
+                UserId = goods.UserId,
+                UserName = _usersService.Find(goods.UserId).Name,
+                StorageId = goodsStorage.StorageId,
+                StorageName = _storageService.Find(goodsStorage.StorageId).Name,
+                RegionId = goodsStorage.RegionId,
+                RegionName = _regionService.Find(goodsStorage.RegionId).Name,
+            };
+            return goodsStorageDetailModel;
+        }
+
+        public bool Update(GetGoodsStorageDetailDto getGoodsStorageDetailDto)
+        {
+            Goods goods = new Goods()
+            {
+                Id = getGoodsStorageDetailDto.GoodsId,
+                Weight = getGoodsStorageDetailDto.Weight,
+                TypeId = getGoodsStorageDetailDto.TypeId,
+                UserId = getGoodsStorageDetailDto.UserId,
+                Name = getGoodsStorageDetailDto.GoodsName,
+                Remarks = getGoodsStorageDetailDto.GoodsRemarks,
+                IsWarehousing = 1
+            };
+            _goodsService.Update(goods);
+
+            GoodsStorage goodsStorage = _goodsStorage.Find(getGoodsStorageDetailDto.GoodsStorageId);
+            goodsStorage.GoodsId = getGoodsStorageDetailDto.GoodsId;
+            goodsStorage.StorageId = getGoodsStorageDetailDto.StorageId;
+            goodsStorage.RegionId = getGoodsStorageDetailDto.RegionId;
+            _goodsStorage.Update(goodsStorage);
+
+            return _unitOfWork.Commit() > 0;
+        }
+
         //public List<Region> GetRegion()
         //{
         //    string sql = "select RegionId from storageRegion";

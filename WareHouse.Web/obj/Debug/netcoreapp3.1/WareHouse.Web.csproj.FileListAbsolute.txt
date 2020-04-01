@@ -176,7 +176,6 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Join\Index.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Storage\Region.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Storage\Choose.cshtml.g.cs
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Outbound\Index.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Join\Create.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.Service.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.Service.pdb
@@ -184,3 +183,9 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Join\Record.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Leave\Index.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Leave\Record.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Join\Update.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Leave\Update.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Menu\Index.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Menu\Create.cshtml.g.cs

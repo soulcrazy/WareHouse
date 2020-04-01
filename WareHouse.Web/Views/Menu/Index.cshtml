@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "菜单管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>菜单管理</h2>
+
+<button id="add-btn" class="btn btn-default">添加菜单</button>
+
+@section Scripts
+{
+    <script>
+        $("#add-btn").click(function() {
+            window.location.href="@Url.Action("Create")";
+        });
+    </script>
+}

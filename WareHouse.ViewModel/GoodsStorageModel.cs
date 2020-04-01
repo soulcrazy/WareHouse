@@ -23,5 +23,7 @@ namespace WareHouse.ViewModel
         public string RegionName { get; set; }
 
         public string CreatedTime { get; set; }
+
+        public int State { get; set; }
     }
 }

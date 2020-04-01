@@ -5,10 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>@ViewData["Title"]</title>
+    <title>后台-@ViewData["Title"]</title>
     <link rel="icon" href="favicon.ico" type="image/ico">
-    <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
-    <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
     <meta name="author" content="yinqi">
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/css/materialdesignicons.min.css" rel="stylesheet">
@@ -18,6 +16,7 @@
     <script type="text/javascript" src="~/js/perfect-scrollbar.min.js"></script>
     <script type="text/javascript" src="~/js/main.min.js"></script>
     <script src="~/js/GetId.js"></script>
+    @RenderSection("Style", required: false);
 </head>
 
 <body>
@@ -41,6 +40,9 @@
                                 <ul class="nav nav-subnav">
                                     <li> <a href="/Role/Index">角色管理</a> </li>
                                 </ul>
+                                <ul class="nav nav-subnav">
+                                    <li> <a href="/Menu/Index">菜单管理</a> </li>
+                                </ul>
                             </li>
                             <li class="nav-item nav-item-has-subnav">
                                 <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> 货物管理</a>
@@ -63,6 +65,13 @@
                                 <ul class="nav nav-subnav">
                                     <li> <a href="/Join/Index">入库管理</a> </li>
                                     <li> <a href="/Join/Record">入库记录</a> </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item nav-item-has-subnav">
+                                <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> 出库管理</a>
+                                <ul class="nav nav-subnav">
+                                    <li> <a href="/Leave/Index">出库管理</a> </li>
+                                    <li> <a href="/Leave/Record">出库记录</a> </li>
                                 </ul>
                             </li>
                         </ul>

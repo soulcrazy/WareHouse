@@ -1,0 +1,152 @@
+﻿@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form action="@Url.Action("UpdateDetail")" method="post">
+    <input type="hidden" name="goodsId" id="goodsId" value="" />
+    <input type="hidden" name="goodsStorageId" id="goodsStorageId" value="" />
+    <div class="form-group">
+        <label for="goodsName">名称</label>
+        <input class="form-control" type="text" id="goodsName" name="goodsName" placeholder="请输入货物名称.." required="">
+    </div>
+    <div class="form-group">
+        <label for="weight">重量</label>
+        <input class="form-control" type="text" id="weight" name="weight" onkeyup="checkInputIntFloat(this);" placeholder="请输入货物重量.." required="">
+    </div>
+    <div class="form-group">
+        <label for="typeId">用户</label>
+        <select class="form-control" id="userId" name="userId" size="1">
+            <option value="0">请选择所属用户</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="typeId">种类</label>
+        <select class="form-control" id="typeId" name="typeId" size="1">
+            <option value="0">请选择种类</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="goodsRemarks">备注</label>
+        <input class="form-control" type="text" id="goodsRemarks" name="goodsRemarks" placeholder="请输入货物备注.." required="">
+    </div>
+    <div class="form-group">
+        <label for="typeId">仓库</label>
+        <select class="form-control" id="storageId" name="storageId" size="1" onchange="getRegion(this.value)">
+            <option value="0">请选择仓库</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="typeId">区域</label>
+        <select class="form-control" id="regionId" name="regionId" size="1">
+            <option value="0">请选择区域</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">修改</button>
+    </div>
+</form>
+
+@section Scripts
+{
+    <script>
+        function checkInputIntFloat(oInput) {
+            if ('' !== oInput.value.replace(/\d{1,}\.{0,1}\d{0,}/, '')) {
+                oInput.value = oInput.value.match(/\d{1,}\.{0,1}\d{0,}/) == null ? '' : oInput.value.match(/\d{1,}\.{0,1}\d{0,}/);
+            }
+        }
+        $.ajax({
+            url: '/Join/GetJoinModel',
+            data: {},
+            type: 'get',
+            success: function (res) {
+                //console.log(res);
+                var html = "";
+                for (var i = 0; i < res.data.goodsTypeList.length; i++) {
+                    html += "<option value='" + res.data.goodsTypeList[i].id + "'>" + res.data.goodsTypeList[i].name + "</option>";
+                }
+                $("#typeId").append(html);
+
+                html = "";
+                for (var i = 0; i < res.data.storageList.length; i++) {
+                    html += "<option value='" + res.data.storageList[i].id + "'>" + res.data.storageList[i].name + "</option>";
+                }
+                $("#storageId").append(html);
+
+                html = "";
+                for (var i = 0; i < res.data.usersList.length; i++) {
+                    html += "<option value='" + res.data.usersList[i].id + "'>" + res.data.usersList[i].name + "</option>";
+                }
+                $("#userId").append(html);
+
+                $.ajax({
+                    url: "/Join/GetDetail",
+                    data: {
+                        id: GetId()
+                    },
+                    type: "get",
+                    success: function (res) {
+                        console.log(res);
+                        $("#goodsId").val(res.data.goodsId);
+                        $("#goodsStorageId").val(res.data.goodsStorageId);
+                        $("#goodsName").val(res.data.goodsName);
+                        $("#weight").val(res.data.weight);
+                        $("#userId").val(res.data.userId);
+                        $("#typeId").val(res.data.typeId);
+                        $("#goodsRemarks").val(res.data.goodsRemarks);
+                        $("#storageId").val(res.data.storageId);
+                        var regionId = res.data.regionId;
+                        $.ajax({
+                            url: '/Join/GetRegion',
+                            data: {
+                                id: res.data.storageId
+                            },
+                            type: 'get',
+                            success: function (res) {
+
+                                if (res.data.region.length === 0) {
+                                    $("#regionId").empty();
+                                    $("#regionId").append("<option value='0'>该仓库没有划分区域，请前往仓库进行设置</option>");
+                                } else {
+                                    var html = "<option value='0'>请选择区域</option>";
+                                    for (var i = 0; i < res.data.region.length; i++) {
+                                        html += "<option value='" + res.data.region[i].id + "'>" + res.data.region[i].name + "</option>";
+                                    }
+                                    $("#regionId").empty();
+                                    $("#regionId").append(html);
+                                    $("#regionId").val(regionId);
+                                }
+
+                            }
+                        });
+                    }
+                });
+
+            }
+        });
+        function getRegion(id) {
+            $.ajax({
+                url: '/Join/GetRegion',
+                data: {
+                    id: id
+                },
+                type: 'get',
+                success: function (res) {
+
+                    if (res.data.region.length === 0) {
+                        $("#regionId").empty();
+                        $("#regionId").append("<option value='0'>该仓库没有划分区域，请前往仓库进行设置</option>");
+                    } else {
+                        var html = "<option value='0'>请选择区域</option>";
+                        for (var i = 0; i < res.data.region.length; i++) {
+                            html += "<option value='" + res.data.region[i].id + "'>" + res.data.region[i].name + "</option>";
+                        }
+                        $("#regionId").empty();
+                        $("#regionId").append(html);
+                    }
+
+                }
+            });
+        }
+    </script>
+}

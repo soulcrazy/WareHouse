@@ -11,12 +11,10 @@ namespace WareHouse.Web.Controllers
     {
         private readonly IJoinService _joinService;
         private readonly IStorageRegionService _storageRegionService;
-        private readonly IGoodsStorageService _goodsStorageService;
 
         public JoinController(IServiceProvider serviceProvider)
         {
             _joinService = serviceProvider.GetRequiredService<IJoinService>();
-            _goodsStorageService = serviceProvider.GetRequiredService<IGoodsStorageService>();
             _storageRegionService = serviceProvider.GetRequiredService<IStorageRegionService>();
         }
 
@@ -31,6 +29,11 @@ namespace WareHouse.Web.Controllers
         }
 
         public IActionResult Record()
+        {
+            return View();
+        }
+
+        public IActionResult Update()
         {
             return View();
         }
@@ -52,6 +55,11 @@ namespace WareHouse.Web.Controllers
             return Json(_joinService.GetAll(0));
         }
 
+        public IActionResult GetAll()
+        {
+            return Json(_joinService.GetAll());
+        }
+
         public IAjaxResult GetJoinModel()
         {
             return Success(_joinService.GetJoinModel());
@@ -60,6 +68,23 @@ namespace WareHouse.Web.Controllers
         public IAjaxResult GetRegion(int id)
         {
             return Success(_storageRegionService.GetAllByStorageId(id));
+        }
+
+        public IAjaxResult GetDetail(int id)
+        {
+            return Success(_joinService.Find(id));
+        }
+
+        public IActionResult UpdateDetail(GetGoodsStorageDetailDto getGoodsStorageDetailDto)
+        {
+            if (_joinService.Update(getGoodsStorageDetailDto))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return Json("修改失败");
+            }
         }
     }
 }
