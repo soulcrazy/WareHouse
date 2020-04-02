@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="@Url.Action("")" method="post">
+<form action="@Url.Action("AddMenu")" method="post">
     <div class="form-group">
         <label for="name">名称</label>
         <input class="form-control" type="text" id="name" name="name" placeholder="请输入菜单名称.." required="">
@@ -21,9 +21,10 @@
         </select>
     </div>
     <div class="form-group">
+        <input type="hidden" name="icon" id="icon" value="" />
         <label for="icon">图标</label><br />
         <div id="small-icon" class="col-sm-1 example-icons">
-            <i id="showIcon" class="mdi mdi-human-male"></i>
+            <i id="showIcon" class=""></i>
         </div>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">选择图标</button>
         <button type="button" class="btn btn-default" id="delete-icon">删除图标</button>
@@ -2087,7 +2088,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                        <button type="button" class="btn btn-primary">点击保存</button>
                     </div>
                 </div>
             </div>
@@ -2097,7 +2097,7 @@
     <div class="form-group">
         <label for="state">显示</label><br />
         <label class="lyear-switch switch-solid switch-info">
-            <input type="checkbox" id="state" name="state" checked="">
+            <input type="checkbox" id="state" name="state" checked="" value="1">
             <span></span>
         </label>
     </div>
@@ -2177,11 +2177,34 @@
 {
     <script>
         $("i").click(function () {
-            console.log($(this).attr("class"));
+            //console.log($(this).attr("class"));
             $("#showIcon").attr("class", $(this).attr("class"));
+            $("#icon").val($(this).attr("class"));
         });
         $("#delete-icon").click(function () {
             $("#showIcon").removeClass();
+        });
+
+        $("#state").click(function () {
+            if ($("#state").is(":checked")) {
+                $("#state").val("1");
+            } else {
+                $("#state").val("0");
+            }
+        });
+
+        $.ajax({
+            url: "/Menu/GetFirstMenu",
+            data: {},
+            type: "get",
+            success: function (res) {
+                console.log(res);
+                var html = "";
+                for (var i = 0; i < res.data.length; i++) {
+                    html += "<option value='" + res.data[i].id + "'>" + res.data[i].name + "</option>";
+                }
+                $("#pId").append(html);
+            }
         });
     </script>
 }

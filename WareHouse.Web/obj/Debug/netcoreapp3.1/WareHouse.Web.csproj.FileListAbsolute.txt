@@ -189,3 +189,5 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Leave\Update.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Menu\Index.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Menu\Create.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Menu\Update.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\RoleMenu\Index.cshtml.g.cs

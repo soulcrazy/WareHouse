@@ -19,6 +19,7 @@ namespace WareHouse.Web.Controllers
                 //context.Result = new RedirectToActionResult("Login", "Login", null);
                 context.HttpContext.Response.Redirect("/Login/Login");
             }
+            ViewData["msg"] = "message";
         }
 
         protected IAjaxResult Success(string msg)

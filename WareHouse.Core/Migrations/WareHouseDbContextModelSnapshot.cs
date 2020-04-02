@@ -237,6 +237,34 @@ namespace WareHouse.Core.Migrations
                     b.ToTable("Role");
                 });
 
+            modelBuilder.Entity("WareHouse.Entity.RoleMenu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("MenuId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifyTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RoleMenu");
+                });
+
             modelBuilder.Entity("WareHouse.Entity.Storage", b =>
                 {
                     b.Property<int>("Id")

@@ -43,6 +43,9 @@
                                 <ul class="nav nav-subnav">
                                     <li> <a href="/Menu/Index">菜单管理</a> </li>
                                 </ul>
+                                <ul class="nav nav-subnav">
+                                    <li> <a href="/RoleMenu/Index">权限管理</a> </li>
+                                </ul>
                             </li>
                             <li class="nav-item nav-item-has-subnav">
                                 <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> 货物管理</a>
@@ -83,7 +86,6 @@
             <header class="lyear-layout-header">
                 <nav class="navbar navbar-default">
                     <div class="topbar">
-
                         <div class="topbar-left">
                             <div class="lyear-aside-toggler">
                                 <span class="lyear-toggler-bar"></span>
@@ -96,7 +98,7 @@
                             <li class="dropdown dropdown-profile">
                                 <a href="javascript:void(0)" data-toggle="dropdown">
                                     <img class="img-avatar img-avatar-48 m-r-10" src="~/images/users/avatar.jpg" alt="笔下光年" />
-                                    <span>笔下光年 <span class="caret"></span></span>
+                                    <span>@ViewData["msg"] <span class="caret"></span></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li> <a href="lyear_pages_profile.html"><i class="mdi mdi-account"></i> 个人信息</a> </li>

@@ -3,15 +3,83 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>菜单管理</h2>
-
-<button id="add-btn" class="btn btn-default">添加菜单</button>
+<div>
+    <button id="add-btn" class="btn btn-default">添加菜单</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>菜单</th>
+                <th>地址</th>
+                <th>图标</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
 
 @section Scripts
 {
     <script>
+        $.ajax({
+            url: "/Menu/GetMenuTree",
+            data: {},
+            type: "get",
+            success: function(res) {
+                console.log(res);
+                console.log(res.data);
+                var html = "";
+                for (var i = 0; i < res.data.length; i++) {
+                    html += "<tr><td>" +
+                        res.data[i].name +
+                        "</td><td>" +
+                        res.data[i].url +
+                        "</td><td><div id='small-icon' class='col-sm-1 example-icons'><i id='showIcon' class='"+res.data[i].icon+"'></i></div></td><td>" + check(res.data[i].state)+"</td><td><button class='btn btn-default' onclick='edit(" + res.data[i].id + ")'>修改</button><button class='btn btn-default' onclick='del(" + res.data[i].id + ")'>删除</button></td></tr>";
+                    if (res.data[i].menuList.length > 0) {
+                        for (var j = 0; j < res.data[i].menuList.length; j++) {
+                            html += "<tr><td class='p-l-40'>" +
+                                res.data[i].menuList[j].name +
+                                "</td><td class='p-l-40'>" +
+                                res.data[i].menuList[j].url +
+                                "</td><td class='p-l-40'><div id='small-icon' class='col-sm-1 example-icons'><i id='showIcon' class='" + res.data[i].menuList[j].icon +"'></i></div></td><td>" + check(res.data[i].menuList[j].state)+"</td><td><button class='btn btn-default' onclick='edit(" + res.data[i].menuList[j].id + ")'>修改</button><button class='btn btn-default' onclick='del(" + res.data[i].menuList[j].id + ")'>删除</button></td></tr>";
+                        }
+                    }
+                }
+
+                $("tbody").html(html);
+            }
+        });
         $("#add-btn").click(function() {
             window.location.href="@Url.Action("Create")";
         });
+
+        function edit(id) {
+            window.location.href = "@Url.Action("Update")?id="+id;
+        }
+        function del(id) {
+            $.ajax({
+                url: "/Menu/DeleteMenu",
+                data: {
+                    id:id
+                },
+                type: "post",
+                success: function(res) {
+                    window.location.href = "@Url.Action("Index")";
+                },
+                error: function(res) {
+                    alert(res);
+                }
+            });
+        }
+
+        function check(id) {
+            if (id===0) {
+                return "隐藏";
+            } else {
+                return "显示";
+            }
+        }
     </script>
 }
