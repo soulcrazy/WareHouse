@@ -31,7 +31,7 @@
                 </div>
                 <div class="lyear-layout-sidebar-scroll">
                     <nav class="sidebar-main">
-                        <ul class="nav nav-drawer">
+                        <ul class="nav nav-drawer" id="menu">
                             <li class="nav-item nav-item-has-subnav">
                                 <a href="javascript:void(0)"><i class="mdi mdi-human-male"></i> 用户管理</a>
                                 <ul class="nav nav-subnav">
@@ -254,5 +254,31 @@
     <script src="~/js/bootstrap-table/bootstrap-table.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/locale/bootstrap-table-zh-CN.min.js"></script>
     @RenderSection("Scripts", required: false);
+    <script>
+        console.log(@ViewData["menu"]);
+        $.ajax({
+            url: "/Menu/GetMenuTreeByRoleId",
+            data: {
+                id:@ViewData["menu"]
+            },
+            type: "get",
+            success: function(res) {
+                console.log(res);
+                var html = "";
+                for (var i = 0; i < res.data.length; i++) {
+                    html += "<li class='nav-item nav-item-has-subnav'><a href='javascript:void(0)'><i class='" + res.data[i].icon + "'></i> " + res.data[i].name + "</a>";
+                    if (res.data[i].menuList.length > 0) {
+                        html += "<ul class='nav nav-subnav'>";
+                        for (var j = 0; j < res.data[i].menuList.length; j++) {
+                            html += "<li> <a href='" + res.data[i].menuList[j].url + "'>" + res.data[i].menuList[j].name +"</a> </li>";
+                        }
+                        html += "</ul>";
+                    }
+                    html += "</li>";
+                }
+                $("#menu").html(html);
+            }
+        });
+    </script>
 </body>
 </html>

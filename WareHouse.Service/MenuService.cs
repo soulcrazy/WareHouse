@@ -13,6 +13,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
@@ -25,11 +26,13 @@ namespace WareHouse.Service
     {
         private readonly IRepository<Menu, int> _repository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IRoleMenuService _roleMenuService;
 
         public MenuService(IServiceProvider serviceProvider)
         {
             _repository = serviceProvider.GetRequiredService<IRepository<Menu, int>>();
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
+            _roleMenuService = serviceProvider.GetRequiredService<IRoleMenuService>();
         }
 
         public string Get()
@@ -132,7 +135,64 @@ namespace WareHouse.Service
                 };
                 menuTreeList.Add(tempMenuTreeModel);
             }
+            return menuTreeList;
+        }
 
+        /// <summary>
+        /// 根据权限ID获取菜单
+        /// </summary>
+        /// <param name="id">权限ID</param>
+        /// <returns></returns>
+        public List<MenuTreeModel> GetMenuTreeByRoleId(int id)
+        {
+            List<MenuTreeModel> menuTreeList = new List<MenuTreeModel>();
+            List<Menu> allFirstMenus = GetFirstMenu();
+            int[] allFirstMenuIdArray = new int[allFirstMenus.Count];
+            int i = 0;
+            //将菜单集合里的菜单ID转换成数组
+            foreach (var firstMenu in allFirstMenus)
+            {
+                allFirstMenuIdArray[i] = firstMenu.Id;
+                i++;
+            }
+            int[] allMenuIdArray = _roleMenuService.GetMenuArray(id);
+            //通过求交集获取需要的一级菜单id数组
+            int[] firstMenuIdArray = allMenuIdArray.Intersect(allFirstMenuIdArray).ToArray();
+            //通过求差集获取需要的二级菜单id数组
+            int[] secondMenuIdArray = allMenuIdArray.Except(firstMenuIdArray).ToArray();
+            //获取允许展示的二级菜单集合
+            List<Menu> secondMenuList = new List<Menu>();
+            foreach (var i1 in secondMenuIdArray)
+            {
+                Menu tempMenu = _repository.Find(c => c.Id == i1 && c.State == 1);
+                secondMenuList.Add(tempMenu);
+            }
+            foreach (var firstMenuId in firstMenuIdArray)
+            {
+                Menu tempMenu = _repository.Find(c => c.Id == firstMenuId && c.State == 1);
+                if (tempMenu != null)
+                {
+                    List<Menu> tempSecondMenuList = new List<Menu>();
+                    foreach (var menu in secondMenuList)
+                    {
+                        if (menu.PId == firstMenuId)
+                        {
+                            tempSecondMenuList.Add(menu);
+                        }
+                    }
+                    MenuTreeModel tempMenuTreeModel = new MenuTreeModel()
+                    {
+                        Id = tempMenu.Id,
+                        Icon = tempMenu.Icon,
+                        Name = tempMenu.Name,
+                        Url = tempMenu.Url,
+                        PId = tempMenu.PId,
+                        State = tempMenu.State,
+                        MenuList = tempSecondMenuList
+                    };
+                    menuTreeList.Add(tempMenuTreeModel);
+                }
+            }
             return menuTreeList;
         }
     }

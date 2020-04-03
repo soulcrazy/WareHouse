@@ -79,5 +79,10 @@ namespace WareHouse.Web.Controllers
                 return Json("修改失败");
             }
         }
+
+        public IAjaxResult GetMenuTreeByRoleId(int id)
+        {
+            return Success(_menuService.GetMenuTreeByRoleId(id));
+        }
     }
 }

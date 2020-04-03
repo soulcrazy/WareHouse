@@ -38,5 +38,7 @@ namespace WareHouse.Service.Interface
         IPageResult<Menu> GetPageResult(Pager pager);
 
         List<MenuTreeModel> GetMenuTree();
+
+        List<MenuTreeModel> GetMenuTreeByRoleId(int id);
     }
 }

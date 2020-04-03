@@ -13,13 +13,14 @@ namespace WareHouse.Web.Controllers
             HttpContext.Session.SetString("userId", "1");
             HttpContext.Session.SetString("role", "4");
 #endif
-
             if (!context.HttpContext.Session.GetString("role").Equals("4"))
             {
                 //context.Result = new RedirectToActionResult("Login", "Login", null);
                 context.HttpContext.Response.Redirect("/Login/Login");
             }
-            ViewData["msg"] = "message";
+
+            ViewData["msg"] = "msg";
+            ViewData["menu"] = context.HttpContext.Session.GetString("role");
         }
 
         protected IAjaxResult Success(string msg)
