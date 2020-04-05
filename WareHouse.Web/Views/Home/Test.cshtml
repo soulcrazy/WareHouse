@@ -6,24 +6,22 @@
 <h2>Test</h2>
 
 <a class="btn btn-default" id="test-btn">测试</a>
-<a href="/Home/TestUnit">content</a>
 <table id="mytab" class="table table-hover"></table>
 
 @section Scripts
 {
     <script>
         $("#test-btn").click(function () {
-            //$.ajax({
-            //    url: '/Home/GetMd5',
-            //    data: {
-            //        str: "测试室"
-            //    },
-            //    type: 'get',
-            //    success: function (res) {
-            //        console.log(res);
-            //    }
-            //});
-            console.log("666");
+            $.ajax({
+                url: '/Menu/GetMenuTreeByRoleId',
+                data: {
+                    id: "4"
+                },
+                type: 'get',
+                success: function (res) {
+                    console.log(res);
+                }
+            });
         });
     </script>
 }

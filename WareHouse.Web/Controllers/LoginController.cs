@@ -25,6 +25,7 @@ namespace WareHouse.Web.Controllers
             {
                 HttpContext.Session.SetString("userId", users.Id.ToString());
                 HttpContext.Session.SetString("role", users.Role.ToString());
+                HttpContext.Session.SetString("userName", users.Name);
 
                 return RedirectToAction("Index", "Home");
             }
@@ -32,6 +33,12 @@ namespace WareHouse.Web.Controllers
             {
                 return RedirectToAction(nameof(Login));
             }
+        }
+
+        public IActionResult LogOut()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction(nameof(Login));
         }
     }
 }

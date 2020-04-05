@@ -102,10 +102,9 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li> <a href="lyear_pages_profile.html"><i class="mdi mdi-account"></i> 个人信息</a> </li>
-                                    <li> <a href="lyear_pages_edit_pwd.html"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
-                                    <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
+                                    <li> <a href="@Url.Action("EditPwd","Home")"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                     <li class="divider"></li>
-                                    <li> <a href="lyear_pages_login.html"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                                    <li> <a href="@Url.Action("LogOut","Login")"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
                                 </ul>
                             </li>
                             <!--切换主题配色-->
@@ -253,32 +252,33 @@
     <link href="~/js/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
     <script src="~/js/bootstrap-table/bootstrap-table.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/locale/bootstrap-table-zh-CN.min.js"></script>
-    @RenderSection("Scripts", required: false);
+
     <script>
-        console.log(@ViewData["menu"]);
-        $.ajax({
-            url: "/Menu/GetMenuTreeByRoleId",
-            data: {
-                id:@ViewData["menu"]
-            },
-            type: "get",
-            success: function(res) {
-                console.log(res);
-                var html = "";
-                for (var i = 0; i < res.data.length; i++) {
-                    html += "<li class='nav-item nav-item-has-subnav'><a href='javascript:void(0)'><i class='" + res.data[i].icon + "'></i> " + res.data[i].name + "</a>";
-                    if (res.data[i].menuList.length > 0) {
-                        html += "<ul class='nav nav-subnav'>";
-                        for (var j = 0; j < res.data[i].menuList.length; j++) {
-                            html += "<li> <a href='" + res.data[i].menuList[j].url + "'>" + res.data[i].menuList[j].name +"</a> </li>";
-                        }
-                        html += "</ul>";
+    $.ajax({
+        url: "/Menu/GetMenuTreeByRoleId",
+        data: {
+            id: @ViewData["roleId"]
+        },
+        type: "get",
+        success: function(res) {
+            console.log(res);
+            var html = "";
+            for (var i = 0; i < res.data.length; i++) {
+                html += "<li class='nav-item nav-item-has-subnav'><a href='javascript:void(0)'><i class='" + res.data[i].icon + "'></i> " + res.data[i].name + "</a>";
+                if (res.data[i].menuList.length > 0) {
+                    html += "<ul class='nav nav-subnav'>";
+                    for (var j = 0; j < res.data[i].menuList.length; j++) {
+                        html += "<li> <a href='" + res.data[i].menuList[j].url + "'>" + res.data[i].menuList[j].name +"</a> </li>";
                     }
-                    html += "</li>";
+                    html += "</ul>";
                 }
-                $("#menu").html(html);
+                html += "</li>";
             }
-        });
+            $("#menu").html(html);
+        }
+    });
     </script>
+
+    @RenderSection("Scripts", required: false);
 </body>
 </html>

@@ -64,6 +64,16 @@ namespace WareHouse.Service
                 return false;
             }
 
+            if (menu.PId == 0)
+            {
+                List<Menu> tempMenuList = _repository.Select(c => c.PId == menu.Id);
+
+                foreach (var tempMenu in tempMenuList)
+                {
+                    _repository.Delete(tempMenu);
+                    _unitOfWork.Commit();
+                }
+            }
             _repository.Delete(menu);
             return _unitOfWork.Commit() > 0;
         }
@@ -165,7 +175,10 @@ namespace WareHouse.Service
             foreach (var i1 in secondMenuIdArray)
             {
                 Menu tempMenu = _repository.Find(c => c.Id == i1 && c.State == 1);
-                secondMenuList.Add(tempMenu);
+                if (tempMenu != null)
+                {
+                    secondMenuList.Add(tempMenu);
+                }
             }
             foreach (var firstMenuId in firstMenuIdArray)
             {

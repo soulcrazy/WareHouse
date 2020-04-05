@@ -12,15 +12,20 @@ namespace WareHouse.Web.Controllers
 #if DEBUG
             HttpContext.Session.SetString("userId", "1");
             HttpContext.Session.SetString("role", "4");
+            HttpContext.Session.SetString("userName", "admin");
 #endif
-            if (!context.HttpContext.Session.GetString("role").Equals("4"))
+            if (string.IsNullOrEmpty(context.HttpContext.Session.GetString("role")))
             {
+                //!context.HttpContext.Session.GetString("role").Equals("4")
                 //context.Result = new RedirectToActionResult("Login", "Login", null);
                 context.HttpContext.Response.Redirect("/Login/Login");
             }
-
-            ViewData["msg"] = "msg";
-            ViewData["menu"] = context.HttpContext.Session.GetString("role");
+            else
+            {
+                ViewData["msg"] = context.HttpContext.Session.GetString("userName");
+                ViewData["roleId"] = context.HttpContext.Session.GetString("role");
+                ViewData["userId"] = context.HttpContext.Session.GetString("userId");
+            }
         }
 
         protected IAjaxResult Success(string msg)

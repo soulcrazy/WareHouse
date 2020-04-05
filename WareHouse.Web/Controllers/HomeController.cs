@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using WareHouse.Core.Data;
+using WareHouse.Dto;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
 
@@ -10,10 +11,29 @@ namespace WareHouse.Web.Controllers
     public class HomeController : BaseController
     {
         private readonly IUsersService _usersService;
+        private readonly ILoginService _loginService;
 
         public HomeController(IServiceProvider serviceProvider)
         {
             _usersService = serviceProvider.GetRequiredService<IUsersService>();
+            _loginService = serviceProvider.GetRequiredService<ILoginService>();
+        }
+
+        public IActionResult EditPwd()
+        {
+            return View();
+        }
+
+        public IAjaxResult UpdatePwd(GetPwdDto getPwdDto)
+        {
+            if (_loginService.UpdatePwd(getPwdDto))
+            {
+                return Success("修改成功！");
+            }
+            else
+            {
+                return Error("旧密码填写错误，修改失败！");
+            }
         }
 
         public IActionResult Index()

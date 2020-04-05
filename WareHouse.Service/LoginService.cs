@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using WareHouse.Core.Data;
 using WareHouse.Core.Helper;
+using WareHouse.Dto;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
 
@@ -9,10 +11,12 @@ namespace WareHouse.Service
     public class LoginService : ILoginService
     {
         private readonly IRepository<Users, int> _repository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public LoginService(IRepository<Users, int> repository)
+        public LoginService(IServiceProvider serviceProvider)
         {
-            _repository = repository;
+            _repository = serviceProvider.GetRequiredService<IRepository<Users, int>>();
+            _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
         }
 
         public string Get()
@@ -33,6 +37,21 @@ namespace WareHouse.Service
             else
             {
                 return false;
+            }
+        }
+
+        public bool UpdatePwd(GetPwdDto getPwdDto)
+        {
+            Users users = _repository.Find(getPwdDto.UserId);
+            if (users.Pwd != Md5Helper.GetMd5(getPwdDto.OldPwd))
+            {
+                return false;
+            }
+            else
+            {
+                users.Pwd = Md5Helper.GetMd5(getPwdDto.NewPwd);
+                _repository.Update(users);
+                return _unitOfWork.Commit() > 0;
             }
         }
     }
