@@ -24,7 +24,7 @@ namespace WareHouse.Web.Controllers
             if (_loginService.AdminLogin(users))
             {
                 HttpContext.Session.SetString("userId", users.Id.ToString());
-                HttpContext.Session.SetString("role", users.Role.ToString());
+                HttpContext.Session.SetString("role", users.RoleId.ToString());
                 HttpContext.Session.SetString("userName", users.Name);
 
                 return RedirectToAction("Index", "Home");

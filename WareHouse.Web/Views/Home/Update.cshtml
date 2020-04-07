@@ -17,33 +17,17 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="col-md-2 control-label" for="corporatename">公司名</label>
-        <div class="col-md-10">
-            <input class="form-control" type="text" id="corporatename" name="corporatename" placeholder="请输入公司名..">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-2 control-label" for="phone">手机号</label>
-        <div class="col-md-10">
-            <input class="form-control" type="text" id="phone" name="phone" placeholder="请输入手机号..">
-        </div>
-    </div>
-    <div class="form-group">
         <label class="col-md-2 control-label" for="email">邮箱</label>
         <div class="col-md-10">
             <input class="form-control" type="email" id="email" name="email" placeholder="请输入邮箱..">
         </div>
     </div>
     <div class="form-group">
-        <label class="col-md-2 control-label" for="postcode">邮编</label>
+        <label class="col-md-2 control-label" for="roleId">角色</label>
         <div class="col-md-10">
-            <input class="form-control" type="text" id="postcode" name="postcode" placeholder="请输入邮编..">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-2 control-label" for="address">地址</label>
-        <div class="col-md-10">
-            <input class="form-control" type="text" id="address" name="address" placeholder="请输入地址..">
+            <select class="form-control" id="roleId" name="roleId">
+                <option value="0">请选择角色</option>
+            </select>
         </div>
     </div>
     <div class="form-group">
@@ -55,20 +39,25 @@
 @section Scripts
 {
     <script>
-        function GetQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-            //console.log(window.location.search);//?id=2
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        }
+        $.ajax({
+            url: "/Role/GetRole",
+            data: {},
+            type: "get",
+            success: function (res) {
+                console.log(res);
+                var html = "";
+                for (var i = 0; i < res.length; i++) {
+                    html += "<option value=" + res[i].id + ">" + res[i].roleName + "</option>";
+                }
+                $("#roleId").append(html);
+            }
+        });
     </script>
     <script>
-        //console.log(GetQueryString("id"));
         $.ajax({
             url: '/Home/FindUser',
             data: {
-                id:GetQueryString("id")
+                id: GetId()
             },
             type: 'get',
             success: function(res) {
@@ -76,11 +65,8 @@
                 $("#id").val(res.id);
                 $("#name").val(res.name);
                 $("#pwd").val(res.pwd);
-                $("#corporatename").val(res.corporateName);
-                $("#phone").val(res.phone);
                 $("#email").val(res.email);
-                $("#postcode").val(res.postCode);
-                $("#address").val(res.address);
+                $("#roleId").val(res.roleId);
             }
         });
 
@@ -89,11 +75,8 @@
                 id: GetQueryString("id"),
                 name: $("#name").val(),
                 pwd: $("#pwd").val(),
-                phone: $("#phone").val(),
-                corporatename: $("#corporatename").val(),
                 email: $("#email").val(),
-                postcode: $("#postcode").val(),
-                address: $("#address").val()
+                roleId: $("#roleId").val()
             }
             //console.log(data);
             $.ajax({
@@ -102,10 +85,8 @@
                 data: data,
                 success: function () {
                     window.location.href = "@Url.Action("Index")";
-                    //console.log("修改成功");
                 },
                 error: function () {
-                    //alert("添加失败");
                     console.log("修改失败");
                 }
             });

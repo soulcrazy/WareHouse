@@ -74,6 +74,13 @@ namespace WareHouse.Service
                     _unitOfWork.Commit();
                 }
             }
+
+            List<RoleMenu> roleMenus = _roleMenuService.GetAll(c => c.MenuId == id);
+            foreach (var roleMenu in roleMenus)
+            {
+                _roleMenuService.Delete(roleMenu.Id);
+            }
+
             _repository.Delete(menu);
             return _unitOfWork.Commit() > 0;
         }

@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Dto;
 using WareHouse.Entity;
@@ -76,6 +77,23 @@ namespace WareHouse.Service
                 i++;
             }
             return menuList;
+        }
+
+        public List<RoleMenu> GetAll(Expression<Func<RoleMenu, bool>> whereExpression)
+        {
+            return _repository.Select(whereExpression);
+        }
+
+        public bool Delete(int id)
+        {
+            _repository.Delete(id);
+            return _unitOfWork.Commit() > 0;
+        }
+
+        public bool Delete(RoleMenu roleMenu)
+        {
+            _repository.Delete(roleMenu);
+            return _unitOfWork.Commit() > 0;
         }
     }
 }

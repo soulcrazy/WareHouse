@@ -10,8 +10,12 @@
  * 创建日期：2020-04-02 20:27:16
  */
 
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Dto;
+using WareHouse.Entity;
 
 namespace WareHouse.Service.Interface
 {
@@ -20,5 +24,11 @@ namespace WareHouse.Service.Interface
         void Update(GetRoleMenuDto getRoleMenuDto);
 
         int[] GetMenuArray(int id);
+
+        List<RoleMenu> GetAll(Expression<Func<RoleMenu, bool>> whereExpression);
+
+        bool Delete(int id);
+
+        bool Delete(RoleMenu roleMenu);
     }
 }

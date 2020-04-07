@@ -68,14 +68,14 @@ namespace WareHouse.Service
                 return false;
             }
 
-            userInfo.Address = users.Address;
-            userInfo.CorporateName = users.CorporateName;
             userInfo.Email = users.Email;
             userInfo.Name = users.Name;
-            userInfo.Phone = users.Phone;
-            userInfo.PostCode = users.PostCode;
-            userInfo.Pwd = Md5Helper.GetMd5(users.Pwd);
-            userInfo.Role = users.Role;
+            if (users.Pwd != userInfo.Pwd)
+            {
+                userInfo.Pwd = Md5Helper.GetMd5(users.Pwd);
+            }
+            userInfo.RoleId = users.RoleId;
+            userInfo.State = users.State;
 
             _repository.Update(userInfo);
             return _unitOfWork.Commit() > 0;

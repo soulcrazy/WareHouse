@@ -16,33 +16,17 @@
     </div>
 </div>
 <div class="form-group">
-    <label class="col-md-3 control-label" for="corporatename">公司名</label>
-    <div class="col-md-7">
-        <input class="form-control" type="text" id="corporatename" name="corporatename" placeholder="请输入公司名..">
-    </div>
-</div>
-<div class="form-group">
-    <label class="col-md-3 control-label" for="phone">手机号</label>
-    <div class="col-md-7">
-        <input class="form-control" type="text" id="phone" name="phone" placeholder="请输入手机号..">
-    </div>
-</div>
-<div class="form-group">
     <label class="col-md-3 control-label" for="email">邮箱</label>
     <div class="col-md-7">
         <input class="form-control" type="email" id="email" name="email" placeholder="请输入邮箱..">
     </div>
 </div>
 <div class="form-group">
-    <label class="col-md-3 control-label" for="postcode">邮编</label>
+    <label class="col-md-3 control-label" for="roleId">角色</label>
     <div class="col-md-7">
-        <input class="form-control" type="text" id="postcode" name="postcode" placeholder="请输入邮编..">
-    </div>
-</div>
-<div class="form-group">
-    <label class="col-md-3 control-label" for="address">地址</label>
-    <div class="col-md-7">
-        <input class="form-control" type="text" id="address" name="address" placeholder="请输入地址..">
+        <select class="form-control" id="roleId" name="roleId">
+            <option value="0">请选择角色</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
@@ -54,23 +38,26 @@
 @section Scripts
 {
     <script>
-        //$("#add-btn").click(function() {
-        //    // console.log('111');
-        //    console.log($("#name").val());
-        //})
-        //console.log($)
+        $.ajax({
+            url: "/Role/GetRole",
+            data: {},
+            type: "get",
+            success: function(res) {
+                console.log(res);
+                var html = "";
+                for (var i = 0; i < res.length; i++) {
+                    html += "<option value="+res[i].id+">"+res[i].roleName+"</option>";
+                }
+                $("#roleId").append(html);
+            }
+        });
         $("#add-btn").click(function () {
-            //console.log("111");
             var data = {
                 name: $("#name").val(),
                 pwd: $("#pwd").val(),
-                phone: $("#phone").val(),
-                corporatename: $("#corporatename").val(),
                 email: $("#email").val(),
-                postcode: $("#postcode").val(),
-                address: $("#address").val()
+                roleId: $("#roleId").val()
             }
-            //console.log(data);
             $.ajax({
                 url: '/Home/AddUser',
                 type: 'post',

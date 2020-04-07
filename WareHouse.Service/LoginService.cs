@@ -30,7 +30,7 @@ namespace WareHouse.Service
             {
                 return false;
             }
-            if (_repository.Select(c => c.Name == users.Name && c.Pwd == Md5Helper.GetMd5(users.Pwd) && c.Role == users.Role).Count == 1)
+            if (_repository.Select(c => c.Name == users.Name && c.Pwd == Md5Helper.GetMd5(users.Pwd) && c.RoleId == users.RoleId).Count == 1)
             {
                 return true;
             }

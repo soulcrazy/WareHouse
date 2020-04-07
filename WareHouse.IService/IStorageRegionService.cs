@@ -10,6 +10,9 @@
  * 创建日期：2020-03-26 13:12:18
  */
 
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.ViewModel;
@@ -28,6 +31,10 @@ namespace WareHouse.Service.Interface
 
         bool Delete(int id);
 
+        bool Delete(StorageRegion storageRegion);
+
         bool Update(StorageRegion storageRegion);
+
+        List<StorageRegion> GetAll(Expression<Func<StorageRegion, bool>> whereExpression);
     }
 }

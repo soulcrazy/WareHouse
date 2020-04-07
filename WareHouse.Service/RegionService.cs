@@ -23,11 +23,13 @@ namespace WareHouse.Service
     {
         private readonly IRepository<Region, int> _repository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IStorageRegionService _storageRegionService;
 
         public RegionService(IServiceProvider serviceProvider)
         {
             _repository = serviceProvider.GetRequiredService<IRepository<Region, int>>();
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
+            _storageRegionService = serviceProvider.GetRequiredService<IStorageRegionService>();
         }
 
         public string Get()
@@ -70,6 +72,13 @@ namespace WareHouse.Service
             {
                 return false;
             }
+
+            List<StorageRegion> storageRegions = _storageRegionService.GetAll(c => c.RegionId == id);
+            foreach (var storageRegion in storageRegions)
+            {
+                _storageRegionService.Delete(storageRegion);
+            }
+
             _repository.Delete(id);
             return _unitOfWork.Commit() > 0;
         }

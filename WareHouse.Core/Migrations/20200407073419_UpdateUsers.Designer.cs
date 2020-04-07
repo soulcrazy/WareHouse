@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WareHouse.Core.Data;
 
 namespace WareHouse.Core.Migrations
 {
     [DbContext(typeof(WareHouseDbContext))]
-    partial class WareHouseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200407073419_UpdateUsers")]
+    partial class UpdateUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -345,7 +347,7 @@ namespace WareHouse.Core.Migrations
                     b.Property<string>("Pwd")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("RoleId")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("RowVersion")

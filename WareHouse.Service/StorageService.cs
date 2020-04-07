@@ -74,6 +74,13 @@ namespace WareHouse.Service
             {
                 return false;
             }
+
+            List<StorageRegion> storageRegions = _storageRegionService.GetAll(c => c.StorageId == id);
+            foreach (var storageRegion in storageRegions)
+            {
+                _storageRegionService.Delete(storageRegion);
+            }
+
             _repository.Delete(storage);
             return _unitOfWork.Commit() > 0;
         }

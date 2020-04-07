@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WareHouse.Core.Data;
 
 namespace WareHouse.Core.Migrations
 {
     [DbContext(typeof(WareHouseDbContext))]
-    partial class WareHouseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200407074016_UpdateUsers1")]
+    partial class UpdateUsers1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

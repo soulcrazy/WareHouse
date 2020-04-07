@@ -15,33 +15,18 @@ namespace WareHouse.Entity
         public string Pwd { get; set; }
 
         /// <summary>
-        /// 联系电话
-        /// </summary>
-        public string Phone { get; set; }
-
-        /// <summary>
         /// 邮箱
         /// </summary>
         public string Email { get; set; }
 
         /// <summary>
-        /// 公司名称
-        /// </summary>
-        public string CorporateName { get; set; }
-
-        /// <summary>
-        /// 邮编
-        /// </summary>
-        public string PostCode { get; set; }
-
-        /// <summary>
-        /// 地址
-        /// </summary>
-        public string Address { get; set; }
-
-        /// <summary>
         /// 角色
         /// </summary>
-        public int Role { get; set; }
+        public int RoleId { get; set; }
+
+        /// <summary>
+        /// 状态，0禁用1启用
+        /// </summary>
+        public int State { get; set; }
     }
 }

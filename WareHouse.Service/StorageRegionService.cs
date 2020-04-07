@@ -13,6 +13,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
@@ -107,6 +108,12 @@ namespace WareHouse.Service
             return _unitOfWork.Commit() > 0;
         }
 
+        public bool Delete(StorageRegion storageRegion)
+        {
+            _repository.Delete(storageRegion);
+            return _unitOfWork.Commit() > 0;
+        }
+
         public bool Update(StorageRegion storageRegion)
         {
             if (storageRegion.Id <= 0)
@@ -121,6 +128,11 @@ namespace WareHouse.Service
 
             _repository.Update(tempStorageRegion);
             return _unitOfWork.Commit() > 0;
+        }
+
+        public List<StorageRegion> GetAll(Expression<Func<StorageRegion, bool>> whereExpression)
+        {
+            return _repository.Select(whereExpression);
         }
     }
 }
