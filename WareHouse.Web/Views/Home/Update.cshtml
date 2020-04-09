@@ -79,15 +79,11 @@
                 roleId: $("#roleId").val()
             }
             //console.log(data);
-            $.ajax({
+            $.post({
                 url: '/Home/UpdateUser',
-                type: 'post',
                 data: data,
                 success: function () {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function () {
-                    console.log("修改失败");
                 }
             });
         });

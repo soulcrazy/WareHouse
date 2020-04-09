@@ -21,7 +21,7 @@ namespace WareHouse.Web.Controllers
 
         public IActionResult CheckLogin(Users users)
         {
-            if (_loginService.AdminLogin(users))
+            if (_loginService.CheckLogin(users))
             {
                 HttpContext.Session.SetString("userId", users.Id.ToString());
                 HttpContext.Session.SetString("role", users.RoleId.ToString());

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Core.Helper;
 using WareHouse.Entity;
@@ -12,16 +13,23 @@ namespace WareHouse.Service
     {
         private readonly IRepository<Users, int> _repository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IGoodsService _goodsService;
 
         public UsersService(IServiceProvider serviceProvider)
         {
             _repository = serviceProvider.GetRequiredService<IRepository<Users, int>>();
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
+            _goodsService = serviceProvider.GetRequiredService<IGoodsService>();
         }
 
         public List<Users> GetUsers()
         {
             return _repository.Select(c => true);
+        }
+
+        public List<Users> GetUsers(Expression<Func<Users, bool>> whereExpression)
+        {
+            return _repository.Select(whereExpression);
         }
 
         public IPageResult<Users> GetPageResult(IPager pager)
@@ -56,6 +64,32 @@ namespace WareHouse.Service
             {
                 return false;
             }
+
+            List<Goods> goodses = _goodsService.GetAll(c => c.UserId == id);
+
+            foreach (var goods in goodses)
+            {
+                _goodsService.Delete(goods);
+            }
+
+            _repository.Delete(users);
+            return _unitOfWork.Commit() > 0;
+        }
+
+        public bool Delete(Users users)
+        {
+            if (users == null)
+            {
+                return false;
+            }
+
+            List<Goods> goodses = _goodsService.GetAll(c => c.UserId == users.Id);
+
+            foreach (var goods in goodses)
+            {
+                _goodsService.Delete(goods);
+            }
+
             _repository.Delete(users);
             return _unitOfWork.Commit() > 0;
         }

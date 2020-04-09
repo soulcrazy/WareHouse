@@ -48,17 +48,13 @@
             window.location.href = "@Url.Action("Update")?id="+id;
         }
         function del(id) {
-            $.ajax({
+            $.post({
                 url: '/GoodsType/DeleteType',
                 data: {
                     id:id
                 },
-                type: 'post',
                 success: function() {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function(res) {
-                    alert(res);
                 }
             });
         }

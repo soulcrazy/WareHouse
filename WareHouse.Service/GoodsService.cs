@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
@@ -33,6 +34,11 @@ namespace WareHouse.Service
             return _repository.Select(c => true);
         }
 
+        public List<Goods> GetAll(Expression<Func<Goods, bool>> whereExpression)
+        {
+            return _repository.Select(whereExpression);
+        }
+
         public Goods Find(int id)
         {
             return _repository.Find(id);
@@ -61,6 +67,12 @@ namespace WareHouse.Service
             {
                 return false;
             }
+            _repository.Delete(goods);
+            return _unitOfWork.Commit() > 0;
+        }
+
+        public bool Delete(Goods goods)
+        {
             _repository.Delete(goods);
             return _unitOfWork.Commit() > 0;
         }

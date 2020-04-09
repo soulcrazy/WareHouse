@@ -123,27 +123,22 @@
 
         $("#update-btn").click(function() {
             if ($("#roleId").val() === "0") {
-                alert("请选择角色");
+                $.error("请选择角色");
                 return 0;
             }
             else {
-                $.ajax({
+                $.post({
                     url: "/RoleMenu/Update",
                     data: {
                         roleId: $("#roleId").val(),
                         menuArray: GetArray()
                     },
-                    type: "post",
                     success: function() {
                         window.location.href = "@Url.Action("Index")";
                     }
                 });
             }
-            //console.log($("#roleId").val());
-            //if ($("#roleId").val() === "0") {
-            //    console.log("请选择角色");
-            //    return 0;
-            //}
+            return 0;
         });
 
         function GetArray() {

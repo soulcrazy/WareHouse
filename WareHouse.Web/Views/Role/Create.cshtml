@@ -18,20 +18,16 @@
     <script>
         $("#add-btn").click(function () {
             if ($("#roleName").val()==="") {
-                alert("角色名不能为空");
+                $.error("角色名不能为空");
                 return;
             }
-            $.ajax({
+            $.post({
                 url: '/Role/AddRole',
                 data: {
                     RoleName: $("#roleName").val()
                 },
-                type: 'post',
                 success: function() {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function(res) {
-                    console.log(res);
                 }
             });
         });

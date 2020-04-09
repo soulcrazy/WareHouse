@@ -38,25 +38,20 @@
         });
         $("#edit-btn").click(function () {
             if ($("#roleName").val()==="") {
-                alert("角色名不能为空");
+                $.error("角色名不能为空");
                 return;
             }
             var data = {
                 id: $("#id").val(),
                 roleName: $("#roleName").val()
             };
-            $.ajax({
+            $.post({
                 url: '/Role/Update',
                 data: data,
-                type: 'post',
                 success: function() {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function(res) {
-                    alert(res);
                 }
             });
-            //console.log(data);
         });
     </script>
 }

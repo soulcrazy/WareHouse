@@ -10,7 +10,9 @@
  * 创建时间：2020-03-23 20:25:58
  */
 
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 
@@ -22,6 +24,8 @@ namespace WareHouse.Service.Interface
 
         List<Goods> GetAll();
 
+        List<Goods> GetAll(Expression<Func<Goods, bool>> whereExpression);
+
         Goods Find(int id);
 
         int GetId(Goods goods);
@@ -29,6 +33,8 @@ namespace WareHouse.Service.Interface
         bool Add(Goods goods);
 
         bool Delete(int id);
+
+        bool Delete(Goods goods);
 
         bool Update(Goods goods);
 

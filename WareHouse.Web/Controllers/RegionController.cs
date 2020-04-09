@@ -39,9 +39,9 @@ namespace WareHouse.Web.Controllers
             return Json(_regionService.GetPageResult(pager));
         }
 
-        public IActionResult Find(int id)
+        public IAjaxResult Find(int id)
         {
-            return Json(_regionService.Find(id));
+            return Success(_regionService.Find(id));
         }
 
         public IActionResult AddRegion(Region region)
@@ -56,15 +56,15 @@ namespace WareHouse.Web.Controllers
             }
         }
 
-        public IActionResult DeleteRegion(int id)
+        public IAjaxResult DeleteRegion(int id)
         {
             if (_regionService.Delete(id))
             {
-                return RedirectToAction(nameof(Index));
+                return Success("删除成功");
             }
             else
             {
-                return Json("删除失败");
+                return Error("删除失败");
             }
         }
 

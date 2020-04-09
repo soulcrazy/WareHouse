@@ -58,15 +58,11 @@
                 email: $("#email").val(),
                 roleId: $("#roleId").val()
             }
-            $.ajax({
+            $.post({
                 url: '/Home/AddUser',
-                type: 'post',
                 data: data,
-                success: function () {
+                success: function (res) {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function () {
-                    alert("添加失败");
                 }
             });
         });

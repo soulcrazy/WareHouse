@@ -68,32 +68,41 @@ namespace WareHouse.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddUser(Users users)
+        public IAjaxResult AddUser(Users users)
         {
             if (_usersService.Add(users))
             {
-                return RedirectToAction(nameof(Index));
-            }
-            return RedirectToAction(nameof(Add));
-        }
-
-        [HttpPost]
-        public IActionResult DeleteUser(int id)
-        {
-            _usersService.Delete(id);
-            return RedirectToAction(nameof(Index));
-        }
-
-        [HttpPost]
-        public bool UpdateUser(Users users)
-        {
-            if (_usersService.Update(users))
-            {
-                return true;
+                return Success("添加成功");
             }
             else
             {
-                return false;
+                return Error("添加失败");
+            }
+        }
+
+        [HttpPost]
+        public IAjaxResult DeleteUser(int id)
+        {
+            if (_usersService.Delete(id))
+            {
+                return Success("删除成功");
+            }
+            else
+            {
+                return Error("删除失败");
+            }
+        }
+
+        [HttpPost]
+        public IAjaxResult UpdateUser(Users users)
+        {
+            if (_usersService.Update(users))
+            {
+                return Success("修改成功");
+            }
+            else
+            {
+                return Error("修改失败");
             }
         }
 

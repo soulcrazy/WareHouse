@@ -40,6 +40,17 @@ namespace WareHouse.Service
             }
         }
 
+        public bool CheckLogin(Users users)
+        {
+            if (string.IsNullOrEmpty(users.Name) || string.IsNullOrEmpty(users.Pwd) || users.RoleId == 0)
+            {
+                return false;
+            }
+            Users tempUsers = _repository.Find(c =>
+                c.Name == users.Name && c.Pwd == Md5Helper.GetMd5(users.Pwd) && c.RoleId == users.RoleId);
+            return tempUsers != null && tempUsers.State == 1;
+        }
+
         public bool UpdatePwd(GetPwdDto getPwdDto)
         {
             Users users = _repository.Find(getPwdDto.UserId);

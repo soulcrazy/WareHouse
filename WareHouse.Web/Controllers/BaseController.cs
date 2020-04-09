@@ -16,8 +16,6 @@ namespace WareHouse.Web.Controllers
 #endif
             if (string.IsNullOrEmpty(context.HttpContext.Session.GetString("role")))
             {
-                //!context.HttpContext.Session.GetString("role").Equals("4")
-                //context.Result = new RedirectToActionResult("Login", "Login", null);
                 context.HttpContext.Response.Redirect("/Login/Login");
             }
             else

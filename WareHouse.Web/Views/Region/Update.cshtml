@@ -1,8 +1,37 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Update";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Update</h2>
+<form action="@Url.Action("UpdateRegion")" method="post">
+    <input type="hidden" name="id" id="id" value="" />
+    <div class="form-group">
+        <label for="name">名称</label>
+        <input class="form-control" type="text" id="name" name="name" placeholder="请输入区域名称.." required="">
+    </div>
+    <div class="form-group">
+        <label for="capacity">容量</label>
+        <input class="form-control" type="number" id="capacity" name="capacity" placeholder="请输入区域容量.." required="">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">修改</button>
+    </div>
+</form>
 
+@section Scripts
+{
+    <script>
+        $.get({
+            url: "/Region/Find",
+            data: {
+                id: GetId()
+            },
+            success: function (res) {
+                console.log(res);
+                $("#id").val(res.data.id);
+                $("#name").val(res.data.name);
+                $("#capacity").val(res.data.capacity);
+            }
+        })
+    </script>
+}

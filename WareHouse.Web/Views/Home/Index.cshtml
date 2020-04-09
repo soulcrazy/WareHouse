@@ -57,12 +57,11 @@
             window.location.href = "@Url.Action("Update")?id="+id;
         }
         function del(id) {
-            $.ajax({
+            $.post({
                 url: '/Home/DeleteUser',
                 data: {
                     id:id
                 },
-                type: 'post',
                 success: function() {
                     window.location.href = "@Url.Action("Index")";
                 }

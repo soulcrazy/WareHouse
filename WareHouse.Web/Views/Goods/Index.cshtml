@@ -63,28 +63,13 @@
             window.location.href = "@Url.Action("Update")?id="+id;
         }
         function del(id) {
-            $.ajax({
+            $.post({
                 url: '/Goods/DeleteGoods',
                 data: {
                     id:id
                 },
-                type: 'post',
                 success: function() {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function(res) {
-                    alert(res);
-                }
-            });
-        }
-
-        function GetRole() {
-            $.ajax({
-                url: '/Role/GetPages',
-                data: {},
-                type: 'get',
-                success: function (res) {
-                    console.log(res);
                 }
             });
         }

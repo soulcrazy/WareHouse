@@ -68,15 +68,15 @@ namespace WareHouse.Web.Controllers
             }
         }
 
-        public IActionResult DeleteType(int id)
+        public IAjaxResult DeleteType(int id)
         {
             if (_goodsTypeService.Delete(id))
             {
-                return RedirectToAction(nameof(Index));
+                return Success("删除成功");
             }
             else
             {
-                return Json("删除失败");
+                return Error("删除失败");
             }
         }
     }

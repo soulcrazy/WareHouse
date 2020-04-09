@@ -59,17 +59,13 @@
             window.location.href = "@Url.Action("Update")?id="+id;
         }
         function del(id) {
-            $.ajax({
+            $.post({
                 url: "/Menu/DeleteMenu",
                 data: {
                     id:id
                 },
-                type: "post",
                 success: function(res) {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function(res) {
-                    alert(res);
                 }
             });
         }

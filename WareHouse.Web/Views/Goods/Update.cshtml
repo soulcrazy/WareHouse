@@ -6,14 +6,13 @@
 }
 <form action="@Url.Action("UpdateGoods")" method="post">
     <input type="hidden" name="id" id="id" value="" />
-    <input type="hidden" name="userId" id="userId" value="" />
     <div class="form-group">
         <label for="name">名称</label>
         <input class="form-control" type="text" id="name" name="name" placeholder="请输入货物名称.." required="">
     </div>
     <div class="form-group">
         <label for="weight">重量</label>
-        <input class="form-control" type="number" id="weight" name="weight" placeholder="请输入货物重量.." required="">
+        <input class="form-control" type="text" id="weight" name="weight" onkeyup="checkInputIntFloat(this)" placeholder="请输入货物重量.." required="">
     </div>
     <div class="form-group">
         <label for="typeId">种类</label>
@@ -26,6 +25,12 @@
         <input class="form-control" type="text" id="remarks" name="remarks" placeholder="请输入货物备注.." required="">
     </div>
     <div class="form-group">
+        <label for="userId">用户</label>
+        <select class="form-control" id="userId" name="userId" size="1">
+            <option value="0">请选择所属用户</option>
+        </select>
+    </div>
+    <div class="form-group">
         <button class="btn btn-primary" type="submit">修改</button>
     </div>
 </form>
@@ -33,33 +38,50 @@
 {
 
     <script>
+        function checkInputIntFloat(oInput) {
+            if ('' !== oInput.value.replace(/\d{1,}\.{0,1}\d{0,}/, '')) {
+                oInput.value = oInput.value.match(/\d{1,}\.{0,1}\d{0,}/) == null ? '' : oInput.value.match(/\d{1,}\.{0,1}\d{0,}/);
+            }
+        }
         $.ajax({
-            url: '/GoodsType/GetAll',
+            url: "/Home/GetPages",
             data: {},
-            type: 'get',
+            type: "get",
             success: function (res) {
                 console.log(res);
                 var html = "";
-                for (var i = 0; i < res.length; i++) {
-                    html += "<option value='" + res[i].id + "'>" + res[i].name + "</option>";
+                for (var i = 0; i < res.rows.length; i++) {
+                    html += "<option value='" + res.rows[i].id + "'>" + res.rows[i].name + "</option>";
                 }
-                $("#typeId").append(html);
-            }
-        });
-        $.ajax({
-            url: '/Goods/Find',
-            data: {
-                id: GetId
-            },
-            type: 'post',
-            success: function (res) {
-                //console.log(res);
-                $("#name").val(res.name);
-                $("#weight").val(res.weight);
-                $("#typeId").val(res.typeId);
-                $("#remarks").val(res.remarks);
-                $("#id").val(res.id);
-                $("#userId").val(res.userId);
+                $("#userId").append(html);
+                $.ajax({
+                    url: '/GoodsType/GetAll',
+                    data: {},
+                    type: 'get',
+                    success: function (res) {
+                        console.log(res);
+                        var html = "";
+                        for (var i = 0; i < res.length; i++) {
+                            html += "<option value='" + res[i].id + "'>" + res[i].name + "</option>";
+                        }
+                        $("#typeId").append(html);
+                        $.ajax({
+                            url: '/Goods/Find',
+                            data: {
+                                id: GetId()
+                            },
+                            type: 'post',
+                            success: function (res) {
+                                $("#name").val(res.name);
+                                $("#weight").val(res.weight);
+                                $("#typeId").val(res.typeId);
+                                $("#remarks").val(res.remarks);
+                                $("#id").val(res.id);
+                                $("#userId").val(res.userId);
+                            }
+                        });
+                    }
+                });
             }
         });
     </script>

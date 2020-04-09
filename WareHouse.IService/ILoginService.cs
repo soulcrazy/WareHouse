@@ -7,6 +7,8 @@ namespace WareHouse.Service.Interface
     {
         bool AdminLogin(Users users);
 
+        bool CheckLogin(Users users);
+
         bool UpdatePwd(GetPwdDto getPwdDto);
     }
 }

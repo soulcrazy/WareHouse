@@ -59,17 +59,13 @@
             window.location.href = "@Url.Action("Region")?id="+id;
         }
         function del(id) {
-            $.ajax({
+            $.post({
                 url: '/Storage/DeleteStorage',
                 data: {
                     id:id
                 },
-                type: 'post',
                 success: function() {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function(res) {
-                    alert(res);
                 }
             });
         }

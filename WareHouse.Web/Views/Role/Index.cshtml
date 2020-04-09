@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "role";
+    ViewData["Title"] = "角色管理";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div>
@@ -48,17 +48,13 @@
             window.location.href = "@Url.Action("Edit")?id="+id;
         }
         function del(id) {
-            $.ajax({
+            $.post({
                 url: '/Role/DeleteRole',
                 data: {
                     id:id
                 },
-                type: 'post',
                 success: function() {
                     window.location.href = "@Url.Action("Index")";
-                },
-                error: function(res) {
-                    alert(res);
                 }
             });
         }

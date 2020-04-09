@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 
@@ -12,6 +14,8 @@ namespace WareHouse.Service.Interface
         /// <returns></returns>
         List<Users> GetUsers();
 
+        List<Users> GetUsers(Expression<Func<Users, bool>> whereExpression);
+
         /// <summary>
         /// 分页查询
         /// </summary>
@@ -24,6 +28,8 @@ namespace WareHouse.Service.Interface
         bool Add(Users users);
 
         bool Delete(int id);
+
+        bool Delete(Users users);
 
         bool Update(Users users);
     }

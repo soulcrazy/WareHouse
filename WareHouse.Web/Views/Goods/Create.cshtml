@@ -11,17 +11,23 @@
     </div>
     <div class="form-group">
         <label for="weight">重量</label>
-        <input class="form-control" type="number" id="weight" name="weight" placeholder="请输入货物重量.." required="">
+        <input class="form-control" type="text" onkeyup="checkInputIntFloat(this)" id="weight" name="weight" placeholder="请输入货物重量.." required="">
     </div>
     <div class="form-group">
         <label for="typeId">种类</label>
         <select class="form-control" id="typeId" name="typeId" size="1">
-            <option value="0">请选择</option>
+            <option value="0">请选择所属种类</option>
         </select>
     </div>
     <div class="form-group">
         <label for="remarks">备注</label>
         <input class="form-control" type="text" id="remarks" name="remarks" placeholder="请输入货物备注.." required="">
+    </div>
+    <div class="form-group">
+        <label for="userId">用户</label>
+        <select class="form-control" id="userId" name="userId" size="1">
+            <option value="0">请选择所属用户</option>
+        </select>
     </div>
     <div class="form-group">
         <button class="btn btn-primary" type="submit">添加</button>
@@ -31,6 +37,11 @@
 @section Scripts
 {
     <script>
+        function checkInputIntFloat(oInput) {
+            if ('' !== oInput.value.replace(/\d{1,}\.{0,1}\d{0,}/, '')) {
+                oInput.value = oInput.value.match(/\d{1,}\.{0,1}\d{0,}/) == null ? '' : oInput.value.match(/\d{1,}\.{0,1}\d{0,}/);
+            }
+        }
         $.ajax({
             url: '/GoodsType/GetAll',
             data: {},
@@ -42,6 +53,20 @@
                     html += "<option value='" + res[i].id + "'>" + res[i].name + "</option>";
                 }
                 $("#typeId").append(html);
+            }
+        });
+
+        $.ajax({
+            url: "/Home/GetPages",
+            data: {},
+            type: "get",
+            success: function (res) {
+                console.log(res);
+                var html = "";
+                for (var i = 0; i < res.rows.length; i++) {
+                    html += "<option value='" + res.rows[i].id + "'>" + res.rows[i].name + "</option>";
+                }
+                $("#userId").append(html);
             }
         });
     </script>

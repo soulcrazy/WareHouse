@@ -169,12 +169,10 @@
                 regionCapacity: $("#capacity").val()
             };
             console.log(data);
-            $.ajax({
+            $.post({
                 url: '@Url.Action("AddNewRegion")',
                 data: data,
-                type: 'post',
                 success: function(res) {
-                    console.log(res);
                 }
             });
         });

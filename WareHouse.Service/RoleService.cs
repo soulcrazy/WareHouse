@@ -13,11 +13,13 @@ namespace WareHouse.Service
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRoleMenuService _roleMenuService;
+        private readonly IUsersService _usersService;
 
         public RoleService(IServiceProvider serviceProvider)
         {
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
             _roleMenuService = serviceProvider.GetRequiredService<IRoleMenuService>();
+            _usersService = serviceProvider.GetRequiredService<IUsersService>();
             _repository = serviceProvider.GetRequiredService<IRepository<Role, int>>();
         }
 
@@ -62,6 +64,12 @@ namespace WareHouse.Service
             foreach (var roleMenu in roleMenus)
             {
                 _roleMenuService.Delete(roleMenu);
+            }
+
+            List<Users> userList = _usersService.GetUsers(c => c.RoleId == id);
+            foreach (var users in userList)
+            {
+                _usersService.Delete(users);
             }
 
             _repository.Delete(id);
