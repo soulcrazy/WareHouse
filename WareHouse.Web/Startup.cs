@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Reflection;
 using WareHouse.Core.Data;
+using WareHouse.Core.Middleware;
 
 namespace WareHouse.Web
 {
@@ -21,6 +23,8 @@ namespace WareHouse.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddMvc(options => options.Filters.Add<ErrorHandlerAttribute>());
+
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
@@ -41,7 +45,11 @@ namespace WareHouse.Web
 
             services.AddSession();
 
-            services.AddDbContext<WareHouseDbContext>();
+            services.AddDbContext<WareHouseDbContext>(c =>
+            {
+                var loggerFactory = new LoggerFactory();
+                loggerFactory.AddProvider(new EFLoggerProvider());
+            });
             services.AddControllersWithViews();
         }
 
@@ -54,6 +62,8 @@ namespace WareHouse.Web
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseMiddleware<WareHouseExceptionHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using WareHouse.Core.Helper;
 using WareHouse.Entity;
 
@@ -7,6 +8,10 @@ namespace WareHouse.Core.Data
     public class WareHouseDbContext : DbContext
     {
         public WareHouseDbContext()
+        {
+        }
+
+        public WareHouseDbContext(DbContextOptions options) : base(options)
         {
         }
 
@@ -24,6 +29,10 @@ namespace WareHouse.Core.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            var loggerFactory = new LoggerFactory();
+            loggerFactory.AddProvider(new EFLoggerProvider());
+            optionsBuilder.UseLoggerFactory(loggerFactory);
+
             optionsBuilder.UseMySql(ConfigHelper.GetConnectString());
         }
     }

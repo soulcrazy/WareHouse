@@ -38,9 +38,8 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\obj\Debug\netcoreapp3.1\WareHouse.Api.csproj.CopyComplete
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\obj\Debug\netcoreapp3.1\WareHouse.Api.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\obj\Debug\netcoreapp3.1\WareHouse.Api.pdb
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\bin\Debug\netcoreapp3.1\Serilog.dll
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\obj\Debug\netcoreapp3.1\WareHouse.Api.csproj.CoreCompileInputs.cache
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\obj\Debug\netcoreapp3.1\WareHouse.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\obj\Debug\netcoreapp3.1\WareHouse.Api.genruntimeconfig.cache
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Api\bin\Debug\netcoreapp3.1\NLog.dll

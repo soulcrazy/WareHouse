@@ -12,7 +12,7 @@
 
 using System;
 
-namespace WareHouse.Core.Data
+namespace WareHouse.Core.Exceptions
 {
     public class BusinessException : Exception
     {

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
 using WareHouse.Core.Data;
+using WareHouse.Core.Exceptions;
 using WareHouse.Dto;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
@@ -11,12 +13,14 @@ namespace WareHouse.Web.Controllers
     public class HomeController : BaseController
     {
         private readonly IUsersService _usersService;
+        private readonly ILogger<HomeController> _logger;
         private readonly ILoginService _loginService;
 
         public HomeController(IServiceProvider serviceProvider)
         {
             _usersService = serviceProvider.GetRequiredService<IUsersService>();
             _loginService = serviceProvider.GetRequiredService<ILoginService>();
+            _logger = serviceProvider.GetRequiredService<ILogger<HomeController>>();
         }
 
         public IActionResult EditPwd()
@@ -108,7 +112,12 @@ namespace WareHouse.Web.Controllers
 
         public IActionResult TestUnit()
         {
-            throw new BusinessException("这是一个错误");
+            throw new Exception("这是一个错误");
+        }
+
+        public IActionResult Business()
+        {
+            throw new BusinessException("BusinessException");
         }
     }
 }

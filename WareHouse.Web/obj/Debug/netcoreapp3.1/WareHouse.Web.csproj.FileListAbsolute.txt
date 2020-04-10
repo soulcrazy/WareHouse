@@ -162,10 +162,7 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\GoodsType\Create.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\GoodsType\Update.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\WareHouse.Web.MvcApplicationPartsAssemblyInfo.cs
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Error\Error.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\WareHouse.Web.csproj.CoreCompileInputs.cache
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\Serilog.dll
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\WareHouse.Web.genruntimeconfig.cache
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Storage\Create.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Storage\Index.cshtml.g.cs
@@ -192,3 +189,6 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Menu\Update.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\RoleMenu\Index.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\EditPwd.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Error\Index.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\NLog.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\NLog.config
