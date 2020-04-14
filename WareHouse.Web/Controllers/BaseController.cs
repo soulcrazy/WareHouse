@@ -10,9 +10,9 @@ namespace WareHouse.Web.Controllers
         public override void OnActionExecuting(ActionExecutingContext context)
         {
 #if DEBUG
-            HttpContext.Session.SetString("userId", "1");
-            HttpContext.Session.SetString("role", "4");
-            HttpContext.Session.SetString("userName", "admin");
+            //HttpContext.Session.SetString("userId", "1");
+            //HttpContext.Session.SetString("role", "4");
+            //HttpContext.Session.SetString("userName", "admin");
 #endif
             if (string.IsNullOrEmpty(context.HttpContext.Session.GetString("role")))
             {

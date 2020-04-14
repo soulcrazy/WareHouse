@@ -38,12 +38,9 @@ namespace WareHouse.Core.Middleware
                 if (e is BusinessException)
                 {
                     LogHelper.Error($"BusinessException，{e.Message}");
-
-                    //await httpContext.Response.WriteAsync(JsonConvert.SerializeObject(new AjaxResult(ResultType.Error, e.Message)));
-
+                    //await httpContext.Response.WriteAsync(JsonConvert.SerializeObject(new AjaxResult(ResultType.Error, e.Message)))
                     httpContext.Response.Redirect("/Error/Index?code=500" + "&&msg=" + e.Message);
                     //httpContext.Response.Redirect("/Error/Index?msg=" + e.Message);
-
                     await Task.CompletedTask;
                 }
                 else

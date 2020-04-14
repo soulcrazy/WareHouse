@@ -31,6 +31,7 @@ namespace WareHouse.Web.Controllers
             }
             else
             {
+                //ViewData["error"] = "用户名或密码错误，请重试";
                 return RedirectToAction(nameof(Login));
             }
         }
