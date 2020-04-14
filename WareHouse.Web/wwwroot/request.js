@@ -48,7 +48,11 @@ $.extend({
                 return false;
             },
             error: function (res) {
-                $.error("请求失败");
+                if (res.message === null) {
+                    $.error("请求失败");
+                } else {
+                    $.error(res.message);
+                }
             }
         });
     }
@@ -74,7 +78,11 @@ $.extend({
                 return false;
             },
             error: function (res) {
-                $.error("请求失败");
+                if (res.message === null) {
+                    $.error("请求失败");
+                } else {
+                    $.error(res.message);
+                }
             }
         });
     }

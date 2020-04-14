@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
 
@@ -19,7 +20,7 @@ namespace WareHouse.Web.Controllers
             return View();
         }
 
-        public IActionResult CheckLogin(Users users)
+        public IAjaxResult CheckLogin(Users users)
         {
             if (_loginService.CheckLogin(users))
             {
@@ -27,12 +28,12 @@ namespace WareHouse.Web.Controllers
                 HttpContext.Session.SetString("role", users.RoleId.ToString());
                 HttpContext.Session.SetString("userName", users.Name);
 
-                return RedirectToAction("Index", "Home");
+                return Success("/Home/Index");
             }
             else
             {
                 //ViewData["error"] = "用户名或密码错误，请重试";
-                return RedirectToAction(nameof(Login));
+                return Error("用户名或密码错误，请重试");
             }
         }
 
@@ -40,6 +41,16 @@ namespace WareHouse.Web.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToAction(nameof(Login));
+        }
+
+        protected IAjaxResult Success(string msg)
+        {
+            return new AjaxResult(ResultType.Success, msg);
+        }
+
+        protected IAjaxResult Error(string msg)
+        {
+            return new AjaxResult(ResultType.Error, msg);
         }
     }
 }
