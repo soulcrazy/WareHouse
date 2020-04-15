@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.DrawingCore.Imaging;
+using System.IO;
 using WareHouse.Core.Data;
-using WareHouse.Entity;
+using WareHouse.Core.Exceptions;
+using WareHouse.Core.Helper;
+using WareHouse.Dto;
 using WareHouse.Service.Interface;
 
 namespace WareHouse.Web.Controllers
@@ -20,20 +24,24 @@ namespace WareHouse.Web.Controllers
             return View();
         }
 
-        public IAjaxResult CheckLogin(Users users)
+        public IAjaxResult CheckLogin(GetLoginDto getLoginDto)
         {
-            if (_loginService.CheckLogin(users))
+            string captcha = HttpContext.GetCookie("captcha");
+            if (captcha != getLoginDto.Captcha)
             {
-                HttpContext.Session.SetString("userId", users.Id.ToString());
-                HttpContext.Session.SetString("role", users.RoleId.ToString());
-                HttpContext.Session.SetString("userName", users.Name);
-
-                return Success("/Home/Index");
+                return Error("验证码填写错误");
             }
-            else
+
+            switch (_loginService.CheckLogin(getLoginDto))
             {
-                //ViewData["error"] = "用户名或密码错误，请重试";
-                return Error("用户名或密码错误，请重试");
+                case 0:
+                    HttpContext.Session.SetString("role", getLoginDto.RoleId.ToString());
+                    HttpContext.Session.SetString("userName", getLoginDto.Name);
+                    return Success("/Home/Index");
+
+                case 1: return Error("用户名或密码错误");
+                case 2: return Error("请填写用户名、密码并选择角色");
+                default: throw new BusinessException("遇到未知错误");
             }
         }
 
@@ -51,6 +59,20 @@ namespace WareHouse.Web.Controllers
         protected IAjaxResult Error(string msg)
         {
             return new AjaxResult(ResultType.Error, msg);
+        }
+
+        /// <summary>
+        /// 混合验证码
+        /// </summary>
+        /// <returns></returns>
+        public FileContentResult MixVerifyCode()
+        {
+            string code = VerifyCodeHelper.GetSingleObj().CreateVerifyCode(VerifyCodeHelper.VerifyCodeType.MixVerifyCode);
+            HttpContext.AddCookie("captcha", code, 5);
+            var bitmap = VerifyCodeHelper.GetSingleObj().CreateBitmapByImgVerifyCode(code, 120, 38);
+            MemoryStream stream = new MemoryStream();
+            bitmap.Save(stream, ImageFormat.Gif);
+            return File(stream.ToArray(), "image/gif");
         }
     }
 }

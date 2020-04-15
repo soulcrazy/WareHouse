@@ -83,6 +83,15 @@
                     </select>
                     <span class="mdi mdi-lock form-control-feedback" aria-hidden="true"></span>
                 </div>
+                <div class="form-group has-feedback feedback-left row">
+                    <div class="col-xs-7">
+                        <input type="text" id="captcha" name="captcha" class="form-control" placeholder="验证码">
+                        <span class="mdi mdi-check-all form-control-feedback" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-xs-5">
+                        <img src="/Login/MixVerifyCode" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src=this.src+'?d='+Math.random();" title="点击刷新" alt="captcha">
+                    </div>
+                </div>
                 <div class="form-group">
                     <button class="btn btn-block btn-primary" type="submit" id="login-btn">立即登录</button>
                 </div>
@@ -99,11 +108,17 @@
 </html>
 
 <script>
+    $("#name").bind('input propertychange', function () {
+        if ($("#name").val() === "admin") {
+            $("#roleId").val("4");
+        }
+    });
     $("#login-btn").click(function () {
         var data = {
             name: $("#name").val(),
             pwd: $("#pwd").val(),
-            roleId: $("#roleId").val()
+            roleId: $("#roleId").val(),
+            captcha: $("#captcha").val()
         };
         if (data.name === "") {
             $.error("请输入用户名");
@@ -117,6 +132,10 @@
             $.error("请选择所属角色");
             return 0;
         }
+        else if (data.captcha === "") {
+            $.error("请填写验证码");
+            return 0;
+        }
         $.post({
             url: '/Login/CheckLogin',
             data: data,
@@ -124,7 +143,12 @@
                 console.log(res);
                 if (res.code === 200) {
                     window.location.href = res.message;
+                } else {
+                    $("#captcha").prop("src", "/Login/MixVerifyCode?" + Math.random());
                 }
+            },
+            error: function (res) {
+                $("#captcha").prop("src", "/Login/MixVerifyCode?" + Math.random());
             }
         });
         return 0;

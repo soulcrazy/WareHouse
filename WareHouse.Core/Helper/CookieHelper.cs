@@ -34,7 +34,7 @@ namespace WareHouse.Core.Helper
         /// <param name="context"></param>
         /// <param name="key"></param>
         /// <param name="value"></param>
-        /// <param name="time"></param>
+        /// <param name="time">分钟</param>
         public static void AddCookie(this HttpContext context, string key, string value, int time)
         {
             context.Response.Cookies.Append(key, value, new CookieOptions

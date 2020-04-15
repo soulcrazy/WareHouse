@@ -40,15 +40,22 @@ namespace WareHouse.Service
             }
         }
 
-        public bool CheckLogin(Users users)
+        public int CheckLogin(GetLoginDto getLoginDto)
         {
-            if (string.IsNullOrEmpty(users.Name) || string.IsNullOrEmpty(users.Pwd) || users.RoleId == 0)
+            if (string.IsNullOrEmpty(getLoginDto.Name) || string.IsNullOrEmpty(getLoginDto.Pwd) || getLoginDto.RoleId == 0)
             {
-                return false;
+                return 2;
             }
             Users tempUsers = _repository.Find(c =>
-                c.Name == users.Name && c.Pwd == Md5Helper.GetMd5(users.Pwd) && c.RoleId == users.RoleId);
-            return tempUsers != null && tempUsers.State == 1;
+                c.Name == getLoginDto.Name && c.Pwd == Md5Helper.GetMd5(getLoginDto.Pwd) && c.RoleId == getLoginDto.RoleId);
+            if (tempUsers != null && tempUsers.State == 1)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
         }
 
         public bool UpdatePwd(GetPwdDto getPwdDto)
