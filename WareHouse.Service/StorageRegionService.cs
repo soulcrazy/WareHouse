@@ -15,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using WareHouse.Core.Data;
+using WareHouse.Core.Exceptions;
+using WareHouse.Dto;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
 using WareHouse.ViewModel;
@@ -56,8 +58,7 @@ namespace WareHouse.Service
                     tempRegions.StorageRegionId = storageRegionId;
                     tempRegions.Id = region.Id;
                     tempRegions.Name = region.Name;
-                    tempRegions.Capacity = region.Capacity;
-
+                    tempRegions.Capacity = storageRegion.Capacity;
                     regionList.Add(tempRegions);
                 }
 
@@ -65,8 +66,7 @@ namespace WareHouse.Service
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                throw new BusinessException(e.ToString());
             }
 
             return regionModel;
@@ -80,6 +80,18 @@ namespace WareHouse.Service
         public StorageRegion Find(int id)
         {
             return _repository.Find(id);
+        }
+
+        public StorageRegionModel FindStorageRegionModel(int id)
+        {
+            StorageRegion storageRegion = _repository.Find(id);
+            StorageRegionModel storageRegionModel = new StorageRegionModel()
+            {
+                RegionId = storageRegion.RegionId,
+                RegionName = _regionRepository.Find(storageRegion.RegionId).Name,
+                Capacity = storageRegion.Capacity
+            };
+            return storageRegionModel;
         }
 
         public bool Add(StorageRegion storageRegion)
@@ -114,17 +126,23 @@ namespace WareHouse.Service
             return _unitOfWork.Commit() > 0;
         }
 
-        public bool Update(StorageRegion storageRegion)
+        public bool Update(GetStorageRegionDto getStorageRegionDto)
         {
-            if (storageRegion.Id <= 0)
+            if (getStorageRegionDto.Id <= 0)
             {
                 return false;
             }
 
-            StorageRegion tempStorageRegion = Find(storageRegion.Id);
+            Region tempRegion = _regionRepository.Find(getStorageRegionDto.RegionId);
+            if (!tempRegion.Name.Equals(getStorageRegionDto.RegionName))
+            {
+                tempRegion.Name = getStorageRegionDto.RegionName;
+                _regionRepository.Update(tempRegion);
+                _unitOfWork.Commit();
+            }
 
-            tempStorageRegion.RegionId = storageRegion.RegionId;
-            tempStorageRegion.StorageId = storageRegion.StorageId;
+            StorageRegion tempStorageRegion = Find(getStorageRegionDto.Id);
+            tempStorageRegion.Capacity = getStorageRegionDto.Capacity;
 
             _repository.Update(tempStorageRegion);
             return _unitOfWork.Commit() > 0;

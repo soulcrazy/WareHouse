@@ -13,6 +13,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
@@ -52,18 +53,39 @@ namespace WareHouse.Service
             return _repository.Find(id);
         }
 
-        public bool Add(Region region)
+        public Region Find(Expression<Func<Region, bool>> whereExpression)
         {
-            if (region.Name == null)
+            return _repository.Find(whereExpression);
+        }
+
+        /// <summary>
+        /// 0成功，1失败，2已存在，3信息未填写
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public int Add(string name)
+        {
+            if (name == null)
             {
-                return false;
+                return 3;
             }
-            if (_repository.Select(c => c.Name == region.Name).Count > 0)
+            if (_repository.Select(c => c.Name == name).Count > 0)
             {
-                return false;
+                return 2;
             }
+            Region region = new Region()
+            {
+                Name = name
+            };
             _repository.Add(region);
-            return _unitOfWork.Commit() > 0;
+            if (_unitOfWork.Commit() > 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
         }
 
         public bool Delete(int id)
@@ -83,25 +105,27 @@ namespace WareHouse.Service
             return _unitOfWork.Commit() > 0;
         }
 
-        public bool Update(Region region)
+        public int Update(Region region)
         {
+            if (region.Name == null)
+            {
+                return 3;
+            }
             if (_repository.Select(c => c.Name == region.Name).Count > 0)
             {
-                return false;
+                return 2;
             }
-
             Region tempRegion = _repository.Find(region.Id);
-
-            if (tempRegion == null)
-            {
-                return false;
-            }
-
             tempRegion.Name = region.Name;
-            tempRegion.Capacity = region.Capacity;
-
             _repository.Update(tempRegion);
-            return _unitOfWork.Commit() > 0;
+            if (_unitOfWork.Commit() > 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }

@@ -3,16 +3,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="@Url.Action("AddRegion")" method="post">
+<div class="col-lg-3">
     <div class="form-group">
         <label for="name">名称</label>
         <input class="form-control" type="text" id="name" name="name" placeholder="请输入区域名称.." required="">
     </div>
     <div class="form-group">
-        <label for="capacity">容量</label>
-        <input class="form-control" type="number" id="capacity" name="capacity" placeholder="请输入区域容量.." required="">
+        <button class="btn btn-primary" id="add-btn">添加</button>
     </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">添加</button>
-    </div>
-</form>
+</div>
+
+@section Scripts
+{
+    <script>
+        $("#add-btn").click(function() {
+            $.post({
+                url: "/Region/AddRegion",
+                data: {
+                    name: $("#name").val()
+                },
+                success: function(res) {
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.href = "@Url.Action("Index")";
+                    },1500);
+                }
+            });
+        });
+    </script>
+}

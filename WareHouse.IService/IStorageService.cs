@@ -25,11 +25,11 @@ namespace WareHouse.Service.Interface
 
         Storage Find(int id);
 
-        bool Add(Storage storage);
+        int Add(Storage storage);
 
         bool Delete(int id);
 
-        bool Update(Storage storage);
+        int Update(Storage storage);
 
         bool AddNewRegion(GetRegionDto getRegionDto);
     }

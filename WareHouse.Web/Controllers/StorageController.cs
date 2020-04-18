@@ -56,15 +56,15 @@ namespace WareHouse.Web.Controllers
             return Json(_storageService.Find(id));
         }
 
-        public IActionResult AddStorage(Storage storage)
+        public IAjaxResult AddStorage(Storage storage)
         {
-            if (_storageService.Add(storage))
+            switch (_storageService.Add(storage))
             {
-                return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                return Json("添加失败");
+                case 0: return Success("添加成功");
+                case 1: return Error("添加失败");
+                case 2: return Error("改名字已存在，请更换名字后重新添加");
+                case 3: return Error("请完整填写信息");
+                default: return Error("请求失败");
             }
         }
 
@@ -80,21 +80,17 @@ namespace WareHouse.Web.Controllers
             }
         }
 
-        public IActionResult UpdateStorage(Storage storage)
+        public IAjaxResult UpdateStorage(Storage storage)
         {
-            if (_storageService.Update(storage))
+            switch (_storageService.Update(storage))
             {
-                return RedirectToAction(nameof(Index));
+                case 0: return Success("修改成功");
+                case 1: return Error("修改失败");
+                case 2: return Error("遇到未知错误");
+                case 3: return Error("该名称已存在，请更换后重新修改");
+                case 4: return Error("ID不合法");
+                default: return Error("请求失败");
             }
-            else
-            {
-                return Json("修改失败");
-            }
-        }
-
-        public IActionResult Choose()
-        {
-            return View();
         }
 
         public IActionResult GetAllRegion()
@@ -116,6 +112,23 @@ namespace WareHouse.Web.Controllers
             else
             {
                 return Error("添加失败");
+            }
+        }
+
+        public IAjaxResult FindStorageRegion(int id)
+        {
+            return Success(_storageRegionService.FindStorageRegionModel(id));
+        }
+
+        public IAjaxResult UpdateStorageRegion(GetStorageRegionDto getStorageRegionDto)
+        {
+            if (_storageRegionService.Update(getStorageRegionDto))
+            {
+                return Success("修改成功");
+            }
+            else
+            {
+                return Error("修改失败");
             }
         }
 

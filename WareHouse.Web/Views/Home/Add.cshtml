@@ -62,7 +62,11 @@
                 url: '/Home/AddUser',
                 data: data,
                 success: function (res) {
-                    window.location.href = "@Url.Action("Index")";
+                    $.message("添加成功，即将跳转到首页");
+                    setTimeout(function() {
+                        window.location.href = "@Url.Action("Index")";
+                    },2000);
+
                 }
             });
         });

@@ -18,10 +18,5 @@ namespace WareHouse.Entity
         /// 区域名称
         /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// 区域容量
-        /// </summary>
-        public int Capacity { get; set; }
     }
 }

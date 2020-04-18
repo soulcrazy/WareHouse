@@ -38,9 +38,6 @@
                     field: "name",
                     title: "区域名称"
                 }, {
-                    field: "capacity",
-                    title: "区域容量"
-                }, {
                     field: "id",
                     title: "操作",
                     formatter: function(value, row, index) {
@@ -65,8 +62,11 @@
                 data: {
                     id:id
                 },
-                success: function() {
-                    window.location.href = "@Url.Action("Index")";
+                success: function (res) {
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.href = "@Url.Action("Index")";
+                    },1000);
                 }
             });
         }

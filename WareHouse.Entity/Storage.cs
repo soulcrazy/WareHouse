@@ -23,10 +23,5 @@ namespace WareHouse.Entity
         /// 仓库地址
         /// </summary>
         public string Address { get; set; }
-
-        /// <summary>
-        /// 仓库容量
-        /// </summary>
-        public int Capacity { get; set; }
     }
 }

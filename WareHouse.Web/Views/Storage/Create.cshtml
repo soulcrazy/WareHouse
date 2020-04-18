@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="@Url.Action("AddStorage")" method="post">
+<div class="col-lg-3">
     <div class="form-group">
         <label for="name">名称</label>
         <input class="form-control" type="text" id="name" name="name" placeholder="请输入仓库名称.." required="">
@@ -13,10 +13,27 @@
         <input class="form-control" type="text" id="address" name="address" placeholder="请输入仓库地址.." required="">
     </div>
     <div class="form-group">
-        <label for="capacity">容量</label>
-        <input class="form-control" type="number" id="capacity" name="capacity" placeholder="请输入仓库容量.." required="">
+        <button class="btn btn-primary" id="add-btn">添加</button>
     </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">添加</button>
-    </div>
-</form>
+</div>
+@section Scripts
+{
+    <script>
+        $("#add-btn").click(function () {
+            var data = {
+                name: $("#name").val(),
+                address: $("#address").val()
+            }
+            $.post({
+                url: "@Url.Action("AddStorage")",
+                data: data,
+                success: function(res) {
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.href = "@Url.Action("Index")";
+                    },1500);
+                }
+            });
+        });
+    </script>
+}

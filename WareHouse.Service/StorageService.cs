@@ -57,14 +57,18 @@ namespace WareHouse.Service
             return _repository.Find(id);
         }
 
-        public bool Add(Storage storage)
+        public int Add(Storage storage)
         {
+            if (string.IsNullOrEmpty(storage.Name) || string.IsNullOrEmpty(storage.Address))
+            {
+                return 3;
+            }
             if (_repository.Select(c => c.Name == storage.Name).Count == 1)
             {
-                return false;
+                return 2;
             }
             _repository.Add(storage);
-            return _unitOfWork.Commit() > 0;
+            return _unitOfWork.Commit() > 0 ? 0 : 1;
         }
 
         public bool Delete(int id)
@@ -85,53 +89,47 @@ namespace WareHouse.Service
             return _unitOfWork.Commit() > 0;
         }
 
-        public bool Update(Storage storage)
+        public int Update(Storage storage)
         {
             if (storage.Id <= 0)
             {
-                return false;
+                return 4;
             }
 
             if (_repository.Select(c => c.Name == storage.Name).Count > 0)
             {
-                return false;
+                return 3;
             }
 
             Storage tempStorage = _repository.Find(storage.Id);
             if (tempStorage == null)
             {
-                return false;
+                return 2;
             }
 
             tempStorage.Name = storage.Name;
             tempStorage.Address = storage.Address;
-            tempStorage.Capacity = storage.Capacity;
             _repository.Update(tempStorage);
-            return _unitOfWork.Commit() > 0;
+            return _unitOfWork.Commit() > 0 ? 0 : 1;
         }
 
         public bool AddNewRegion(GetRegionDto getRegionDto)
         {
-            Region region = new Region()
+            if (_regionService.Find(c => c.Name == getRegionDto.RegionName) == null)
             {
-                Name = getRegionDto.RegionName,
-                Capacity = getRegionDto.RegionCapacity
-            };
-
-            if (!_regionService.Add(region))
-            {
-                return false;
+                if (_regionService.Add(getRegionDto.RegionName) != 0)
+                {
+                    return false;
+                }
             }
 
-            region = _regionRepository.Find(c =>
-                c.Name == getRegionDto.RegionName && c.Capacity == getRegionDto.RegionCapacity);
-
+            Region region = _regionService.Find(c => c.Name == getRegionDto.RegionName);
             StorageRegion storageRegion = new StorageRegion()
             {
+                RegionId = region.Id,
                 StorageId = getRegionDto.StorageId,
-                RegionId = region.Id
+                Capacity = getRegionDto.RegionCapacity
             };
-
             return _storageRegionService.Add(storageRegion);
         }
     }

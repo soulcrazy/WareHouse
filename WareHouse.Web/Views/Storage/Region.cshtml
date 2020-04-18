@@ -52,6 +52,31 @@
 
     <table class="table table-striped table-hover" id="region-table">
     </table>
+    <div class="modal fade update-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="update-title">修改仓库区域</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="update-id" name="update-id" value="" />
+                    <input type="hidden" id="update-regionId" name="update-regionId" value="" />
+                    <div class="form-group">
+                        <label for="name">名称</label>
+                        <input class="form-control" type="text" id="update-name" name="update-name" placeholder="请输入区域名称.." required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="capacity">容量</label>
+                        <input class="form-control" type="number" id="update-capacity" name="update-capacity" placeholder="请输入区域容量.." required="">
+                    </div>
+                    <div class="form-group">
+                        <button id="update-btn" class="btn btn-primary">修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts
@@ -82,13 +107,14 @@
                     title: "操作",
                     formatter: function (value, row, index) {
                         var html = '';
+                        html += "<button type='button' onclick='find(" + value + ")' class='btn btn-default' data-toggle='modal' data-target='.update-modal-lg'>修改</button>";
                         html += "<button class='btn btn-default' onclick='del(" + value + ")'>删除</button>";
                         return html;
                     }
                 }
             ],
             responseHandler: function (res) {
-                console.log(res);
+                //console.log(res);
                 //console.log(typeof res);
                 return res.region;
             }
@@ -128,6 +154,22 @@
             });
         }
 
+        function find(id) {
+            $.get({
+                url: "/Storage/FindStorageRegion",
+                data: {
+                    id: id
+                },
+                success: function (res) {
+                    $("#update-id").val(id);
+                    $("#update-regionId").val(res.data.regionId);
+                    $("#update-name").val(res.data.regionName);
+                    $("#update-capacity").val(res.data.capacity);
+
+                }
+            });
+        }
+
         $('#choose-table').bootstrapTable({
             method: 'get',
             url: "/Storage/GetAllRegion", //请求路径
@@ -145,9 +187,6 @@
                 }, {
                     field: "name",
                     title: "区域名称"
-                }, {
-                    field: "capacity",
-                    title: "区域容量"
                 }, {
                     field: "id",
                     title: "操作",
@@ -168,11 +207,33 @@
                 regionName: $("#name").val(),
                 regionCapacity: $("#capacity").val()
             };
-            console.log(data);
             $.post({
                 url: '@Url.Action("AddNewRegion")',
                 data: data,
+                success: function (res) {
+                    $.message(res.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 1500);
+                }
+            });
+        });
+
+        $("#update-btn").click(function() {
+            var data = {
+                id: $("#update-id").val(),
+                regionId: $("#update-regionId").val(),
+                regionName: $("#update-name").val(),
+                capacity: $("#update-capacity").val()
+            };
+            $.post({
+                url: "/Storage/UpdateStorageRegion",
+                data: data,
                 success: function(res) {
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.reload();
+                    },1500);
                 }
             });
         });

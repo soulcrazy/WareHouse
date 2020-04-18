@@ -44,15 +44,15 @@ namespace WareHouse.Web.Controllers
             return Success(_regionService.Find(id));
         }
 
-        public IActionResult AddRegion(Region region)
+        public IAjaxResult AddRegion(string name)
         {
-            if (_regionService.Add(region))
+            switch (_regionService.Add(name))
             {
-                return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                return Json("添加失败");
+                case 0: return Success("添加成功");
+                case 1: return Error("添加失败");
+                case 2: return Error("该名字已存在，请更换名字后重新添加");
+                case 3: return Error("区域名称不能为空");
+                default: return Error("请求失败");
             }
         }
 
@@ -68,15 +68,15 @@ namespace WareHouse.Web.Controllers
             }
         }
 
-        public IActionResult UpdateRegion(Region region)
+        public IAjaxResult UpdateRegion(Region region)
         {
-            if (_regionService.Update(region))
+            switch (_regionService.Update(region))
             {
-                return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                return Json("修改失败");
+                case 0: return Success("修改成功");
+                case 1: return Error("修改失败");
+                case 2: return Error("该名称已存在，请更换区域名称后重试");
+                case 3: return Error("区域名称不能为空");
+                default: return Error("请求失败");
             }
         }
     }

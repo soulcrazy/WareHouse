@@ -143,6 +143,9 @@
                 console.log(res);
                 if (res.code === 200) {
                     window.location.href = res.message;
+                    setTimeout(function () {
+                        $.message("欢迎登陆");
+                    }, 2000);
                 } else {
                     $("#captcha").prop("src", "/Login/MixVerifyCode?" + Math.random());
                 }

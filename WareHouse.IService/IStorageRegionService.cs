@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using WareHouse.Core.Data;
+using WareHouse.Dto;
 using WareHouse.Entity;
 using WareHouse.ViewModel;
 
@@ -27,13 +28,15 @@ namespace WareHouse.Service.Interface
 
         StorageRegion Find(int id);
 
+        StorageRegionModel FindStorageRegionModel(int id);
+
         bool Add(StorageRegion storageRegion);
 
         bool Delete(int id);
 
         bool Delete(StorageRegion storageRegion);
 
-        bool Update(StorageRegion storageRegion);
+        bool Update(GetStorageRegionDto getStorageRegionDto);
 
         List<StorageRegion> GetAll(Expression<Func<StorageRegion, bool>> whereExpression);
     }
