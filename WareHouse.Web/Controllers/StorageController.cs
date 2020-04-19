@@ -41,6 +41,11 @@ namespace WareHouse.Web.Controllers
             return View();
         }
 
+        public IActionResult Choose()
+        {
+            return View();
+        }
+
         public IActionResult GetAll()
         {
             return Json(_storageService.GetAll());
@@ -96,6 +101,11 @@ namespace WareHouse.Web.Controllers
         public IActionResult GetAllRegion()
         {
             return Json(_regionService.GetAll());
+        }
+
+        public IAjaxResult GetAllNotAddRegion(int id)
+        {
+            return Success(_regionService.GetAllNotAdd(id));
         }
 
         public IActionResult GetAllStorageRegion(int id)

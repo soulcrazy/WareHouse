@@ -22,6 +22,13 @@ namespace WareHouse.Service.Interface
     {
         List<Region> GetAll();
 
+        /// <summary>
+        /// 获取所有未加入仓库的区域
+        /// </summary>
+        /// <param name="id">仓库ID</param>
+        /// <returns></returns>
+        List<Region> GetAllNotAdd(int id);
+
         IPageResult<Region> GetPageResult(IPager pager);
 
         Region Find(int id);

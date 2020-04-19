@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "选择区域";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-striped table-hover" id="choose-table">
+</table>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myLargeModalLabel">容量</h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="regionId" id="regionId" value="" />
+                <input type="number" name="capacity" id="capacity" value="" placeholder="请填写容量" required="" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="add-btn">添加</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#choose-table').bootstrapTable({
+            method: 'get',
+            url: "/Storage/GetAllNotAddRegion?id=" + GetId(), //请求路径
+            striped: true, //是否显示行间隔色
+            pageNumber: 1, //初始化加载第一页
+            pagination: true, //是否分页
+            sidePagination: 'client', //server:服务器端分页|client：前端分页
+            pageSize: 5, //单页记录数
+            pageList: [5, 10, 20, 30], //可选择单页记录数
+            showRefresh: true, //刷新按钮
+            columns: [
+                {
+                    field: "id",
+                    title: "主键"
+                }, {
+                    field: "name",
+                    title: "区域名称"
+                }, {
+                    field: "id",
+                    title: "操作",
+                    formatter: function (value, row, index) {
+                        $("#regionId").val(value);
+                        var html = '';
+                        html += "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>添加</button>";
+                        return html;
+                    }
+                }
+            ], responseHandler: function (res) {
+                return res.data;
+            }
+        });
+
+        $("#add-btn").click(function () {
+            var data = {
+                regionId: $("#regionId").val(),
+                storageId: GetId(),
+                capacity: $("#capacity").val()
+            };
+            $.post({
+                url: "/Storage/AddStorageRegion",
+                data: data,
+                success: function (res) {
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.href = "@Url.Action("Region")?id="+GetId();
+                    },1000);
+                }
+            });
+        });
+    </script>
+}

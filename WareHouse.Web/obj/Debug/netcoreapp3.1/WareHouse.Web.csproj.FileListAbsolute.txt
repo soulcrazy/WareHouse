@@ -191,3 +191,4 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\NLog.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\NLog.config
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\bin\Debug\netcoreapp3.1\ZKWeb.System.Drawing.dll
+D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Storage\Choose.cshtml.g.cs
