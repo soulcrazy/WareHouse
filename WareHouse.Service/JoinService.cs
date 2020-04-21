@@ -13,7 +13,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using WareHouse.Core.Data;
+using WareHouse.Core.Exceptions;
 using WareHouse.Dto;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
@@ -27,9 +27,9 @@ namespace WareHouse.Service
         private readonly IGoodsService _goodsService;
         private readonly IGoodsTypeService _goodsTypeService;
         private readonly IUsersService _usersService;
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IRegionService _regionService;
-        private readonly IRepository<GoodsStorage, int> _goodsStorage;
+        private readonly IGoodsStorageService _goodsStorageService;
+        private readonly IStorageRegionService _storageRegionService;
 
         public JoinService(IServiceProvider serviceProvider)
         {
@@ -37,9 +37,9 @@ namespace WareHouse.Service
             _goodsService = serviceProvider.GetRequiredService<IGoodsService>();
             _goodsTypeService = serviceProvider.GetRequiredService<IGoodsTypeService>();
             _usersService = serviceProvider.GetRequiredService<IUsersService>();
-            _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
             _regionService = serviceProvider.GetRequiredService<IRegionService>();
-            _goodsStorage = serviceProvider.GetRequiredService<IRepository<GoodsStorage, int>>();
+            _goodsStorageService = serviceProvider.GetRequiredService<IGoodsStorageService>();
+            _storageRegionService = serviceProvider.GetRequiredService<IStorageRegionService>();
         }
 
         public string Get()
@@ -58,7 +58,7 @@ namespace WareHouse.Service
             return joinModel;
         }
 
-        public bool Join(GetJoinDto getJoinDto)
+        public int Join(GetJoinDto getJoinDto)
         {
             Goods goods = new Goods()
             {
@@ -72,9 +72,21 @@ namespace WareHouse.Service
             _goodsService.Add(goods);
             int goodsId = _goodsService.GetId(goods);
 
-            if (_goodsStorage.Find(c => c.GoodsId == goodsId && c.RegionId == getJoinDto.RegionId && c.StorageId == getJoinDto.StorageId && c.State == 0) != null)
+            if (_goodsStorageService.Find(c => c.GoodsId == goodsId && c.RegionId == getJoinDto.RegionId && c.StorageId == getJoinDto.StorageId && c.State == 0) != null)
             {
-                return false;
+                return 3;
+            }
+
+            StorageRegion storageRegion = new StorageRegion()
+            {
+                StorageId = getJoinDto.StorageId,
+                RegionId = getJoinDto.RegionId
+            };
+
+            //判断仓库中的货物数量是否超出最大容量
+            if (_goodsStorageService.GetCountByStorageRegion(storageRegion) >= _storageRegionService.Find(c => c.StorageId == getJoinDto.StorageId && c.RegionId == getJoinDto.RegionId).Capacity)
+            {
+                return 2;
             }
 
             GoodsStorage goodsStorage = new GoodsStorage()
@@ -85,14 +97,13 @@ namespace WareHouse.Service
                 State = 0
             };
 
-            _goodsStorage.Add(goodsStorage);
-            return _unitOfWork.Commit() > 0;
+            return _goodsStorageService.Add(goodsStorage) ? 0 : 1;
         }
 
         public List<GoodsStorageModel> GetAll(int state)
         {
             List<GoodsStorageModel> goodsStorageModels = new List<GoodsStorageModel>();
-            List<GoodsStorage> goodsStorageList = _goodsStorage.Select(c => c.State == state);
+            List<GoodsStorage> goodsStorageList = _goodsStorageService.GetAll(c => c.State == state);
             foreach (var goodsStorage in goodsStorageList)
             {
                 GoodsStorageModel tempGoodsStorageModel = new GoodsStorageModel
@@ -112,7 +123,7 @@ namespace WareHouse.Service
         public List<GoodsStorageModel> GetAll()
         {
             List<GoodsStorageModel> goodsStorageModels = new List<GoodsStorageModel>();
-            List<GoodsStorage> goodsStorageList = _goodsStorage.Select(c => true);
+            List<GoodsStorage> goodsStorageList = _goodsStorageService.GetAll();
             foreach (var goodsStorage in goodsStorageList)
             {
                 GoodsStorageModel tempGoodsStorageModel = new GoodsStorageModel
@@ -132,7 +143,7 @@ namespace WareHouse.Service
 
         public GoodsStorageDetailModel Find(int id)
         {
-            GoodsStorage goodsStorage = _goodsStorage.Find(id);
+            GoodsStorage goodsStorage = _goodsStorageService.Find(id);
             Goods goods = _goodsService.Find(goodsStorage.GoodsId);
             GoodsStorageDetailModel goodsStorageDetailModel = new GoodsStorageDetailModel()
             {
@@ -153,7 +164,7 @@ namespace WareHouse.Service
             return goodsStorageDetailModel;
         }
 
-        public bool Update(GetGoodsStorageDetailDto getGoodsStorageDetailDto)
+        public int Update(GetGoodsStorageDetailDto getGoodsStorageDetailDto)
         {
             Goods goods = new Goods()
             {
@@ -165,15 +176,25 @@ namespace WareHouse.Service
                 Remarks = getGoodsStorageDetailDto.GoodsRemarks,
                 IsWarehousing = 1
             };
-            _goodsService.Update(goods);
+            if (!_goodsService.Update(goods))
+            {
+                throw new BusinessException("修改货物信息失败");
+            }
 
-            GoodsStorage goodsStorage = _goodsStorage.Find(getGoodsStorageDetailDto.GoodsStorageId);
+            StorageRegion storageRegion = new StorageRegion()
+            {
+                StorageId = getGoodsStorageDetailDto.StorageId,
+                RegionId = getGoodsStorageDetailDto.RegionId
+            };
+            if (_goodsStorageService.GetCountByStorageRegion(storageRegion) >= _storageRegionService.Find(c => c.StorageId == getGoodsStorageDetailDto.StorageId && c.RegionId == getGoodsStorageDetailDto.RegionId).Capacity)
+            {
+                return 2;
+            }
+            GoodsStorage goodsStorage = _goodsStorageService.Find(getGoodsStorageDetailDto.GoodsStorageId);
             goodsStorage.GoodsId = getGoodsStorageDetailDto.GoodsId;
             goodsStorage.StorageId = getGoodsStorageDetailDto.StorageId;
             goodsStorage.RegionId = getGoodsStorageDetailDto.RegionId;
-            _goodsStorage.Update(goodsStorage);
-
-            return _unitOfWork.Commit() > 0;
+            return _goodsStorageService.Update(goodsStorage) ? 0 : 1;
         }
 
         //public List<Region> GetRegion()

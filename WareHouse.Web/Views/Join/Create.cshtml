@@ -3,47 +3,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="@Url.Action("Join")" method="post">
-    <div class="form-group">
-        <label for="name">名称</label>
-        <input class="form-control" type="text" id="name" name="name" placeholder="请输入货物名称.." required="">
-    </div>
-    <div class="form-group">
-        <label for="weight">重量</label>
-        <input class="form-control" type="text" id="weight" name="weight" onkeyup="checkInputIntFloat(this);" placeholder="请输入货物重量.." required="">
-    </div>
-    <div class="form-group">
-        <label for="typeId">用户</label>
-        <select class="form-control" id="userId" name="userId" size="1">
-            <option value="0">请选择所属用户</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="typeId">种类</label>
-        <select class="form-control" id="typeId" name="typeId" size="1">
-            <option value="0">请选择种类</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="remarks">备注</label>
-        <input class="form-control" type="text" id="remarks" name="remarks" placeholder="请输入货物备注.." required="">
-    </div>
-    <div class="form-group">
-        <label for="typeId">仓库</label>
-        <select class="form-control" id="storageId" name="storageId" size="1" onchange="getRegion(this.value)">
-            <option value="0">请选择仓库</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="typeId">区域</label>
-        <select class="form-control" id="regionId" name="regionId" size="1">
-            <option value="0">请选择区域</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">添加</button>
-    </div>
-</form>
+<div class="form-group">
+    <label for="name">名称</label>
+    <input class="form-control" type="text" id="name" name="name" placeholder="请输入货物名称.." required="">
+</div>
+<div class="form-group">
+    <label for="weight">重量</label>
+    <input class="form-control" type="text" id="weight" name="weight" onkeyup="checkInputIntFloat(this);" placeholder="请输入货物重量.." required="">
+</div>
+<div class="form-group">
+    <label for="userId">用户</label>
+    <select class="form-control" id="userId" name="userId" size="1">
+        <option value="0">请选择所属用户</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="typeId">种类</label>
+    <select class="form-control" id="typeId" name="typeId" size="1">
+        <option value="0">请选择种类</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="remarks">备注</label>
+    <input class="form-control" type="text" id="remarks" name="remarks" placeholder="请输入货物备注.." required="">
+</div>
+<div class="form-group">
+    <label for="storageId">仓库</label>
+    <select class="form-control" id="storageId" name="storageId" size="1" onchange="getRegion(this.value)">
+        <option value="0">请选择仓库</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="regionId">区域</label>
+    <select class="form-control" id="regionId" name="regionId" size="1">
+        <option value="0">请选择区域</option>
+    </select>
+</div>
+<div class="form-group">
+    <button id="add-btn" class="btn btn-primary" type="submit">添加</button>
+</div>
 
 @section Scripts
 {
@@ -103,5 +101,27 @@
                 }
             });
         }
+
+        $("#add-btn").click(function () {
+            var data = {
+                name: $("#name").val(),
+                weight: $("#weight").val(),
+                userId: $("#userId").val(),
+                typeId: $("#typeId").val(),
+                remarks: $("#remarks").val(),
+                storageId: $("#storageId").val(),
+                regionId: $("#regionId").val()
+            };
+            $.post({
+                url: "@Url.Action("Join")",
+                data: data,
+                success: function(res) {
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.href = "@Url.Action("Index")";
+                    },1000);
+                }
+            });
+        });
     </script>
 }

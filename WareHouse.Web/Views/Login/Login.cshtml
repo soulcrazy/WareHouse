@@ -97,7 +97,11 @@
                 </div>
             </div>
         </div>
+        <div style="position: fixed; bottom: 0px;right: 0px">
+            <a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">桂ICP备20002354号</a>
+        </div>
     </div>
+
     <script type="text/javascript" src="~/js/jquery.min.js"></script>
     <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jconfirm/jquery-confirm.min.js"></script>
@@ -140,12 +144,8 @@
             url: '/Login/CheckLogin',
             data: data,
             success: function (res) {
-                console.log(res);
                 if (res.code === 200) {
                     window.location.href = res.message;
-                    setTimeout(function () {
-                        $.message("欢迎登陆");
-                    }, 2000);
                 } else {
                     $("#captcha").prop("src", "/Login/MixVerifyCode?" + Math.random());
                 }

@@ -34,6 +34,9 @@ namespace WareHouse.Dto
         /// </summary>
         public int TypeId { get; set; }
 
+        /// <summary>
+        /// 货物备注
+        /// </summary>
         public string Remarks { get; set; }
 
         /// <summary>

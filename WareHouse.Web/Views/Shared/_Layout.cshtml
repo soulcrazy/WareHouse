@@ -82,6 +82,9 @@
                             </li>
                         </ul>
                     </nav>
+                    <div style="position: fixed; bottom: 0px;left: 0px">
+                        <a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">桂ICP备20002354号</a>
+                    </div>
                 </div>
             </aside>
             <!--End 左侧导航-->
@@ -244,7 +247,6 @@
             <!--End 头部信息-->
             <!--页面主要内容-->
             <main class="lyear-layout-content">
-
                 <div class="container-fluid">
                     @RenderBody()
                 </div>
@@ -255,7 +257,6 @@
     <link href="~/js/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
     <script src="~/js/bootstrap-table/bootstrap-table.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/locale/bootstrap-table-zh-CN.min.js"></script>
-
     <script>
     $.ajax({
         url: "/Menu/GetMenuTreeByRoleId",
@@ -264,7 +265,6 @@
         },
         type: "get",
         success: function(res) {
-            //console.log(res);
             var html = "";
             for (var i = 0; i < res.data.length; i++) {
                 html += "<li class='nav-item nav-item-has-subnav'><a href='javascript:void(0)'><i class='" + res.data[i].icon + "'></i> " + res.data[i].name + "</a>";

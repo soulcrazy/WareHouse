@@ -21,7 +21,7 @@ namespace WareHouse.Service.Interface
     {
         JoinModel GetJoinModel();
 
-        bool Join(GetJoinDto getJoinDto);
+        int Join(GetJoinDto getJoinDto);
 
         List<GoodsStorageModel> GetAll(int state);
 
@@ -29,6 +29,6 @@ namespace WareHouse.Service.Interface
 
         GoodsStorageDetailModel Find(int id);
 
-        bool Update(GetGoodsStorageDetailDto getGoodsStorageDetailDto);
+        int Update(GetGoodsStorageDetailDto getGoodsStorageDetailDto);
     }
 }

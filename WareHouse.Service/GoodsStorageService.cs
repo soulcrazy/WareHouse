@@ -13,6 +13,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
@@ -86,9 +87,24 @@ namespace WareHouse.Service
             return _repository.Select(c => true);
         }
 
+        public List<GoodsStorage> GetAll(Expression<Func<GoodsStorage, bool>> whereExpression)
+        {
+            return _repository.Select(whereExpression);
+        }
+
         public IPageResult<GoodsStorage> GetPages(IPager pager)
         {
             return _repository.Select(pager, c => true, c => c.Id);
+        }
+
+        public int GetCountByStorageRegion(StorageRegion storageRegion)
+        {
+            return _repository.Select(c => c.StorageId == storageRegion.StorageId && c.RegionId == storageRegion.RegionId && c.State == 0).Count;
+        }
+
+        public GoodsStorage Find(Expression<Func<GoodsStorage, bool>> whereExpression)
+        {
+            return _repository.Find(whereExpression);
         }
     }
 }

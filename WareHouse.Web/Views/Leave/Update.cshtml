@@ -3,49 +3,47 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="@Url.Action("UpdateDetail")" method="post">
-    <input type="hidden" name="goodsId" id="goodsId" value="" />
-    <input type="hidden" name="goodsStorageId" id="goodsStorageId" value="" />
-    <div class="form-group">
-        <label for="goodsName">名称</label>
-        <input class="form-control" type="text" id="goodsName" name="goodsName" placeholder="请输入货物名称.." required="">
-    </div>
-    <div class="form-group">
-        <label for="weight">重量</label>
-        <input class="form-control" type="text" id="weight" name="weight" onkeyup="checkInputIntFloat(this);" placeholder="请输入货物重量.." required="">
-    </div>
-    <div class="form-group">
-        <label for="typeId">用户</label>
-        <select class="form-control" id="userId" name="userId" size="1">
-            <option value="0">请选择所属用户</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="typeId">种类</label>
-        <select class="form-control" id="typeId" name="typeId" size="1">
-            <option value="0">请选择种类</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="goodsRemarks">备注</label>
-        <input class="form-control" type="text" id="goodsRemarks" name="goodsRemarks" placeholder="请输入货物备注.." required="">
-    </div>
-    <div class="form-group">
-        <label for="typeId">仓库</label>
-        <select class="form-control" id="storageId" name="storageId" size="1" onchange="getRegion(this.value)">
-            <option value="0">请选择仓库</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="typeId">区域</label>
-        <select class="form-control" id="regionId" name="regionId" size="1">
-            <option value="0">请选择区域</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">修改</button>
-    </div>
-</form>
+<input type="hidden" name="goodsId" id="goodsId" value="" />
+<input type="hidden" name="goodsStorageId" id="goodsStorageId" value="" />
+<div class="form-group">
+    <label for="goodsName">名称</label>
+    <input class="form-control" type="text" id="goodsName" name="goodsName" placeholder="请输入货物名称.." required="">
+</div>
+<div class="form-group">
+    <label for="weight">重量</label>
+    <input class="form-control" type="text" id="weight" name="weight" onkeyup="checkInputIntFloat(this);" placeholder="请输入货物重量.." required="">
+</div>
+<div class="form-group">
+    <label for="userId">用户</label>
+    <select class="form-control" id="userId" name="userId" size="1">
+        <option value="0">请选择所属用户</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="typeId">种类</label>
+    <select class="form-control" id="typeId" name="typeId" size="1">
+        <option value="0">请选择种类</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="goodsRemarks">备注</label>
+    <input class="form-control" type="text" id="goodsRemarks" name="goodsRemarks" placeholder="请输入货物备注.." required="">
+</div>
+<div class="form-group">
+    <label for="typeId">仓库</label>
+    <select class="form-control" id="storageId" name="storageId" size="1" onchange="getRegion(this.value)">
+        <option value="0">请选择仓库</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="typeId">区域</label>
+    <select class="form-control" id="regionId" name="regionId" size="1">
+        <option value="0">请选择区域</option>
+    </select>
+</div>
+<div class="form-group">
+    <button id="update-btn" class="btn btn-primary" type="submit">修改</button>
+</div>
 
 @section Scripts
 {
@@ -148,5 +146,29 @@
                 }
             });
         }
+
+        $("#update-btn").click(function() {
+            var data = {
+                goodsId: $("#goodsId").val(),
+                goodsStorageId: $("#goodsStorageId").val(),
+                goodsName: $("#goodsName").val(),
+                weight: $("#weight").val(),
+                userId: $("#userId").val(),
+                typeId: $("#typeId").val(),
+                goodsRemarks: $("#goodsRemarks").val(),
+                storageId: $("#storageId").val(),
+                regionId: $("#regionId").val()
+            }
+            $.post({
+                url: "@Url.Action("UpdateDetail")",
+                data: data,
+                success: function(res) {
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.href = "@Url.Action("Index")";
+                    },1000);
+                }
+            });
+        });
     </script>
 }

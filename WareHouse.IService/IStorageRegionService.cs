@@ -28,6 +28,8 @@ namespace WareHouse.Service.Interface
 
         StorageRegion Find(int id);
 
+        StorageRegion Find(Expression<Func<StorageRegion, bool>> whereExpression);
+
         StorageRegionModel FindStorageRegionModel(int id);
 
         bool Add(StorageRegion storageRegion);

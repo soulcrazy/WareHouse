@@ -33,15 +33,14 @@ namespace WareHouse.Web.Controllers
             return View();
         }
 
-        public IActionResult UpdateDetail(GetGoodsStorageDetailDto getGoodsStorageDetailDto)
+        public IAjaxResult UpdateDetail(GetGoodsStorageDetailDto getGoodsStorageDetailDto)
         {
-            if (_joinService.Update(getGoodsStorageDetailDto))
+            switch (_joinService.Update(getGoodsStorageDetailDto))
             {
-                return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                return Json("修改失败");
+                case 0: return Success("修改成功");
+                case 1: return Error("修改失败");
+                case 2: return Error("仓库区域已满，修改失败");
+                default: return Error("请求失败");
             }
         }
 

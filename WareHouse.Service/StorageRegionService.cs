@@ -152,5 +152,10 @@ namespace WareHouse.Service
         {
             return _repository.Select(whereExpression);
         }
+
+        public StorageRegion Find(Expression<Func<StorageRegion, bool>> whereExpression)
+        {
+            return _repository.Find(whereExpression);
+        }
     }
 }
