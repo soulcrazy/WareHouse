@@ -42,6 +42,11 @@ namespace WareHouse.Service
             return _repository.Find(id);
         }
 
+        public Users Find(Expression<Func<Users, bool>> whereExpression)
+        {
+            return _repository.Find(whereExpression);
+        }
+
         public bool Add(Users users)
         {
             if (_repository.Select(c => c.Name == users.Name).Count > 0)
@@ -112,6 +117,14 @@ namespace WareHouse.Service
             userInfo.State = users.State;
 
             _repository.Update(userInfo);
+            return _unitOfWork.Commit() > 0;
+        }
+
+        public bool UpdateInfo(Users users)
+        {
+            Users tempUsers = _repository.Find(c => c.Name == users.Name);
+            tempUsers.Email = users.Email;
+            _repository.Update(tempUsers);
             return _unitOfWork.Commit() > 0;
         }
 

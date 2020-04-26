@@ -6,4 +6,3 @@ D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.dll
 D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.csproj.CoreCompileInputs.cache
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.csprojAssemblyReference.cache

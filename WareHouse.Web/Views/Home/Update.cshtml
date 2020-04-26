@@ -31,6 +31,13 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="state">是否启用</label><br />
+        <label class="lyear-switch switch-solid switch-info">
+            <input type="checkbox" id="state" name="state" checked="" value="1">
+            <span></span>
+        </label>
+    </div>
+    <div class="form-group">
         <div class="col-md-1 col-md-offset-3">
             <button id="update-btn" class="btn btn-primary" type="submit">修改</button>
         </div>
@@ -39,6 +46,13 @@
 @section Scripts
 {
     <script>
+        $("#state").click(function () {
+            if ($("#state").is(":checked")) {
+                $("#state").val("1");
+            } else {
+                $("#state").val("0");
+            }
+        });
         $.ajax({
             url: "/Role/GetRole",
             data: {},
@@ -60,13 +74,17 @@
                 id: GetId()
             },
             type: 'get',
-            success: function(res) {
-                console.log(res);
+            success: function (res) {
                 $("#id").val(res.id);
                 $("#name").val(res.name);
                 $("#pwd").val(res.pwd);
                 $("#email").val(res.email);
                 $("#roleId").val(res.roleId);
+                if (res.state === 1) {
+                    $("#state").prop("checked", true);
+                } else {
+                    $("#state").prop("checked", false);
+                }
             }
         });
 
@@ -76,9 +94,9 @@
                 name: $("#name").val(),
                 pwd: $("#pwd").val(),
                 email: $("#email").val(),
-                roleId: $("#roleId").val()
+                roleId: $("#roleId").val(),
+                state: $("#state").val()
             }
-            //console.log(data);
             $.post({
                 url: '/Home/UpdateUser',
                 data: data,

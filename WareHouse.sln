@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Entity", "WareHou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Dto", "WareHouse.Dto\WareHouse.Dto.csproj", "{9889E971-3BF2-437C-9826-CF7D6DF75B9A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Api", "WareHouse.Api\WareHouse.Api.csproj", "{59E6CCD3-128E-4005-8843-B2E8DBAF433C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WareHouse.Service.Interface", "WareHouse.IService\WareHouse.Service.Interface.csproj", "{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}"
 EndProject
 Global
@@ -49,10 +47,6 @@ Global
 		{9889E971-3BF2-437C-9826-CF7D6DF75B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9889E971-3BF2-437C-9826-CF7D6DF75B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9889E971-3BF2-437C-9826-CF7D6DF75B9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59E6CCD3-128E-4005-8843-B2E8DBAF433C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E96D3D45-E6C7-44FB-83EA-003381F0BDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using WareHouse.Core.Data;
@@ -22,6 +23,12 @@ namespace WareHouse.Web.Controllers
 
         public IActionResult EditPwd()
         {
+            return View();
+        }
+
+        public IActionResult Information()
+        {
+            ViewBag.UserName = HttpContext.Session.GetString("userName");
             return View();
         }
 
@@ -68,6 +75,11 @@ namespace WareHouse.Web.Controllers
             return Json(_usersService.Find(id));
         }
 
+        public IAjaxResult FindUserByName(string name)
+        {
+            return Success(_usersService.Find(c => c.Name == name));
+        }
+
         [HttpPost]
         public IAjaxResult AddUser(Users users)
         {
@@ -98,6 +110,19 @@ namespace WareHouse.Web.Controllers
         public IAjaxResult UpdateUser(Users users)
         {
             if (_usersService.Update(users))
+            {
+                return Success("修改成功");
+            }
+            else
+            {
+                return Error("修改失败");
+            }
+        }
+
+        [HttpPost]
+        public IAjaxResult UpdateInfo(Users users)
+        {
+            if (_usersService.UpdateInfo(users))
             {
                 return Success("修改成功");
             }

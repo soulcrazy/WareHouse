@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="name">用户名</label>
+                        <input type="text" class="form-control" name="name" id="name" value="@ViewBag.UserName" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="请输入正确的邮箱地址" value="" required="">
+                        <small id="emailHelp" class="form-text text-muted">请保证您填写的邮箱地址是正确的。</small>
+                    </div>
+                    <button type="submit" id="update-btn" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $.get({
+            url: "@Url.Action("FindUserByName","Home")",
+            data: {
+                name:$("#name").val()
+            },
+            success: function(res) {
+                $("#email").prop("value",res.data.email);
+            }
+        });
+        $("#update-btn").click(function() {
+            var data = {
+                name: $("#name").val(),
+                email: $("#email").val()
+            };
+            $.post({
+                url: "@Url.Action("UpdateInfo","Home")",
+                data: data,
+                success: function(res) {
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.reload();
+                    },1000);
+                }
+            });
+        });
+    </script>
+}

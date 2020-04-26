@@ -25,6 +25,8 @@ namespace WareHouse.Service.Interface
 
         Users Find(int id);
 
+        Users Find(Expression<Func<Users, bool>> whereExpression);
+
         bool Add(Users users);
 
         bool Delete(int id);
@@ -32,5 +34,7 @@ namespace WareHouse.Service.Interface
         bool Delete(Users users);
 
         bool Update(Users users);
+
+        bool UpdateInfo(Users users);
     }
 }

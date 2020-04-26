@@ -35,10 +35,17 @@ namespace WareHouse.Web.Controllers
             switch (_loginService.CheckLogin(getLoginDto))
             {
                 case 0:
-                    HttpContext.Session.SetString("role", getLoginDto.RoleId.ToString());
+                    int roleId = getLoginDto.RoleId;
+                    HttpContext.Session.SetString("role", roleId.ToString());
                     HttpContext.Session.SetString("userName", getLoginDto.Name);
-                    return Success("/Home/Index");
-
+                    switch (roleId)
+                    {
+                        case 1: return Success("/Home/Index");
+                        case 2: return Success("/Join/Index");
+                        case 3: return Success("/Leave/Index");
+                        case 4: return Success("/Home/Index");
+                        default: throw new BusinessException("遇到未知错误");
+                    }
                 case 1: return Error("用户名或密码错误");
                 case 2: return Error("请填写用户名、密码并选择角色");
                 default: throw new BusinessException("遇到未知错误");
