@@ -13,6 +13,13 @@
 @section Scripts
 {
     <script>
+        $.get({
+            url: "/Home/GetPages",
+            data: {},
+            success: function(res) {
+                console.log(res);
+            }
+        });
         $('#user-table').bootstrapTable({
             //url: '/Home/GetPages',         //请求后台的URL（*）
             //method: 'get',                      //请求方式（*）

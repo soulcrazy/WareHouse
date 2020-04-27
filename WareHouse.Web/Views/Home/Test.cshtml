@@ -12,7 +12,7 @@
 <figure>
     <h3>图片验证码</h3>
     <fieldset>
-        <img id="mixImg" title="数字字母混合验证码" src="/Home/MixVerifyCode" alt="vcode" style="cursor:pointer;" />
+        <img id="mixImg" title="数字字母混合验证码" src="/Login/MixVerifyCode" alt="vcode" style="cursor:pointer;" />
     </fieldset>
     <input type="text" name="code" id="code" value="" />
     <button id="check-btn" class="btn btn-default">校验</button>
@@ -22,26 +22,28 @@
 {
     <script>
         $("#mixImg").click(function () {
-            $("#mixImg").prop("src", "/Home/MixVerifyCode?" + Math.random());
+            $("#mixImg").prop("src", "/Login/MixVerifyCode?" + Math.random());
         });
         $("#check-btn").click(function () {
-            var code = $("#code").val();
-            if (code === "") {
-                $.message("请输入验证码");
-                return 0;
-            }
-            $.post({
-                url: "/Home/CheckCode",
-                data: {
-                    code: code
-                },
-                success: function (res) {
-                    $.message(res.message);
-                },
-                error: function () {
-                    $("#mixImg").prop("src", "/Home/MixVerifyCode?" + Math.random());
-                }
-            });
+            $("#mixImg").trigger('click');
+            //$("#mixImg").prop("src", "/Login/MixVerifyCode?" + Math.random());
+            //var code = $("#code").val();
+            //if (code === "") {
+            //    $.message("请输入验证码");
+            //    return 0;
+            //}
+            //$.post({
+            //    url: "/Home/CheckCode",
+            //    data: {
+            //        code: code
+            //    },
+            //    success: function (res) {
+            //        $.message(res.message);
+            //    },
+            //    error: function () {
+            //        $("#mixImg").prop("src", "/Login/MixVerifyCode?" + Math.random());
+            //    }
+            //});
         });
     </script>
 }

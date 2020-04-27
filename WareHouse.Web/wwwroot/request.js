@@ -37,7 +37,8 @@ $.extend({
             success: function (res) {
                 if (res.code === 500) {
                     $.message(res.message);
-                    return false;
+                    setting.success(res);
+                    return true;
                 } if (res.code === 401) {
                     $.error("未登录");
                     return false;
@@ -53,6 +54,7 @@ $.extend({
                 } else {
                     $.error(res.message);
                 }
+                return false;
             }
         });
     }

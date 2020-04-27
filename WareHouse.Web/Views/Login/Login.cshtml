@@ -63,7 +63,8 @@
         <div class="lyear-login">
             <div class="login-center">
                 <div class="login-header text-center">
-                    <img alt="light year admin" src="~/images/logo-sidebar.png">
+                    <h4>物流企业仓库管理系统</h4>
+                    @*<img alt="light year admin" src="~/images/logo-sidebar.png">*@
                 </div>
                 <div class="form-group has-feedback feedback-left">
                     <input type="text" placeholder="请输入您的用户名" class="form-control" name="name" id="name" required="" />
@@ -81,7 +82,7 @@
                         <option value="3">出库管理员</option>
                         <option value="4">系统管理员</option>
                     </select>
-                    <span class="mdi mdi-lock form-control-feedback" aria-hidden="true"></span>
+                    <span class="mdi mdi-account-settings-variant form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group has-feedback feedback-left row">
                     <div class="col-xs-7">
@@ -89,7 +90,7 @@
                         <span class="mdi mdi-check-all form-control-feedback" aria-hidden="true"></span>
                     </div>
                     <div class="col-xs-5">
-                        <img src="/Login/MixVerifyCode" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src=this.src+'?d='+Math.random();" title="点击刷新" alt="captcha">
+                        <img src="/Login/MixVerifyCode" class="pull-right" id="captcha_img" style="cursor: pointer;" onclick="this.src=this.src+'?d='+Math.random();" title="点击刷新" alt="captcha">
                     </div>
                 </div>
                 <div class="form-group">
@@ -147,11 +148,8 @@
                 if (res.code === 200) {
                     window.location.href = res.message;
                 } else {
-                    $("#captcha").prop("src", "/Login/MixVerifyCode?" + Math.random());
+                    $("#captcha_img").trigger('onclick');
                 }
-            },
-            error: function (res) {
-                $("#captcha").prop("src", "/Login/MixVerifyCode?" + Math.random());
             }
         });
         return 0;
