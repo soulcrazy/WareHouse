@@ -10,3 +10,27 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.ViewModel\obj\Debug\netcor
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csproj.CopyComplete
+D:\project\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.deps.json
+D:\project\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
+D:\project\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
+D:\project\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
+D:\project\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
+D:\project\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csprojAssemblyReference.cache
+D:\project\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csproj.CoreCompileInputs.cache
+D:\project\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.AssemblyInfoInputs.cache
+D:\project\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.AssemblyInfo.cs
+D:\project\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csproj.CopyComplete
+D:\project\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
+D:\project\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.deps.json
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.csproj.CopyComplete
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.ViewModel\obj\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb

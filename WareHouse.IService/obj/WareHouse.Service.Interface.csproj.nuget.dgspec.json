@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {}
   },
   "projects": {
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj",
         "projectName": "WareHouse.Core",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+              "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
               }
             }
           }
@@ -49,6 +49,18 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.0.30, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -92,14 +104,14 @@
         }
       }
     },
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
         "projectName": "WareHouse.Dto",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -148,14 +160,14 @@
         }
       }
     },
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj",
         "projectName": "WareHouse.Entity",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -204,14 +216,14 @@
         }
       }
     },
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
         "projectName": "WareHouse.Service.Interface",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.IService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -231,17 +243,17 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj"
+              "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj"
               },
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj"
+              "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj"
               },
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+              "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
               },
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj"
+              "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj"
               }
             }
           }
@@ -273,14 +285,14 @@
         }
       }
     },
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj",
         "projectName": "WareHouse.ViewModel",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -300,8 +312,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+              "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
               }
             }
           }

@@ -49,6 +49,11 @@ namespace WareHouse.Web.Controllers
             return Json(_usersService.GetUsers());
         }
 
+        public IActionResult GetUserModel()
+        {
+            return Json(_usersService.GetUserModels());
+        }
+
         [HttpPost]
         public IAjaxResult AddUser(Users users)
         {

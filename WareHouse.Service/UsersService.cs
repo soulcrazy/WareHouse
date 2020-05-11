@@ -6,6 +6,7 @@ using WareHouse.Core.Data;
 using WareHouse.Core.Helper;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
+using WareHouse.ViewModel;
 
 namespace WareHouse.Service
 {
@@ -14,12 +15,14 @@ namespace WareHouse.Service
         private readonly IRepository<Users, int> _repository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IGoodsService _goodsService;
+        private readonly IRoleService _roleService;
 
         public UsersService(IServiceProvider serviceProvider)
         {
             _repository = serviceProvider.GetRequiredService<IRepository<Users, int>>();
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
             _goodsService = serviceProvider.GetRequiredService<IGoodsService>();
+            _roleService = serviceProvider.GetRequiredService<IRoleService>();
         }
 
         public List<Users> GetUsers()
@@ -126,6 +129,26 @@ namespace WareHouse.Service
             tempUsers.Email = users.Email;
             _repository.Update(tempUsers);
             return _unitOfWork.Commit() > 0;
+        }
+
+        public List<UserModel> GetUserModels()
+        {
+            List<UserModel> userModels = new List<UserModel>();
+            List<Users> userList = GetUsers();
+            foreach (var user in userList)
+            {
+                UserModel tempModel = new UserModel()
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    Email = user.Email,
+                    RoleName = _roleService.Find(user.RoleId).RoleName,
+                    State = user.State == 0 ? "禁用" : "启用"
+                };
+                userModels.Add(tempModel);
+            }
+
+            return userModels;
         }
 
         public string Get()

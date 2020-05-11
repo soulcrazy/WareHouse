@@ -7,13 +7,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>登录页面</title>
+    <title>注册页面</title>
     <link rel="icon" href="~/favicon.ico" type="image/ico">
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="~/css/style.min.css" rel="stylesheet">
     <style>
-
         .lyear-wrapper {
             position: relative;
         }
@@ -68,26 +67,27 @@
                 </div>
                 <div class="form-group has-feedback feedback-left">
                     <input type="text" placeholder="请输入您的用户名" class="form-control" name="name" id="name" required="" />
-                    <span class="mdi mdi-account form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group has-feedback feedback-left">
                     <input type="password" placeholder="请输入密码" class="form-control" id="pwd" name="pwd" required="" />
-                    <span class="mdi mdi-lock form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback feedback-left">
+                    <input type="password" placeholder="请输入确认密码" class="form-control" id="confirm-password" name="confirm-password" required="" />
+                </div>
+                <div class="form-group has-feedback feedback-left">
+                    <input type="email" placeholder="请输入邮箱" class="form-control" id="email" name="email" required="" />
                 </div>
                 <div class="form-group has-feedback feedback-left">
                     <select class="form-control" id="roleId" name="roleId" size="1">
                         <option value="0">请选择角色</option>
-                        <option value="1">用户</option>
                         <option value="2">入库管理员</option>
                         <option value="3">出库管理员</option>
                         <option value="4">系统管理员</option>
                     </select>
-                    <span class="mdi mdi-account-settings-variant form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group has-feedback feedback-left row">
                     <div class="col-xs-7">
                         <input type="text" id="captcha" name="captcha" class="form-control" placeholder="请输入验证码">
-                        <span class="mdi mdi-check-all form-control-feedback" aria-hidden="true"></span>
                     </div>
                     <div class="col-xs-5">
                         <img src="/Login/MixVerifyCode" class="pull-right" id="captcha_img" style="cursor: pointer;" onclick="this.src=this.src+'?d='+Math.random();" title="点击刷新" alt="captcha">
@@ -95,18 +95,19 @@
                 </div>
                 <div class="form-group">
                     <div class="col-xs-6">
-                        <button class="btn btn-block btn-primary" type="submit" id="login-btn">立即登录</button>
+                        <button class="btn btn-block btn-primary" type="submit" id="register-btn">立即注册</button>
                     </div>
                     <div class="col-xs-6">
-                        <button class="btn btn-block btn btn-secondary" type="submit" id="register-btn">点我注册</button>
+                        <button class="btn btn-block btn-secondary" type="submit" id="login-btn">点我登录</button>
                     </div>
-                </div>
-                <div style="position: fixed; bottom: 0px;right: 0px">
-                    <a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">桂ICP备20002354号</a>
                 </div>
             </div>
         </div>
+        <div style="position: fixed; bottom: 0px;right: 0px">
+            <a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">桂ICP备20002354号</a>
+        </div>
     </div>
+
     <script type="text/javascript" src="~/js/jquery.min.js"></script>
     <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jconfirm/jquery-confirm.min.js"></script>
@@ -117,17 +118,19 @@
 </html>
 
 <script>
-    $("#name").bind('input propertychange', function () {
-        if ($("#name").val() === "admin") {
-            $("#roleId").val("4");
+    $("#register-btn").click(function () {
+        var pwd = $("#pwd").val();
+        var confirm = $("#confirm-password").val();
+        if (pwd !== confirm) {
+            $.error("两次输入的密码不一致，请重新输入");
+            return 0;
         }
-    });
-    $("#login-btn").click(function () {
         var data = {
             name: $("#name").val(),
             pwd: $("#pwd").val(),
             roleId: $("#roleId").val(),
-            captcha: $("#captcha").val()
+            captcha: $("#captcha").val(),
+            email:$("#email").val()
         };
         if (data.name === "") {
             $.error("请输入用户名");
@@ -145,20 +148,28 @@
             $.error("请填写验证码");
             return 0;
         }
+        else if (data.email === "") {
+            $.error("请填写邮箱");
+            return 0;
+        }
         $.post({
-            url: '/Login/CheckLogin',
+            url: '@Url.Action("Register")',
             data: data,
             success: function (res) {
                 if (res.code === 200) {
-                    window.location.href = res.message;
+                    $.message(res.message);
+                    setTimeout(function() {
+                        window.location.href = "@Url.Action("Login")";
+                    },1000);
                 } else {
+                    //$.message(res.message);
                     $("#captcha_img").trigger('onclick');
                 }
             }
         });
         return 0;
     });
-    $("#register-btn").click(function () {
-        window.location.href = "@Url.Action("Regist")";
+    $("#login-btn").click(function() {
+        window.location.href = "@Url.Action("Login")";
     });
 </script>

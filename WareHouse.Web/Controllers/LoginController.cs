@@ -24,6 +24,34 @@ namespace WareHouse.Web.Controllers
             return View();
         }
 
+        public IActionResult Regist()
+        {
+            return View();
+        }
+
+        public IAjaxResult Register(GetLoginDto getLoginDto)
+        {
+            string captcha = HttpContext.GetCookie("captcha");
+            if (captcha != getLoginDto.Captcha)
+            {
+                return Error("验证码填写错误");
+            }
+            switch (_loginService.Register(getLoginDto))
+            {
+                case 0:
+                    return Success("注册成功");
+
+                case 1:
+                    return Error("注册失败");
+
+                case 2:
+                    return Error("用户名已存在");
+
+                default:
+                    throw new BusinessException("出现未知错误");
+            }
+        }
+
         public IAjaxResult CheckLogin(GetLoginDto getLoginDto)
         {
             string captcha = HttpContext.GetCookie("captcha");
@@ -48,6 +76,7 @@ namespace WareHouse.Web.Controllers
                     }
                 case 1: return Error("用户名或密码错误");
                 case 2: return Error("请填写用户名、密码并选择角色");
+                case 3: return Error("该用户被禁用，请联系管理员");
                 default: throw new BusinessException("遇到未知错误");
             }
         }

@@ -12,10 +12,12 @@ namespace WareHouse.Web.Controllers
     public class HomeController : BaseController
     {
         private readonly ILoginService _loginService;
+        private readonly IHomeService _homeService;
 
         public HomeController(IServiceProvider serviceProvider)
         {
             _loginService = serviceProvider.GetRequiredService<ILoginService>();
+            _homeService = serviceProvider.GetRequiredService<IHomeService>();
         }
 
         public IActionResult EditPwd()
@@ -56,11 +58,6 @@ namespace WareHouse.Web.Controllers
             return View();
         }
 
-        public IActionResult Update()
-        {
-            return View();
-        }
-
         public IActionResult TestUnit()
         {
             throw new Exception("这是一个错误");
@@ -69,6 +66,11 @@ namespace WareHouse.Web.Controllers
         public IActionResult Business()
         {
             throw new BusinessException("BusinessException");
+        }
+
+        public IAjaxResult GetHomeModel()
+        {
+            return Success(_homeService.GetHomeModel());
         }
     }
 }

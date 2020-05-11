@@ -6,3 +6,21 @@ D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.dll
 D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.csproj.CoreCompileInputs.cache
+D:\project\WareHouse\WareHouse.Dto\bin\Debug\netcoreapp3.1\WareHouse.Dto.deps.json
+D:\project\WareHouse\WareHouse.Dto\bin\Debug\netcoreapp3.1\WareHouse.Dto.dll
+D:\project\WareHouse\WareHouse.Dto\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb
+D:\project\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.csproj.CoreCompileInputs.cache
+D:\project\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.AssemblyInfoInputs.cache
+D:\project\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.AssemblyInfo.cs
+D:\project\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.dll
+D:\project\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.pdb
+D:\project\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\bin\Debug\netcoreapp3.1\WareHouse.Dto.deps.json
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\bin\Debug\netcoreapp3.1\WareHouse.Dto.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Dto\obj\Debug\netcoreapp3.1\WareHouse.Dto.pdb
