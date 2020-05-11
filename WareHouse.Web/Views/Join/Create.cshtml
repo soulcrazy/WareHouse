@@ -116,10 +116,12 @@
                 url: "@Url.Action("Join")",
                 data: data,
                 success: function(res) {
-                    $.message(res.message);
-                    setTimeout(function() {
-                        window.location.href = "@Url.Action("Index")";
-                    },1000);
+                    if (res.code === 200) {
+                        $.message(res.message);
+                        setTimeout(function() {
+                            window.location.href = "@Url.Action("Index")";
+                        },1000);
+                    }
                 }
             });
         });

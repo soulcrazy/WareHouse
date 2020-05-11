@@ -28,13 +28,15 @@
 @section Scripts
 {
     <script>
-        $.get({
-            url: "@Url.Action("FindUserByName","Home")",
+        $.ajax({
+            url: "@Url.Action("FindUserByName", "User")",
             data: {
-                name:$("#name").val()
+                name: $("#name").val()
             },
-            success: function(res) {
-                $("#email").prop("value",res.data.email);
+            type: "get",
+            success: function (res) {
+                console.log(res);
+                $("#email").prop("value", res.email);
             }
         });
         $("#update-btn").click(function() {
@@ -43,7 +45,7 @@
                 email: $("#email").val()
             };
             $.post({
-                url: "@Url.Action("UpdateInfo","Home")",
+                url: "@Url.Action("UpdateInfo","User")",
                 data: data,
                 success: function(res) {
                     $.message(res.message);

@@ -162,11 +162,13 @@
             $.post({
                 url:"@Url.Action("UpdateDetail")",
                 data: data,
-                success: function(res) {
-                    $.message(res.message);
-                    setTimeout(function () {
-                        window.location.href = "@Url.Action("Index")";
-                    },1000);
+                success: function (res) {
+                    if (res.code===200) {
+                        $.message(res.message);
+                        setTimeout(function () {
+                            window.location.href = "@Url.Action("Index")";
+                        },1000);
+                    }
                 }
             });
         });

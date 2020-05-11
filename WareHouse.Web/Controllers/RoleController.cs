@@ -74,7 +74,7 @@ namespace WareHouse.Web.Controllers
             }
             else
             {
-                return Error("修改失败");
+                return Error("修改失败,请更换角色名称后重试");
             }
         }
 

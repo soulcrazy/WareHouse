@@ -133,11 +133,13 @@
                         roleId: $("#roleId").val(),
                         menuArray: GetArray()
                     },
-                    success: function () {
-                        $.message("修改成功");
-                        setTimeout(function() {
-                            window.location.href = "@Url.Action("Index")";
-                        },2000);
+                    success: function (res) {
+                        if (res.code===200) {
+                            $.message("修改成功");
+                            setTimeout(function() {
+                                window.location.href = "@Url.Action("Index")";
+                            },2000);
+                        }
                     }
                 });
             }

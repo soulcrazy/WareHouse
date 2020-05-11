@@ -57,12 +57,17 @@
         }
         function del(id) {
             $.post({
-                url: '/Storage/DeleteStorage',
+                url: '@Url.Action("DeleteStorage")',
                 data: {
                     id:id
                 },
-                success: function() {
-                    window.location.href = "@Url.Action("Index")";
+                success: function (res) {
+                    if (res.code===200) {
+                        $.message(res.message);
+                        setTimeout(function() {
+                            window.location.href = "@Url.Action("Index")";
+                        },1000);
+                    }
                 }
             });
         }

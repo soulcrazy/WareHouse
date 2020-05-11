@@ -31,7 +31,6 @@
             },
             type: 'post',
             success: function (res) {
-                console.log(res);
                 $("#roleName").val(res.data.roleName);
                 $("#id").val(res.data.id);
             }
@@ -48,8 +47,14 @@
             $.post({
                 url: '/Role/Update',
                 data: data,
-                success: function() {
-                    window.location.href = "@Url.Action("Index")";
+                success: function (res) {
+                    if (res.code === 200) {
+                        $.message("修改成功");
+                        setTimeout(function() {
+                            window.location.href = "@Url.Action("Index")";
+                        },1000);
+                    }
+
                 }
             });
         });

@@ -3,8 +3,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Created</h2>
-
 <div class="form-group">
     <label for="roleName">角色名</label>
     <input class="form-control" type="text" id="roleName" name="roleName" placeholder="请输入角色名.." required="required">
@@ -26,8 +24,13 @@
                 data: {
                     RoleName: $("#roleName").val()
                 },
-                success: function() {
-                    window.location.href = "@Url.Action("Index")";
+                success: function (res) {
+                    if (res.code===200) {
+                        $.message("添加成功");
+                        setTimeout(function() {
+                            window.location.href = "@Url.Action("Index")";
+                        },1000);
+                    }
                 }
             });
         });

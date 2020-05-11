@@ -96,15 +96,15 @@ namespace WareHouse.Service
                 return 4;
             }
 
-            if (_repository.Select(c => c.Name == storage.Name).Count > 0)
-            {
-                return 3;
-            }
-
             Storage tempStorage = _repository.Find(storage.Id);
             if (tempStorage == null)
             {
                 return 2;
+            }
+
+            if (_repository.Select(c => c.Name == storage.Name).Count > 0 && tempStorage.Name != storage.Name)
+            {
+                return 3;
             }
 
             tempStorage.Name = storage.Name;

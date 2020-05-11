@@ -88,6 +88,11 @@ namespace WareHouse.Service
                 return false;
             }
 
+            if (_repository.Select(c => c.RoleName == role.RoleName).Count > 0 && tempRole.RoleName != role.RoleName)
+            {
+                return false;
+            }
+
             tempRole.RoleName = role.RoleName;
             _repository.Update(tempRole);
             return _unitOfWork.Commit() > 0;

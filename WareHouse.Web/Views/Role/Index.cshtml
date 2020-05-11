@@ -53,8 +53,14 @@
                 data: {
                     id:id
                 },
-                success: function() {
-                    window.location.href = "@Url.Action("Index")";
+                success: function (res) {
+                    if (res.code===200) {
+                        $.message("删除成功");
+                        setTimeout(function() {
+                            window.location.href = "@Url.Action("Index")";
+                        },1000);
+                    }
+
                 }
             });
         }
