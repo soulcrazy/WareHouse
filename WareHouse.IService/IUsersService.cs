@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
+using WareHouse.ViewModel;
 
 namespace WareHouse.Service.Interface
 {
@@ -36,5 +37,7 @@ namespace WareHouse.Service.Interface
         bool Update(Users users);
 
         bool UpdateInfo(Users users);
+
+        List<UserModel> GetUserModels();
     }
 }

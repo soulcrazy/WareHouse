@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
       "projectName": "WareHouse.Dto",
-      "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\WareHouse\\WareHouse.Dto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

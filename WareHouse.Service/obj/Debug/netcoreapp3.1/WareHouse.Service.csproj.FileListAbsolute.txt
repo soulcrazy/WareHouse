@@ -23,3 +23,43 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcorea
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.deps.json
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.dll
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.pdb
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Core.dll
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.dll
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Core.pdb
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
+D:\project\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
+D:\project\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.csprojAssemblyReference.cache
+D:\project\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.csproj.CoreCompileInputs.cache
+D:\project\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.AssemblyInfoInputs.cache
+D:\project\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.AssemblyInfo.cs
+D:\project\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.csproj.CopyComplete
+D:\project\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.dll
+D:\project\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.deps.json
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Core.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Core.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.csproj.CopyComplete
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Service\obj\Debug\netcoreapp3.1\WareHouse.Service.pdb

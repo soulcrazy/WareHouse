@@ -40,3 +40,33 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\bin\Debug\netcoreapp3
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.xml
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csproj.CoreCompileInputs.cache
+D:\project\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csprojAssemblyReference.cache
+D:\project\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csproj.CoreCompileInputs.cache
+D:\project\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.AssemblyInfoInputs.cache
+D:\project\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.AssemblyInfo.cs
+D:\project\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.dll
+D:\project\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.pdb
+D:\project\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.deps.json
+D:\project\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.runtimeconfig.json
+D:\project\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.runtimeconfig.dev.json
+D:\project\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.dll
+D:\project\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
+D:\project\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
+D:\project\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csproj.CopyComplete
+D:\project\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.genruntimeconfig.cache
+D:\project\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.deps.json
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.runtimeconfig.json
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.runtimeconfig.dev.json
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Core.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.csproj.CopyComplete
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.dll
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.pdb
+C:\Users\Administrator\Desktop\WareHouse\WareHouse.Core\obj\Debug\netcoreapp3.1\WareHouse.Core.genruntimeconfig.cache

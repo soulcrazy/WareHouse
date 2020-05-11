@@ -10,7 +10,6 @@ namespace WareHouse.Service
     public class RoleService : IRoleService
     {
         private readonly IRepository<Role, int> _repository;
-
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRoleMenuService _roleMenuService;
         private readonly IUsersService _usersService;
