@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N86UyCr2WezT8I2wJYXGB9J9eIdVztgC5AYNKgo115EKUNoD+QwBZ8ccwbF4Y7G4bJtZ1YpPZI4BtClsMIuoLw==",
+  "dgSpecHash": "UUVySzuSfwvbeormqH2o5w28ClP6I+L4OxAmtFqNK+H+JHPN3mgbC+6LKn1+QHzqs88MoxcxsPSzaeiawcdH2w==",
   "success": true,
-  "projectFilePath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
+  "projectFilePath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\dapper\\2.0.30\\dapper.2.0.30.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",

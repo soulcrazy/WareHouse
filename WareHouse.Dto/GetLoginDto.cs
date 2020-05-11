@@ -33,5 +33,7 @@ namespace WareHouse.Dto
         /// 验证码
         /// </summary>
         public string Captcha { get; set; }
+
+        public string Email { get; set; }
     }
 }

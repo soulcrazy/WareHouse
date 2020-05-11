@@ -10,5 +10,7 @@ namespace WareHouse.Service.Interface
         int CheckLogin(GetLoginDto getLoginDto);
 
         bool UpdatePwd(GetPwdDto getPwdDto);
+
+        int Register(GetLoginDto getLoginDto);
     }
 }

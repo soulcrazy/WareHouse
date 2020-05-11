@@ -8696,11 +8696,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Web\\WareHouse.Web.csproj",
+      "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Web\\WareHouse.Web.csproj",
       "projectName": "WareHouse.Web",
-      "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Web\\WareHouse.Web.csproj",
+      "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Web\\WareHouse.Web.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Web\\obj\\",
+      "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8720,23 +8720,23 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj": {
-              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj"
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj"
             },
-            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
-              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Dto\\WareHouse.Dto.csproj"
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj"
             },
-            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
-              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
             },
-            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {
-              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj"
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj"
             },
-            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Service\\WareHouse.Service.csproj": {
-              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Service\\WareHouse.Service.csproj"
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Service\\WareHouse.Service.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Service\\WareHouse.Service.csproj"
             },
-            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
-              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj"
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj"
             }
           }
         }

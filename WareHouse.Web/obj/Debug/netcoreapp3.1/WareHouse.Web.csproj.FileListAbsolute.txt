@@ -196,3 +196,4 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Update.cshtml.g.cs
+D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Web\obj\Debug\netcoreapp3.1\Razor\Views\Login\Regist.cshtml.g.cs

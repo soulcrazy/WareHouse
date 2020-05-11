@@ -81,5 +81,33 @@ namespace WareHouse.Web.Controllers
             bitmap.Save(stream, ImageFormat.Gif);
             return File(stream.ToArray(), "image/gif");
         }
+
+        public IActionResult Regist()
+        {
+            return View();
+        }
+
+        public IAjaxResult Register(GetLoginDto getLoginDto)
+        {
+            string captcha = HttpContext.GetCookie("captcha");
+            if (captcha != getLoginDto.Captcha)
+            {
+                return Error("验证码填写错误");
+            }
+            switch (_loginService.Register(getLoginDto))
+            {
+                case 0:
+                    return Success("注册成功");
+
+                case 1:
+                    return Error("注册失败");
+
+                case 2:
+                    return Error("用户名已存在");
+
+                default:
+                    throw new BusinessException("出现未知错误");
+            }
+        }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9pbGu7nb+LdO7dNX6CFLuDhgXdwYa+FowNjQxE1xvSV9ssg8YNQQFqtq/uxxSvk6qgu1lnaQf49wS41CIX5i6A==",
+  "dgSpecHash": "BrOkru0xeUUzQMWEsLPpFFLwCGuV0Haw9MyMpJxgb7jwzH/Pa61wotKRRs0SG5HDZouQs2VvpsBwsGRbFcjZVw==",
   "success": true,
-  "projectFilePath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Web\\WareHouse.Web.csproj",
+  "projectFilePath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Web\\WareHouse.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\dapper\\2.0.30\\dapper.2.0.30.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

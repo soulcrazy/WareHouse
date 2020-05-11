@@ -3184,11 +3184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj",
+      "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj",
       "projectName": "WareHouse.Core",
-      "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\WareHouse.Core.csproj",
+      "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Core\\obj\\",
+      "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3208,8 +3208,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
-              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\Warehouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+            "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+              "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
             }
           }
         }

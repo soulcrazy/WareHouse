@@ -12,11 +12,13 @@ namespace WareHouse.Service
     {
         private readonly IRepository<Users, int> _repository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IUsersService _usersService;
 
         public LoginService(IServiceProvider serviceProvider)
         {
             _repository = serviceProvider.GetRequiredService<IRepository<Users, int>>();
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
+            _usersService = serviceProvider.GetRequiredService<IUsersService>();
         }
 
         public string Get()
@@ -71,6 +73,22 @@ namespace WareHouse.Service
                 _repository.Update(users);
                 return _unitOfWork.Commit() > 0;
             }
+        }
+
+        public int Register(GetLoginDto getLoginDto)
+        {
+            Users user = new Users()
+            {
+                Name = getLoginDto.Name,
+                Pwd = getLoginDto.Pwd,
+                Email = getLoginDto.Email,
+                RoleId = getLoginDto.RoleId
+            };
+            if (_usersService.Find(c => c.Name == user.Name) != null)
+            {
+                return 2;
+            }
+            return _usersService.Add(user) ? 0 : 1;
         }
     }
 }
