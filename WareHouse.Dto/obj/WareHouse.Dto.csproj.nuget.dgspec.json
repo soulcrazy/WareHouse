@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {}
+    "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {}
   },
   "projects": {
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
+    "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
+        "projectUniqueName": "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
         "projectName": "WareHouse.Dto",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
+        "projectPath": "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\obj\\",
+        "outputPath": "E:\\C#\\WareHouse\\WareHouse.Dto\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -25,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cnblogs.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -56,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

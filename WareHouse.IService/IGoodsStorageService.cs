@@ -24,6 +24,8 @@ namespace WareHouse.Service.Interface
 
         bool Delete(int id);
 
+        bool Delete(GoodsStorage goodsStorage);
+
         bool Update(GoodsStorage goodsStorage);
 
         GoodsStorage Find(int id);

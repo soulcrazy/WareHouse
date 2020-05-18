@@ -13,6 +13,14 @@
 @section Scripts
 {
     <script>
+        $.ajax({
+            url: "@Url.Action("GetAll")",
+            data: {},
+            type: "get",
+            success: function(res) {
+                console.log(res);
+            }
+        });
         $('#user-table').bootstrapTable({
             //url: '/Home/GetPages',         //请求后台的URL（*）
             //method: 'get',                      //请求方式（*）
@@ -41,7 +49,7 @@
             //detailView: false,                   //是否显示父子表
 
             method: 'get',
-            url: "@Url.Action("GetUserModel")", //请求路径
+            url: "@Url.Action("GetAll")", //请求路径
             striped: true, //是否显示行间隔色
             toolbar: '#toolbar',                //工具按钮用哪个容器
             pageNumber: 1, //初始化加载第一页

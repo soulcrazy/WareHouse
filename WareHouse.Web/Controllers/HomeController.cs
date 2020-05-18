@@ -53,11 +53,6 @@ namespace WareHouse.Web.Controllers
             return View();
         }
 
-        public IActionResult Add()
-        {
-            return View();
-        }
-
         public IActionResult TestUnit()
         {
             throw new Exception("这是一个错误");

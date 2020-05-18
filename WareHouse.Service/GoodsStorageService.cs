@@ -56,6 +56,12 @@ namespace WareHouse.Service
             return _unitOfWork.Commit() > 0;
         }
 
+        public bool Delete(GoodsStorage goodsStorage)
+        {
+            _repository.Delete(goodsStorage);
+            return _unitOfWork.Commit() > 0;
+        }
+
         public bool Update(GoodsStorage goodsStorage)
         {
             if (goodsStorage.Id <= 0)

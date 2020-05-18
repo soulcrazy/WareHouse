@@ -46,11 +46,6 @@ namespace WareHouse.Web.Controllers
 
         public IActionResult GetAll()
         {
-            return Json(_usersService.GetUsers());
-        }
-
-        public IActionResult GetUserModel()
-        {
             return Json(_usersService.GetUserModels());
         }
 
@@ -104,6 +99,11 @@ namespace WareHouse.Web.Controllers
             {
                 return Error("修改失败");
             }
+        }
+
+        public IActionResult GetUserModel()
+        {
+            return Json(_usersService.GetUserModels());
         }
     }
 }

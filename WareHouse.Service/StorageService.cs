@@ -23,18 +23,22 @@ namespace WareHouse.Service
     public class StorageService : IStorageService
     {
         private readonly IRepository<Storage, int> _repository;
-        private readonly IRepository<Region, int> _regionRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRegionService _regionService;
         private readonly IStorageRegionService _storageRegionService;
+        private readonly IGoodsStorageService _goodsStorageService;
+        private readonly IRepository<GoodsLeave, int> _leaveRepository;
+        //private readonly ILeaveService _leaveService;
 
         public StorageService(IServiceProvider serviceProvider)
         {
             _repository = serviceProvider.GetRequiredService<IRepository<Storage, int>>();
+            _leaveRepository = serviceProvider.GetRequiredService<IRepository<GoodsLeave, int>>();
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
             _regionService = serviceProvider.GetRequiredService<IRegionService>();
-            _regionRepository = serviceProvider.GetRequiredService<IRepository<Region, int>>();
             _storageRegionService = serviceProvider.GetRequiredService<IStorageRegionService>();
+            _goodsStorageService = serviceProvider.GetRequiredService<IGoodsStorageService>();
+            //_leaveService = serviceProvider.GetRequiredService<ILeaveService>();
         }
 
         public string Get()
@@ -83,6 +87,19 @@ namespace WareHouse.Service
             foreach (var storageRegion in storageRegions)
             {
                 _storageRegionService.Delete(storageRegion);
+            }
+
+            List<GoodsStorage> goodsStorages = _goodsStorageService.GetAll(c => c.StorageId == id);
+            foreach (var goodsStorage in goodsStorages)
+            {
+                _goodsStorageService.Delete(goodsStorage);
+            }
+
+            List<GoodsLeave> goodsLeaves = _leaveRepository.Select(c => c.StorageId == id);
+            foreach (var goodsLeaf in goodsLeaves)
+            {
+                _leaveRepository.Delete(goodsLeaf);
+                _unitOfWork.Commit();
             }
 
             _repository.Delete(storage);

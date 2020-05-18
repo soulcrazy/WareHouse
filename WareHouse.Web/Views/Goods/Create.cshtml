@@ -57,7 +57,7 @@
         });
 
         $.ajax({
-            url: "/Home/GetPages",
+            url: "@Url.Action("GetPages","User")",
             data: {},
             type: "get",
             success: function (res) {

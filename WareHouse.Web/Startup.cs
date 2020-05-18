@@ -1,24 +1,18 @@
-#region
-
-using System.Linq;
-using System.Reflection;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-
+using Microsoft.Extensions.Logging;
+using System.Linq;
+using System.Reflection;
 using WareHouse.Core.Data;
-
-#endregion
+using WareHouse.Core.Middleware;
 
 namespace WareHouse.Web
 {
-
     public class Startup
     {
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -37,22 +31,25 @@ namespace WareHouse.Web
             var baseType = typeof(IBaseService);
 
             Assembly.Load("WareHouse.Service").GetTypes()
-                    .Where(type => type.IsClass && !type.IsAbstract && !type.IsNested && !type.IsSealed)
-                    .Where(type => type.BaseType != null)
-                    .Where(type => type.GetInterface(baseType.FullName) != null)
-                    .ToList().ForEach(t =>
-                     {
-                         var interfaceList = t.GetInterfaces().Where(c => c != baseType);
-
-                         foreach (var inter in interfaceList)
-                         {
-                             services.TryAddScoped(inter, t);
-                         }
-                     });
+                .Where(type => type.IsClass && !type.IsAbstract && !type.IsNested && !type.IsSealed)
+                .Where(type => type.BaseType != null)
+                .Where(type => type.GetInterface(baseType.FullName) != null)
+                .ToList().ForEach(t =>
+                {
+                    var interfaceList = t.GetInterfaces().Where(c => c != baseType);
+                    foreach (var inter in interfaceList)
+                    {
+                        services.TryAddScoped(inter, t);
+                    }
+                });
 
             services.AddSession();
 
-            services.AddDbContext<WareHouseDbContext>();
+            services.AddDbContext<WareHouseDbContext>(c =>
+            {
+                var loggerFactory = new LoggerFactory();
+                loggerFactory.AddProvider(new EFLoggerProvider());
+            });
             services.AddControllersWithViews();
         }
 
@@ -66,15 +63,14 @@ namespace WareHouse.Web
 
             app.UseAuthorization();
 
-            // app.UseMiddleware<WareHouseExceptionHandlerMiddleware>();
+            app.UseMiddleware<WareHouseExceptionHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default",
-                                             "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
-
     }
-
 }

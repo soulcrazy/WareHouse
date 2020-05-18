@@ -44,7 +44,7 @@
             }
         }
         $.ajax({
-            url: "/Home/GetPages",
+            url: "@Url.Action("GetPages","User")",
             data: {},
             type: "get",
             success: function (res) {
@@ -55,7 +55,7 @@
                 }
                 $("#userId").append(html);
                 $.ajax({
-                    url: '/GoodsType/GetAll',
+                    url: '@Url.Action("GetAll","GoodsType")',
                     data: {},
                     type: 'get',
                     success: function (res) {
@@ -66,7 +66,7 @@
                         }
                         $("#typeId").append(html);
                         $.ajax({
-                            url: '/Goods/Find',
+                            url: '@Url.Action("Find","Goods")',
                             data: {
                                 id: GetId()
                             },

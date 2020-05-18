@@ -1,4 +1,4 @@
-﻿
+﻿@using WareHouse.Entity
 @{
     ViewData["Title"] = "后台首页";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,7 +12,7 @@
                         <p class="h6 text-white m-t-0">用户总数</p>
                         <p class="h3 text-white m-b-0" id="userTotal"></p>
                     </div>
-                    <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-currency-cny fa-1-5x"></i></span> </div>
+                    <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-account fa-1-5x"></i></span> </div>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                         <p class="h6 text-white m-t-0">货物总数</p>
                         <p class="h3 text-white m-b-0" id="goodsTotal"></p>
                     </div>
-                    <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-account fa-1-5x"></i></span> </div>
+                    <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-package-variant-closed fa-1-5x"></i></span> </div>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                         <p class="h6 text-white m-t-0">仓库数量</p>
                         <p class="h3 text-white m-b-0" id="storageTotal"></p>
                     </div>
-                    <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-arrow-down-bold fa-1-5x"></i></span> </div>
+                    <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-home-outline fa-1-5x"></i></span> </div>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                         <p class="h6 text-white m-t-0">区域数量</p>
                         <p class="h3 text-white m-b-0" id="regionTotal"></p>
                     </div>
-                    <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-comment-outline fa-1-5x"></i></span> </div>
+                    <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-blackberry fa-1-5x"></i></span> </div>
                 </div>
             </div>
         </div>
@@ -104,20 +104,4 @@
             }
         });
     </script>
-    <script>
-                                                                                                                                                //new Chart($("#chart-pie"), {
-                                                                                                                                                //    type: 'pie',
-                                                                                                                                                //    data: {
-                                                                                                                                                //        labels: ["货物数量", "仓库剩余容量"],
-                                                                                                                                                //        datasets: [{
-                                                                                                                                                //            data: [300, 50],
-                                                                                                                                                //            backgroundColor: ['rgba(54, 162, 235, 1)', 'rgba(255,99,132,1)']
-                                                                                                                                                //        }]
-                                                                                                                                                //    },
-                                                                                                                                                //    options: {
-                                                                                                                                                //        responsive: false
-                                                                                                                                                //    }
-                                                                                                                                                //});
-    </script>
-
 }

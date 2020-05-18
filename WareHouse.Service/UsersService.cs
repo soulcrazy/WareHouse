@@ -15,14 +15,14 @@ namespace WareHouse.Service
         private readonly IRepository<Users, int> _repository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IGoodsService _goodsService;
-        private readonly IRoleService _roleService;
+        private readonly IRepository<Role, int> _roleRepository;
 
         public UsersService(IServiceProvider serviceProvider)
         {
             _repository = serviceProvider.GetRequiredService<IRepository<Users, int>>();
             _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
             _goodsService = serviceProvider.GetRequiredService<IGoodsService>();
-            _roleService = serviceProvider.GetRequiredService<IRoleService>();
+            _roleRepository = serviceProvider.GetRequiredService<IRepository<Role, int>>();
         }
 
         public List<Users> GetUsers()
@@ -137,12 +137,14 @@ namespace WareHouse.Service
             List<Users> userList = GetUsers();
             foreach (var user in userList)
             {
+                int roleId = user.RoleId;
+                string roleName = _roleRepository.Find(c => c.Id == roleId).RoleName;
                 UserModel tempModel = new UserModel()
                 {
                     Id = user.Id,
                     Name = user.Name,
                     Email = user.Email,
-                    RoleName = _roleService.Find(user.RoleId).RoleName,
+                    RoleName = roleName,
                     State = user.State == 0 ? "禁用" : "启用"
                 };
                 userModels.Add(tempModel);

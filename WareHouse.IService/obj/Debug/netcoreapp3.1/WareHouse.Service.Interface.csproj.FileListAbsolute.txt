@@ -21,39 +21,3 @@ D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.IService\obj\Debug\netcore
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.csproj.CopyComplete
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.deps.json
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Core.dll
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Dto.dll
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Core.pdb
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
-D:\project\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
-D:\project\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.csprojAssemblyReference.cache
-D:\project\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.csproj.CoreCompileInputs.cache
-D:\project\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.AssemblyInfoInputs.cache
-D:\project\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.AssemblyInfo.cs
-D:\project\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.csproj.CopyComplete
-D:\project\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
-D:\project\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.deps.json
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Core.dll
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Dto.dll
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.dll
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Core.pdb
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Dto.pdb
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\bin\Debug\netcoreapp3.1\WareHouse.ViewModel.pdb
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.csprojAssemblyReference.cache
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.AssemblyInfoInputs.cache
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.AssemblyInfo.cs
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.csproj.CopyComplete
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.dll
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.IService\obj\Debug\netcoreapp3.1\WareHouse.Service.Interface.pdb

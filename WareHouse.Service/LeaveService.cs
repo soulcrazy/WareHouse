@@ -13,6 +13,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using WareHouse.Core.Data;
 using WareHouse.Entity;
 using WareHouse.Service.Interface;
@@ -72,6 +73,17 @@ namespace WareHouse.Service
 
             _repository.Add(goodsLeave);
             return _unitOfWork.Commit() > 0;
+        }
+
+        public bool Delete(GoodsLeave goodsLeave)
+        {
+            _repository.Delete(goodsLeave);
+            return _unitOfWork.Commit() > 0;
+        }
+
+        public List<GoodsLeave> GetAll(Expression<Func<GoodsLeave, bool>> whereExpression)
+        {
+            return _repository.Select(whereExpression);
         }
 
         public List<GoodsStorageModel> GetAll()

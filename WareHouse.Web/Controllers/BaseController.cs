@@ -10,6 +10,7 @@ namespace WareHouse.Web.Controllers
         public override void OnActionExecuting(ActionExecutingContext context)
         {
 #if DEBUG
+            HttpContext.Session.SetString("userId", "1");
             HttpContext.Session.SetString("role", "4");
             HttpContext.Session.SetString("userName", "admin");
 #endif
@@ -21,6 +22,7 @@ namespace WareHouse.Web.Controllers
             {
                 ViewData["msg"] = context.HttpContext.Session.GetString("userName");
                 ViewData["roleId"] = context.HttpContext.Session.GetString("role");
+                ViewData["userId"] = context.HttpContext.Session.GetString("userId");
             }
         }
 

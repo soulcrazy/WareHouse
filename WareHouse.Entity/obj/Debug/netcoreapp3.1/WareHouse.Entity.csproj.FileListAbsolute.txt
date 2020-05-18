@@ -6,22 +6,4 @@ D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Entity\obj\Debug\netcoreap
 D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.dll
 D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.pdb
 D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.csproj.CoreCompileInputs.cache
-D:\MyProject\OneDrive - OBA GG\C#\Warehouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.csprojAssemblyReference.cache
-D:\project\WareHouse\WareHouse.Entity\bin\Debug\netcoreapp3.1\WareHouse.Entity.deps.json
-D:\project\WareHouse\WareHouse.Entity\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
-D:\project\WareHouse\WareHouse.Entity\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
-D:\project\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.csproj.CoreCompileInputs.cache
-D:\project\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.AssemblyInfoInputs.cache
-D:\project\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.AssemblyInfo.cs
-D:\project\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.dll
-D:\project\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.pdb
-D:\project\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.csprojAssemblyReference.cache
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\bin\Debug\netcoreapp3.1\WareHouse.Entity.deps.json
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\bin\Debug\netcoreapp3.1\WareHouse.Entity.dll
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\bin\Debug\netcoreapp3.1\WareHouse.Entity.pdb
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.csprojAssemblyReference.cache
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.AssemblyInfoInputs.cache
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.AssemblyInfo.cs
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.dll
-C:\Users\Administrator\Desktop\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.pdb
+D:\MyProject\OneDrive - OBA GG\C#\WareHouse\WareHouse.Entity\obj\Debug\netcoreapp3.1\WareHouse.Entity.csprojAssemblyReference.cache

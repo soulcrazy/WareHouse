@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {}
+    "E:\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {}
   },
   "projects": {
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj": {
+    "E:\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj",
+        "projectUniqueName": "E:\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj",
         "projectName": "WareHouse.Core",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj",
+        "projectPath": "E:\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\obj\\",
+        "outputPath": "E:\\C#\\WareHouse\\WareHouse.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -25,14 +22,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cnblogs.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+              "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+                "projectPath": "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
               }
             }
           }
@@ -88,22 +84,19 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
+    "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
+        "projectUniqueName": "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
         "projectName": "WareHouse.Dto",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
+        "projectPath": "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\obj\\",
+        "outputPath": "E:\\C#\\WareHouse\\WareHouse.Dto\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -113,8 +106,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cnblogs.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -144,22 +136,19 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+    "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj",
+        "projectUniqueName": "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj",
         "projectName": "WareHouse.Entity",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj",
+        "projectPath": "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\obj\\",
+        "outputPath": "E:\\C#\\WareHouse\\WareHouse.Entity\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -169,8 +158,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cnblogs.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -200,22 +188,19 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {
+    "E:\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
+        "projectUniqueName": "E:\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
         "projectName": "WareHouse.Service.Interface",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
+        "projectPath": "E:\\C#\\WareHouse\\WareHouse.IService\\WareHouse.Service.Interface.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.IService\\obj\\",
+        "outputPath": "E:\\C#\\WareHouse\\WareHouse.IService\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -225,23 +210,22 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cnblogs.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj"
+              "E:\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj": {
+                "projectPath": "E:\\C#\\WareHouse\\WareHouse.Core\\WareHouse.Core.csproj"
               },
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj"
+              "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj": {
+                "projectPath": "E:\\C#\\WareHouse\\WareHouse.Dto\\WareHouse.Dto.csproj"
               },
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+              "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+                "projectPath": "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
               },
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj"
+              "E:\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
+                "projectPath": "E:\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj"
               }
             }
           }
@@ -269,22 +253,19 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
+    "E:\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj",
+        "projectUniqueName": "E:\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj",
         "projectName": "WareHouse.ViewModel",
-        "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj",
+        "projectPath": "E:\\C#\\WareHouse\\WareHouse.ViewModel\\WareHouse.ViewModel.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.ViewModel\\obj\\",
+        "outputPath": "E:\\C#\\WareHouse\\WareHouse.ViewModel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -294,14 +275,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cnblogs.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
-                "projectPath": "D:\\MyProject\\OneDrive - OBA GG\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
+              "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj": {
+                "projectPath": "E:\\C#\\WareHouse\\WareHouse.Entity\\WareHouse.Entity.csproj"
               }
             }
           }
@@ -329,7 +309,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

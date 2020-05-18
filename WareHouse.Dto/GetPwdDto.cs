@@ -14,7 +14,7 @@ namespace WareHouse.Dto
 {
     public class GetPwdDto
     {
-        public string Name { get; set; }
+        public int UserId { get; set; }
 
         public string OldPwd { get; set; }
 

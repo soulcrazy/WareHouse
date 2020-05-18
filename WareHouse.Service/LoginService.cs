@@ -11,7 +11,6 @@ namespace WareHouse.Service
     public class LoginService : ILoginService
     {
         private readonly IRepository<Users, int> _repository;
-        private readonly IUsersService _usersService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IUsersService _usersService;
 
@@ -65,7 +64,7 @@ namespace WareHouse.Service
 
         public bool UpdatePwd(GetPwdDto getPwdDto)
         {
-            Users users = _repository.Find(c => c.Name == getPwdDto.Name);
+            Users users = _repository.Find(getPwdDto.UserId);
             if (users.Pwd != Md5Helper.GetMd5(getPwdDto.OldPwd))
             {
                 return false;

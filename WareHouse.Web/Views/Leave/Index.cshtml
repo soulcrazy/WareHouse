@@ -33,6 +33,14 @@
 @section Scripts
 {
     <script>
+        $.ajax({
+            url: "@Url.Action("GetAllInside","Join")",
+            data: {},
+            type: "get",
+            success: function(res) {
+                console.log(res);
+            }
+        });
         $('#inside-table').bootstrapTable({
             method: 'get',
             url: "/Join/GetAllInside", //请求路径
